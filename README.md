@@ -44,7 +44,9 @@ Further improvements are welcome!
 
 ## Screenshots
 
-_Add screenshots of your site here for visual reference._
+![Matrix-style Loading Screen](assets/files/matrix_screenshot.png)
+
+_Matrix-style loading screen from the portfolio website._
 
 ---
 
