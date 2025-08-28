@@ -2,6 +2,65 @@
 
 Welcome to the source code for [Akbar Aman’s Portfolio Website](http://localhost:8001/), a modern, interactive showcase for a Computer Engineer. This site is designed with a Matrix-inspired theme, featuring a terminal CLI, smooth animations, and responsive layouts.
 
+---
+
+## Live Demo & Deployment
+
+This site is deployed using **Cloudflare Pages** for fast, secure, and global delivery. To deploy your own version:
+
+1. Fork or clone this repository.
+2. Push your code to a public GitHub repository.
+3. Go to [Cloudflare Pages](https://pages.cloudflare.com/) and create a new project, connecting your GitHub repo.
+4. Use the default build settings for static sites (no build command required).
+5. Your site will be live at `https://<your-project>.pages.dev`.
+
+---
+
+## Technologies Used
+
+- **HTML5** & **CSS3** (custom, modular, and responsive)
+- **JavaScript** (vanilla, for interactivity and animations)
+- **Font Awesome** (icon library)
+- **Google Fonts** (Fira Code, Share Tech Mono)
+- **Cloudflare Pages** (hosting)
+
+---
+
+## Browser Compatibility
+
+Tested on latest versions of Chrome, Firefox, Edge, and Safari. Fully responsive and mobile-friendly.
+
+---
+
+## Accessibility
+
+Efforts have been made to ensure:
+- Sufficient color contrast
+- Keyboard navigation for terminal CLI
+- Semantic HTML structure
+Further improvements are welcome!
+
+---
+
+## Screenshots
+
+_Add screenshots of your site here for visual reference._
+
+---
+
+## Contributing
+
+Contributions, suggestions, and improvements are welcome!
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-name`)
+3. Commit your changes
+4. Open a pull request
+
+Please follow best practices and keep code modular and well-documented.
+
+---
+
 ## Table of Contents
 
 - [Features](#features)
@@ -86,6 +145,16 @@ README.md                 # Project documentation
 ## License
 
 See `LICENSE` for details.
+
+---
+
+## Professional Notes
+
+- This portfolio is designed for high performance and modern aesthetics.
+- All code is original and modular for easy maintenance.
+- For deployment, Cloudflare Pages is recommended for its speed and reliability.
+
+---
 
 ---
 
