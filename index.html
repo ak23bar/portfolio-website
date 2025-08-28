@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akbar Aman - Computer Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading" style="background:#000; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999;">
+        <div class="loading-matrix-bg" id="loading-matrix-bg" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:1;pointer-events:none;"></div>
+        <div class="loading-matrix-rain" id="loading-matrix-rain" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:2;pointer-events:none;overflow:hidden;"></div>
+        <div class="loading-terminal" style="position:relative;z-index:3;">
+            <div class="loading-line">$ ssh akbar@portfolio.dev</div>
+            <div class="loading-line">$ Loading professional profile...</div>
+            <div class="loading-line">$ Initializing secure connection...</div>
+            <div class="loading-line">$ Access granted <span class="loading-cursor">_</span></div>
+            <div class="loading-matrix-enter" style="opacity:0;margin-top:2.5rem;text-align:center;font-size:1.3rem;color:#00ff41;font-family:'Share Tech Mono',monospace;letter-spacing:0.1em;transition:opacity 0.7s;">WELCOME TO THE MATRIX...</div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Matrix Background -->
+    <div class="matrix-bg"></div>
+    <div class="matrix-rain" id="matrixRain"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Interactive Terminal CLI -->
+    <div class="terminal-cli" id="terminalCli">
+        <div class="terminal-cli-header">
+            <span>akbar@portfolio:~$</span>
+            <button onclick="toggleTerminalCli()" style="background:none;border:none;color:#000;font-size:1.2rem;cursor:pointer;">&times;</button>
+        </div>
+        <div class="terminal-cli-content" id="terminalCliContent">
+            <div class="cli-output">Type 'help' for available commands</div>
+        </div>
+        <div class="cli-input-line">
+            <span class="cli-prompt">akbar@portfolio:<span id="cliPath">~</span>$</span>
+            <input type="text" class="cli-input" id="cliInput" placeholder="Enter command..." autocomplete="off">
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <div class="quick-action" onclick="toggleTerminalCli()" title="Terminal">
+            <i class="fas fa-terminal"></i>
+        </div>
+        <div class="quick-action" onclick="scrollToTop()" title="Scroll to Top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+        <div class="quick-action" onclick="downloadResume()" title="Download Resume">
+            <i class="fas fa-file-download"></i>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="scrollToTop()">akbar.exe</div>
+            <ul class="nav-links">
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#education">education</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="version-display" id="versionDisplay">
+                    <span class="version-label">v</span>
+                    <span class="version-number" id="versionNumber">1.0</span>
+                    <div class="version-tooltip" id="versionTooltip">
+                        <div class="version-details">
+                            <div class="version-title">Portfolio Version 1.0</div>
+                            <div class="version-date">Last Updated: August 27, 2025</div>
+                            <div class="version-changes">
+                                <div class="change-title">Latest Updates:</div>
+                                <ul>
+                                    <li>Initial portfolio launch with Matrix theme</li>
+                                    <li>Complete terminal CLI with Linux-like commands</li>
+                                    <li>Interactive navigation and smooth animations</li>
+                                    <li>Comprehensive project showcase</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu" onclick="toggleMobileNav()">
+                    <i class="fas fa-terminal"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-mobile" onclick="toggleMobileNav()">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="#home" onclick="toggleMobileNav()">home</a>
+        <a href="#about" onclick="toggleMobileNav()">about</a>
+        <a href="#experience" onclick="toggleMobileNav()">experience</a>
+        <a href="#education" onclick="toggleMobileNav()">education</a>
+        <a href="#projects" onclick="toggleMobileNav()">projects</a>
+        <a href="#contact" onclick="toggleMobileNav()">contact</a>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-flex-wrap">
+                <div class="hero-image-wrap">
+                    <img src="assets/files/neo.png" alt="Neo" class="terminal-neo-image" style="display:block;margin:1.5rem auto 1rem auto;max-width:150px;width:100%;height:auto;box-shadow:0 0 0 4px #00ff41;">
+                </div>
+                <div class="hero-text-wrap" style="padding:1.5rem 0 0 0;">
+                    <h1 style="margin-bottom: 2.2rem; text-align: center; margin-left: auto; margin-right: auto; display: block; font-size: 3.2rem; text-shadow: 0 0 30px #00ff41, 0 0 60px #00ff41;">Akbar Aman</h1>
+                    <div class="terminal-window" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
+                        <div class="terminal-header" style="background:#00ff41; border-top-left-radius:16px; border-top-right-radius:16px; padding:0.8rem 1.2rem; display:flex; align-items:center; justify-content:space-between;">
+                            <span style="color:#000; font-family:'Share Tech Mono', monospace; font-size:1.45rem; font-weight:600; letter-spacing:1px;">akbar@portfolio:~$</span>
+                            <div style="display:flex; gap:0.5rem;">
+                                <span style="width:16px; height:16px; background:#ff0040; border-radius:50%; display:inline-block;"></span>
+                                <span style="width:16px; height:16px; background:#ffff00; border-radius:50%; display:inline-block;"></span>
+                                <span style="width:16px; height:16px; background:#00ff41; border-radius:50%; display:inline-block;"></span>
+                            </div>
+                        </div>
+                        <div class="terminal-content" style="border: 4px solid #00ff41; border-radius: 0 0 16px 16px; padding: 1.2rem 0.5rem; background: transparent;">
+                            <div class="terminal-line terminal-prompt">cat summary.txt</div>
+                            <div class="terminal-line">Computer Engineer with a passion for building impactful solutions at the intersection of software and hardware.</div>
+                            <div class="terminal-line">I specialize in designing efficient systems, integrating AI and embedded technologies, and solving real-world problems through creative engineering.</div>
+                            <div class="terminal-line">My work is driven by curiosity, a commitment to lifelong learning, and a desire to advance technology for the benefit of society.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="professional-stats">
+            <div class="stat-card">
+                <span class="number">10+</span>
+                <span class="label">Professional & Research Roles</span>
+            </div>
+            <div class="stat-card">
+                <span class="number">15+</span>
+                <span class="label">Technical Skills & Frameworks</span>
+            </div>
+            <div class="stat-card">
+                <span class="number">20+</span>
+                <span class="label">Projects & Implementations</span>
+            </div>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">View Portfolio</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+            <div class="about-text" style="margin-top: -2rem; align-self: flex-start;">
+                <h3>whoami</h3>
+                <p style="font-size:1.15rem; color:#cccccc; margin-bottom:1.5rem;">
+I am a <span id="engineerTypeAbout" style="display: inline-block; min-width: 220px; text-align: left;">Computer Engineer</span> dedicated to merging creativity and precision in both hardware and software. My work spans data science, AI, ML, fullstack engineering, hardware design and integration, & more. I take great pride in solving meaningful problems that contribute to the greater good.
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+I firmly believe that technology's true value lies in its ability to improve lives. Whether I am building efficient systems, advancing AI techniques, or addressing complex engineering challenges, my goal is to create solutions that will stand the test of time and positively impact society.
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;"> 
+            I am committed to making a lasting contribution in my time on this earth, not only through the systems I design, but by pushing myself to be <span style="color: #00ff41; font-weight: bold;">أكبر</span> (akbar - "the greatest").
+        </p>
+        
+        <div class="skill-category" style="margin-top: 2rem;">
+            <h4>passions_&_interests</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">Basketball</span>
+                <span class="skill-tag">Strength Training</span>
+                <span class="skill-tag">Coding</span>
+                <span class="skill-tag">Reading & Literature</span>
+                <span class="skill-tag">Chess</span>
+                <span class="skill-tag">Logic Puzzles</span>
+                <span class="skill-tag">Travel</span>
+                <span class="skill-tag">Gaming</span>
+                <span class="skill-tag">Cinema</span>
+                <span class="skill-tag">Anime</span>
+                <span class="skill-tag">Mathematical & Theorem Proving</span>
+                <span class="skill-tag">Quantum Physics</span>
+                <span class="skill-tag">Theology</span>
+                <span class="skill-tag">Philosophy</span>
+                <span class="skill-tag">Psychology</span>
+                <span class="skill-tag">Astrology</span>
+                <span class="skill-tag">History</span>
+                <span class="skill-tag">Multilingual: Arabic, English, Urdu, Spanish, French</span>
+            </div>
+        </div>
+            </div>
+            <div class="skills-grid">
+            
+               <div class="skill-category">
+                    <h4>programming_languages</h4>
+                    <div class="skill-tags">
+                         <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">ARM Assembly</span>
+                        <span class="skill-tag">MIPS Assembly</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">VHDL</span>
+                        <span class="skill-tag">Verilog</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Rust</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>frameworks_tools</h4>
+                    <div class="skill-tags">
+                       <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">Anaconda</span>
+                        <span class="skill-tag">Pygame</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Xilinx Vivado</span>
+                        <span class="skill-tag">LTspice</span>
+                        <span class="skill-tag">Arduino IDE</span>
+                        <span class="skill-tag">Tiva C</span>
+                        <span class="skill-tag">Raspberry Pi</span>
+                        <span class="skill-tag">MATLAB/Simulink</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Tempo</span>
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>core_competencies</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Data Structures & Algorithms</span>
+                        <span class="skill-tag">Discrete Math</span>
+                        <span class="skill-tag">Differential Equations</span>
+                        <span class="skill-tag">Calculus I-III</span>
+                        <span class="skill-tag">Probability and Randomness</span>
+                        <span class="skill-tag">Applied Linear Algebra</span>
+                        <span class="skill-tag">Electricity and Magnetism</span>
+                        <span class="skill-tag">Thermodynamics</span>
+                        <span class="skill-tag">Circuit Analysis</span>
+                        <span class="skill-tag">Computer Architecture</span>
+                        <span class="skill-tag">Digital Systems Design</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">Computer Communication Networks</span>
+                        <span class="skill-tag">Signals and Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item" onclick="openModal('modal-eng-success')">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="job-title">Engineering Success Program Mentor</div>
+                    <div class="company">University of Illinois Chicago</div>
+                    <div class="date-location">Aug 2025 - Present | Chicago, IL (Fall & Spring Semesters)</div>
+                    <div class="job-description">
+                        <p>Facilitating ENGR 100/101: Engineering Success Seminar series across multiple sections, serving 120+ students with curriculum development and academic guidance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="openModal('modal3')">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="job-title">CS Teaching Assistant</div>
+                    <div class="company">University of Illinois Chicago</div>
+                    <div class="date-location">Jan 2025 - May 2025, Aug 2025 - Present | Chicago, IL</div>
+                    <div class="job-description">
+                        <p>Selected for re-appointment teaching CS 109: Programming for Engineers with MATLAB, supporting 600+ students across Spring and Fall 2025 semesters.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="openModal('modal-private-tutor')">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="job-title">Private Tutor</div>
+                    <div class="company">Varsity Tutors & Grade Potential Tutoring</div>
+                    <div class="date-location">Aug 2025 - Present | Remote & Greater Chicago Area</div>
+                    <div class="job-description">
+                        <p>Providing personalized tutoring for learners of all ages across 30+ subjects including Mathematics, Programming Languages, and AI through two tutoring platforms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="openModal('modal2')">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="job-title">AI Trainer - Machine Learning</div>
+                    <div class="company">Handshake (MOVE Fellowship)</div>
+                    <div class="date-location">Aug 2025 - Present | Remote</div>
+                    <div class="job-description">
+                        <p>Collaborating with researchers to evaluate and refine state-of-the-art LLMs through structured testing and data labelling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="openModal('modal1')">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="job-title">AI Trainer - Software Developer</div>
+                    <div class="company">Outlier</div>
+                    <div class="date-location">April 2025 - Present | Remote</div>
+                    <div class="job-description">
+                        <p>Developing and evaluating AI models across technical domains including Math, Science, C++, Python, SQL, JavaScript, and more.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="openModal('modal4')">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="job-title">Code Coach</div>
+                    <div class="company">The Coder School</div>
+                    <div class="date-location">Jan 2025 - Present | Lombard, IL</div>
+                    <div class="job-description">
+                        <p>Mentoring students in Code Theory, Python, C++, Java, Scratch, CLI, and web development with custom curriculum design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="openModal('modal5')">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="job-title">Deep Learning/AI Intern</div>
+                    <div class="company">UIC Electrical and Computer Engineering Department</div>
+                    <div class="date-location">Jun 2024 - Aug 2024 | Chicago, IL</div>
+                    <div class="job-description">
+                        <p>Led a team of 5 interns in reasearching & developing computer vision models for wildfire detection, achieving 20-30% accuracy improvement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="openModal('modal6')">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="job-title">UI-UX/Machine Learning Intern</div>
+                    <div class="company">STEMAway</div>
+                    <div class="date-location">Jun 2023 - Sep 2023 | Remote</div>
+                    <div class="job-description">
+                        <p>Built and deployed ML pipelines using AWS, GPT API, and web scraping technologies. Launched team website circa September 2023. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-card">
+            <div class="education-content">
+                <div class="university-name">University of Illinois Chicago</div>
+                <div class="degree">BS in Computer Engineering / MS in Electrical and Computer Engineering
+                    <div style="margin-top: 0.5rem; font-size: 0.9em; color: #00ff41; font-style: italic;">
+                        Minor in Mathematics
+                    </div>
+                </div>
+                <div class="education-stats">
+                    <div class="edu-stat">
+                        <span class="value">3.65</span>
+                        <span class="label">Current GPA</span>
+                    </div>
+                    <div class="edu-stat">
+                        <span class="value">May 2027</span>
+                        <span class="label">Expected BS</span>
+                    </div>
+                    <div class="edu-stat">
+                        <span class="value">May 2028</span>
+                        <span class="label">Expected MS</span>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.9); border: 1px solid #00ff41; border-radius: 5px; padding: 1rem; margin: 1rem 0; font-family: 'Fira Code', monospace; color: #00ff41;">
+                    <span style="color: #666;">// Academic Focus</span><br>
+                    <span style="color: #ff0040;">const</span> specializations = [<br>
+                    &nbsp;&nbsp;<span style="color: #ffff00;">"Data Science & Engineering"</span>,<br>
+                    &nbsp;&nbsp;<span style="color: #ffff00;">"Signal Processing"</span>,<br>
+                    ];<br><br>
+                    <span style="color: #ff0040;">const</span> minor = <span style="color: #ffff00;">"Mathematics"</span>;<br>
+                    <span style="color: #666;">// Building strong analytical foundations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" onclick="openModal('project1')">
+                <div class="project-header">
+                    <h3>Lamhaa.ai <span style="font-size:1.1rem;vertical-align:middle;"> </span></h3>
+                    <span class="project-status">BUILDING</span>
+                </div>
+                <p><strong>AI-powered platform for visual asset management.</strong> Lamhaa.ai processes thousands of photos in seconds, automatically selecting, organizing, and categorizing the best images for photographers, creators, and businesses. Features include smart quality detection, duplicate removal, burst grouping, and mode-specific intelligence for both creative and business workflows.<br><br>
+<b>Use Cases:</b> Wedding/event culling, e-commerce product management, marketing asset organization, and professional photography workflow optimization.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">CLIP</span>
+                    <span class="tech-tag">BLIP</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Image Processing</span>
+                    <span class="tech-tag">AI Models</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/lamhaa.ai" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project-matrix')">
+                <div class="project-header">
+                    <h3>MATRIX <span style="font-size:1.1rem;vertical-align:middle;"> </span></h3>
+                    <span class="project-status">PUBLIC</span>
+                </div>
+                <p><strong>Voice AI assistant featuring Matrix-themed interface.</strong> Advanced conversational AI powered by ElevenLabs neural voice synthesis with real-time speech processing and production-ready Python architecture. Features immersive cyberpunk terminal interface, WebSocket audio streaming, and contextual conversation management.<br><br>
+                <b>Key Features:</b> Real-time voice processing, chat bot capabilities, neural voice synthesis, Matrix-themed CLI, continuous speech recognition, contextual conversations, cross-platform audio optimization.<br>
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">ElevenLabs API</span>
+                    <span class="tech-tag">PyAudio</span>
+                    <span class="tech-tag">SpeechRecognition</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">LLMs</span>
+                    <span class="tech-tag">WebSocket</span>
+                    <span class="tech-tag">Neural AI</span>
+                    <span class="tech-tag">Voice Synthesis</span>
+                    <span class="tech-tag">Real-time Processing</span>
+                    <span class="tech-tag">Audio Processing</span>
+                    <span class="tech-tag">CLI Applications</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/MATRIX" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project-personal-projects')">
+                <div class="project-header">
+                    <h3>AI Album Finder <span style="font-size:1.1rem;vertical-align:middle;"> </span></h3>
+                    <span class="project-status">PUBLIC</span>
+                </div>
+                <p><strong>AI-powered music discovery and analysis platform.</strong> Leverages Spotify's Web API and artificial intelligence for deep music insights, mood analysis, and personalized recommendations. Demonstrates advanced web development, API integration, and AI-powered data analysis.<br><br>
+<b>Key Features:</b> Audio feature analysis, mood profiling, smart recommendations, interactive frontend, and production-ready infrastructure with containerized deployment.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">Spotify API</span>
+                    <span class="tech-tag">AI Integration</span>
+                    <span class="tech-tag">CLIP Models</span>
+                    <span class="tech-tag">Data Analysis</span>
+                    <span class="tech-tag">Web Development</span>
+                    <span class="tech-tag">Containerization</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/ai-album-finder" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project-coderschool')">
+                <div class="project-header">
+                    <h3>Student Projects</h3>
+                    <span class="project-status">EDUCATION</span>
+                </div>
+                <p><strong>Educational programming repository showcasing student-guided development projects.</strong> Comprehensive collection of coding exercises and projects designed to build fundamental programming skills through hands-on learning. Features progressive difficulty levels from basic syntax to complex application development.<br><br>
+<b>Educational Impact:</b> Direct mentorship of 15+ students across multiple programming languages, custom curriculum development, and real-world project implementation experience.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">Scratch</span>
+                    <span class="tech-tag">Web Development</span>
+                    <span class="tech-tag">Game Development</span>
+                    <span class="tech-tag">CLI Applications</span>
+                    <span class="tech-tag">Educational Design</span>
+                    <span class="tech-tag">Curriculum Development</span>
+                    <span class="tech-tag">Student Mentorship</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/Student-Projects" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+            
+            <div class="project-card" onclick="openModal('project4')">
+                <div class="project-header">
+                    <h3>DSA_Library</h3>
+                    <span class="project-status">COURSEWORK</span>
+                </div>
+                <p><strong>Comprehensive data structures and algorithms implementation library showcasing advanced programming expertise.</strong> Features custom implementations of fundamental CS concepts through challenging coursework projects. Demonstrates deep understanding of algorithmic complexity, memory management, and performance optimization.<br><br>
+<b>Highlight Projects:</b> Search Engine with boolean logic operators, custom HashMap with linear probing collision resolution, and OpenStreetMap navigation system using Dijkstra's shortest path algorithm. All projects achieved maximum scores with additional extra credit recognition.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">STL Containers</span>
+                    <span class="tech-tag">Data Structures</span>
+                    <span class="tech-tag">Algorithms</span>
+                    <span class="tech-tag">Hash Tables</span>
+                    <span class="tech-tag">Graph Algorithms</span>
+                    <span class="tech-tag">Dijkstra's Algorithm</span>
+                    <span class="tech-tag">Search Engines</span>
+                    <span class="tech-tag">OpenStreetMap API</span>
+                    <span class="tech-tag">Performance Optimization</span>
+                    <span class="tech-tag">Memory Management</span>
+                    <span class="tech-tag">Template Programming</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/DSA_Library" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                    <a href="#" onclick="event.stopPropagation();" style="margin-left:0.5rem; color:#00ff41; text-decoration:underline;">highlight project</a>
+                </div>
+            </div>
+
+            
+            <div class="project-card" onclick="openModal('project3')">
+                <div class="project-header">
+                    <h3>Embedded_Systems</h3>
+                    <span class="project-status">COURSEWORK</span>
+                </div>
+                <p><strong>Comprehensive embedded systems development portfolio showcasing ARM microcontroller expertise.</strong> Collection of real-time applications demonstrating sensor integration, interrupt handling, and hardware-software interfacing. Features custom sensor implementations and performance-optimized embedded solutions.<br><br>
+<b>Final Project:</b> Ultra Heat Sensor Alarm System combining ultrasonic distance detection, temperature monitoring, seven-segment displays, PWM-driven buzzer alerts, and real-time response logic. Designed as a complete safety alert device with adjustable thresholds and modular embedded C/ARM assembly programming.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">ARM Assembly</span>
+                    <span class="tech-tag">C Programming</span>
+                    <span class="tech-tag">Tiva C Microcontroller</span>
+                    <span class="tech-tag">Real-Time Systems</span>
+                    <span class="tech-tag">Sensor Integration</span>
+                    <span class="tech-tag">Interrupt Handling</span>
+                    <span class="tech-tag">Hardware Interfacing</span>
+                    <span class="tech-tag">GPIO Programming</span>
+                    <span class="tech-tag">Timer/PWM Control</span>
+                    <span class="tech-tag">Serial Communication</span>
+                    <span class="tech-tag">Embedded Debug</span>
+                    <span class="tech-tag">ADC Sampling</span>
+                    <span class="tech-tag">UART Communication</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/Embedded_Systems" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project2')">
+                <div class="project-header">
+                    <h3>Wildfire Detection Pipeline</h3>
+                    <span class="project-status">PUBLIC</span>
+                </div>
+                <p><strong>Computer vision-based wildfire detection pipeline for video analysis.</strong> This repository supports video preprocessing, optical flow estimation, and inference using pretrained fire detection models (EfficientNetV2, ResNet18). Originally developed during a wildfire detection internship, this pipeline was used in conjunction with the Vision Mamba project for experimental evaluation.<br><br>
+<b>Note:</b> Vision Mamba itself is not included, but this codebase contains adaptable tools for working with video datasets and classification models, and can be extended for use with other architectures or real-time fire detection tasks.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">Deep Learning</span>
+                    <span class="tech-tag">EfficientNetV2</span>
+                    <span class="tech-tag">ResNet18</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">Video Processing</span>
+                    <span class="tech-tag">Optical Flow</span>
+                    <span class="tech-tag">Data Preprocessing</span>
+                    <span class="tech-tag">Model Inference</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/wildfire-detection-pipeline" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project5')">
+                <div class="project-header">
+                    <h3>Web-Dev Collection</h3>
+                    <span class="project-status">PUBLIC</span>
+                </div>
+                <p><strong>Diverse collection of creative web applications showcasing modern front-end development skills.</strong> Features interactive mini-projects ranging from dynamic user interfaces to responsive design implementations. Each project demonstrates different aspects of web development including animations, API integrations, and user experience optimization.<br><br>
+<b>Notable Projects:</b> Interactive dashboard designs, responsive portfolio templates, dynamic content management systems, and creative CSS animations. Originally developed for competitive programming challenges and refined for production-quality presentation.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript ES6+</span>
+                    <span class="tech-tag">Responsive Design</span>
+                    <span class="tech-tag">CSS Animations</span>
+                    <span class="tech-tag">DOM Manipulation</span>
+                    <span class="tech-tag">UI/UX Design</span>
+                    <span class="tech-tag">Cross-browser Compatibility</span>
+                    <span class="tech-tag">Mobile-first Design</span>
+                    <span class="tech-tag">Performance Optimization</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/web-dev-collection" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                    <a href="#" onclick="event.stopPropagation();" style="margin-left:0.5rem; color:#00ff41; text-decoration:underline;">highlight project</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project-portfolio-website')">
+                <div class="project-header">
+                    <h3>Portfolio Website</h3>
+                    <span class="project-status">LIVE</span>
+                </div>
+                <p><strong>Professional portfolio website developed with modern web technologies and performance optimization.</strong> Features responsive design, interactive terminal CLI with 26+ commands, custom animations, and Matrix-themed interface. Implements best practices in front-end development including semantic HTML, CSS Grid/Flexbox layouts, and vanilla JavaScript.<br><br>
+<b>Architecture:</b> Deployed on Cloudflare Pages with automated CI/CD pipeline and global CDN distribution for optimal performance and reliability.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">Vanilla JavaScript</span>
+                    <span class="tech-tag">CSS Grid & Flexbox</span>
+                    <span class="tech-tag">Responsive Design</span>
+                    <span class="tech-tag">Terminal CLI Simulation</span>
+                    <span class="tech-tag">Performance Optimization</span>
+                    <span class="tech-tag">SEO Implementation</span>
+                    <span class="tech-tag">Cloudflare Pages</span>
+                    <span class="tech-tag">CI/CD Pipeline</span>
+                    <span class="tech-tag">Web Accessibility</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/portfolio-website" target="_blank">repo</a>
+                    <a href="https://ak23bar.pages.dev" target="_blank">live demo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project-leetcode')">
+                <div class="project-header">
+                    <h3>LeetCode Solutions</h3>
+                    <span class="project-status" style="background:rgba(0,255,65,0.2);color:#00ff41;border:1px solid #00ff41;">INTERVIEW PREP</span>
+                </div>
+                <p><strong>Comprehensive collection of optimized coding interview solutions demonstrating algorithmic expertise.</strong> Features well-documented implementations across multiple programming languages with detailed complexity analysis and alternative approaches. Each solution includes comprehensive test cases and explanation of thought processes.<br><br>
+<b>Interview Focus:</b> Emphasis on clean code practices, optimal time/space complexity, and clear problem-solving methodology specifically designed for technical interview preparation and code quality demonstration.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Data Structures</span>
+                    <span class="tech-tag">Algorithms</span>
+                    <span class="tech-tag">Dynamic Programming</span>
+                    <span class="tech-tag">Graph Theory</span>
+                    <span class="tech-tag">Tree Traversal</span>
+                    <span class="tech-tag">Hash Tables</span>
+                    <span class="tech-tag">Binary Search</span>
+                    <span class="tech-tag">Sorting Algorithms</span>
+                    <span class="tech-tag">Problem Solving</span>
+                    <span class="tech-tag">Code Optimization</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/msami3/LeetCode" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="terminal-window" style="margin-bottom: 3rem;">
+            <div class="terminal-header">
+                <span>akbar@contact:~$</span>
+                <div class="terminal-buttons">
+                    <div class="terminal-btn"></div>
+                    <div class="terminal-btn minimize"></div>
+                    <div class="terminal-btn maximize"></div>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <div class="terminal-line terminal-prompt">echo "Ready to drive innovation and deliver results"</div>
+                <div class="terminal-line">I specialize in fullstack engineering, AI and machine learning, and embedded systems, with every skill I have gained consistently applied to real-world impact. My work has delivered measurable results through innovative solutions, efficient execution, and a commitment to excellence. Whether the need is full-time engineering support, contract expertise, or strategic consulting, I provide immediate value by turning knowledge into practical outcomes. From advanced AI applications to scalable software architectures and integrated systems, I ensure that ideas move beyond theory into transformative results.</div>
+                <div class="terminal-line terminal-prompt">cat availability.txt</div>
+                <div class="terminal-line">Excellence is the standard. Impact is guaranteed. Let us build something extraordinary together.</div>
+
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h4 style="color:#ffff00;margin-bottom:0.5rem;font-size:1.2rem;font-family:'Share Tech Mono',monospace;">Professional Email</h4>
+                <p style="color:#cccccc;margin-bottom:1rem;font-family:'Fira Code',monospace;">For opportunities, collaborations, and resume requests</p>
+                <a href="mailto:akbaraman797@gmail.com" style="color:#00ff41;text-decoration:none;font-weight:500;font-family:'Fira Code',monospace;">akbaraman797@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h4 style="color:#ffff00;margin-bottom:0.5rem;font-size:1.2rem;font-family:'Share Tech Mono',monospace;">Direct Contact</h4>
+                <p style="color:#cccccc;margin-bottom:1rem;font-family:'Fira Code',monospace;">Available for urgent opportunities and discussions</p>
+                <a href="tel:+12245223075" style="color:#00ff41;text-decoration:none;font-weight:500;font-family:'Fira Code',monospace;">(224) 522-3075</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h4 style="color:#ffff00;margin-bottom:0.5rem;font-size:1.2rem;font-family:'Share Tech Mono',monospace;">LinkedIn</h4>
+                <p style="color:#cccccc;margin-bottom:1rem;font-family:'Fira Code',monospace;">Professional networking and career opportunities</p>
+                <a href="https://linkedin.com/in/akbar-aman-94b1b6263" target="_blank" style="color:#00ff41;text-decoration:none;font-weight:500;font-family:'Fira Code',monospace;">Connect →</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h4 style="color:#ffff00;margin-bottom:0.5rem;font-size:1.2rem;font-family:'Share Tech Mono',monospace;">GitHub</h4>
+                <p style="color:#cccccc;margin-bottom:1rem;font-family:'Fira Code',monospace;">Technical projects, open source contributions</p>
+                <a href="https://github.com/ak23bar" target="_blank" style="color:#00ff41;text-decoration:none;font-weight:500;font-family:'Fira Code',monospace;">@ak23bar →</a>
+            </div>
+        </div>
+
+       <!-- TALK TO THE MATRIX Section -->
+<div style="margin-top: 3rem; text-align: center;">
+    <div class="terminal-window" style="max-width: 800px; margin: 0 auto;">
+        <div class="terminal-header">
+            <span>akbar@matrix:~$</span>
+            <div class="terminal-buttons">
+                <div class="terminal-btn"></div>
+                <div class="terminal-btn minimize"></div>
+                <div class="terminal-btn maximize"></div>
+            </div>
+        </div>
+        <div class="terminal-content" style="padding: 2.5rem; text-align: center;">
+            <div class="terminal-line terminal-prompt" style="margin-bottom: 1rem;">./start_matrix_conversation.sh</div>
+            <div class="terminal-line" style="margin-bottom: 1.5rem; color: #00ff41; font-size: 1.1rem;">MATRIX AGENT ONLINE - VOICE & TEXT READY</div>
+            
+            <h3 style="color: #ffff00; margin-bottom: 0.8rem; font-family: 'Share Tech Mono', monospace; font-size: 1.4rem;">
+                TALK TO THE MATRIX
+            </h3>
+            
+            <p style="color: #cccccc; margin-bottom: 1rem; font-family: 'Fira Code', monospace; line-height: 1.6;">
+                Experience my MATRIX voice AI assistant powered by ElevenLabs. Ask about my projects, experience, or technical skills through natural conversation - both voice and text supported.
+            </p>
+            
+            <div style="color: #ffff00; font-family: 'Fira Code', monospace; font-size: 0.9rem; margin-bottom: 2rem; padding: 0.8rem; background: rgba(255,255,0,0.1); border: 1px solid #ffff00; border-radius: 4px;">
+                <strong>Note:</strong> AI agent requires ElevenLabs credits to be active. Currently configured and ready for deployment when needed.
+            </div>
+            
+            <!-- Widget Container Box - Expanded and optimized -->
+            <div style="
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid #00ff41;
+                border-radius: 12px;
+                padding: 2rem;
+                margin: 2rem auto 0;
+                max-width: 700px;
+                width: 90%;
+                box-shadow: 0 0 20px rgba(0, 255, 65, 0.4), inset 0 0 10px rgba(0, 255, 65, 0.1);
+                position: relative;
+                overflow: hidden;
+                backdrop-filter: blur(10px);
+            ">
+                <!-- Animated border effect -->
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 3px;
+                    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+                    animation: matrix-scan 2s linear infinite;
+                "></div>
+                
+                <!-- Terminal-style header for the widget box -->
+                <div style="
+                    background: rgba(0, 255, 65, 0.15);
+                    border-bottom: 1px solid #00ff41;
+                    margin: -2rem -2rem 2.5rem;
+                    padding: 1rem;
+                    font-family: 'Fira Code', monospace;
+                    font-size: 1rem;
+                    color: #00ff41;
+                    text-align: center;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                ">
+                    ◉ MATRIX_AI_INTERFACE_ACTIVE ◉
+                </div>
+                
+                <!-- Widget content area - Much larger -->
+                <div style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 400px;
+                    width: 100%;
+                    margin-top: 0.5rem;
+                ">
+                    <elevenlabs-convai agent-id="agent_0701k28hr0maekn92g84ddfhc0qs"></elevenlabs-convai>
+                </div>
+                
+                <!-- Status indicator -->
+                <div style="
+                    position: absolute;
+                    top: 1.2rem;
+                    right: 1.2rem;
+                    width: 10px;
+                    height: 10px;
+                    background: #00ff41;
+                    border-radius: 50%;
+                    animation: matrix-pulse 1.5s ease-in-out infinite;
+                "></div>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+<style>
+@keyframes matrix-scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes matrix-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
+</style>
+
+    <!-- Experience Detail Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>AI Trainer - Software Developer | Outlier</h2>
+            <p><strong>Duration:</strong> April 2025 - Present</p>
+            <p><strong>Location:</strong> Remote</p>
+            <h3>Key Responsibilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Developed and evaluated prompts across technical domains, including code-based inputs in C++, Python, SQL, and JavaScript</li>
+                <li>Reviewed AI-generated outputs for correctness, logic, and clarity in complex programming scenarios</li>
+                <li>Produced improved reference implementations for various software development tasks</li>
+                <li>Identified failure cases and explored prompt optimization strategies for enhanced AI performance</li>
+                <li>Maintained 4.5/5 average task submission feedback across all assigned projects</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>AI Trainer - Machine Learning | Handshake (MOVE Fellowship)</h2>
+            <p><strong>Duration:</strong> Aug 2025 - Present</p>
+            <p><strong>Location:</strong> Remote</p>
+            <h3>Key Responsibilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Collaborated with leading researchers through the MOVE Fellowship on contract-based projects to evaluate and refine state-of-the-art LLMs</li>
+                <li>Executed data labeling, prompt evaluation, and error identification to enhance model accuracy and reasoning</li>
+                <li>Supported model refinement through precise, actionable feedback to improve overall AI system performance</li>
+                <li>Participated in structured testing and contextual analysis of advanced language models</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Add remaining modals and close body/html tags -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>CS Teaching Assistant | University of Illinois Chicago</h2>
+            <p><strong>Duration:</strong> Jan 2025 - May 2025, Aug 2025 - Present (Spring & Fall Semesters)</p>
+            <p><strong>Location:</strong> Chicago, IL</p>
+            <h3>Key Responsibilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Selected for re-appointment due to exceptional performance and positive student feedback, demonstrating reliability and teaching effectiveness across Spring 2025 and Fall 2025 semesters.</li>
+                <li>Assist in teaching CS 109: Programming for Engineers with MATLAB, supporting 250+ students per semester and 30+ students in weekly lab sessions.</li>
+                <li>Grade and administer lab assignments with detailed feedback, proctor examinations, and conduct weekly office hours for student support.</li>
+                <li>Develop course materials, facilitate tailored exam-week review sessions, and enhance student academic success through personalized guidance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-eng-success" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Engineering Success Program Mentor (ENGR 100/101) | University of Illinois Chicago</h2>
+            <p><strong>Duration:</strong> Aug 2025 - Present (Fall & Spring Semesters)</p>
+            <p><strong>Location:</strong> Chicago, IL (On-site)</p>
+            <h3>Key Responsibilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Facilitate ENGR 100/101: Engineering Success Seminar series in sections of 24 students, collaborating with ECE mentor team across 10+ sections of freshman & transfer students.</li>
+                <li>Create curriculum and projects, grade assignments, respond to course emails, and conduct weekly office hours during fall 25 and spring 26 semesters.</li>
+                <li>Assist with Engineering Expo coordination and provide individualized academic support to enhance student engagement and success.</li>
+                <li>Coordinate course delivery with fellow mentors while providing constructive, targeted feedback on projects and labs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Code Coach | The Coder School</h2>
+            <p><strong>Duration:</strong> Jan 2025 - Present</p>
+            <p><strong>Location:</strong> Lombard, IL</p>
+            <h3>Key Responsibilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Mentoring students in Python, C++, Java, and web development technologies</li>
+                <li>Designing custom lesson plans, projects, and coding challenges for varying skill levels</li>
+                <li>Providing individualized feedback and support to foster student growth and interest in programming</li>
+                <li>Teaching fundamental programming concepts and best practices</li>
+            </ul>
+            
+            <h3>Student Projects Repository</h3>
+            <div style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <p><strong>Educational Portfolio:</strong> Comprehensive collection of student-guided development projects showcasing real-world applications of programming concepts. This repository demonstrates curriculum design, progressive learning paths, and successful student outcomes across multiple programming languages and project types.</p>
+                
+                <p><strong>Project Categories:</strong> Features hands-on coding exercises from basic syntax to complex applications including game development, web development, CLI tools, and creative programming challenges. Each project includes clear documentation, learning objectives, and extension activities for continued growth.</p>
+                
+                <div style="margin-top:1rem;">
+                    <a href="https://github.com/ak23bar/Student-Projects" target="_blank" style="color:#00ff41;text-decoration:underline;">View Student Projects Repository →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Deep Learning Research Intern | UIC ECE Department</h2>
+            <p><strong>Duration:</strong> Jun 2024 - Aug 2024</p>
+            <p><strong>Location:</strong> Chicago, IL</p>
+            <h3>Key Projects & Achievements</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Developed custom CNN architecture for wildfire detection achieving 20-30% accuracy improvement over baseline models</li>
+                <li>Implemented complete video processing pipeline using PyTorch and OpenCV</li>
+                <li>Collaborated with faculty and graduate students on computer vision research deliverables</li>
+                <li>Conducted data preprocessing, model training, and performance evaluation</li>
+            </ul>
+            
+            <h3>Additional Recognition</h3>
+            <div style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <p><strong>hls4ml Summer School - Northwestern University (Aug 2024)</strong></p>
+                <p>Selected as 1 of 20 students from UIC, UIUC, and Northwestern to participate in a competitive 3-day program hosted by CERN and the NSF. Gained hands-on training in hls4ml, an open-source framework that converts PyTorch/Keras models into high-level synthesis (HLS) for FPGA deployment.</p>
+                
+                <p><strong>Technical Focus:</strong> Applied FPGA accelerators through technical talks, tutorials, and a hackathon, developing projects such as cartpole stabilization and a Pokémon card identifier. Collaborated with peers to design and debug FPGA-based ML controllers while optimizing for latency, performance, and resource utilization, and explored hls4ml applications in edge AI, IoT, embedded systems, and scientific discovery.</p>
+                
+                <div style="margin-top:1rem;">
+                    <a href="https://www.mccormick.northwestern.edu/news/articles/2024/09/hls4ml-summer-school-offers-students-training-in-edge-ai-hardware-accelerators/" target="_blank" style="color:#00ff41;text-decoration:underline;">Read More About hls4ml Summer School →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>UI-UX/Machine Learning Intern | STEMAway</h2>
+            <p><strong>Duration:</strong> Jun 2023 - Sep 2023</p>
+            <p><strong>Location:</strong> Remote</p>
+            <h3>Key Projects & Achievements</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Participated in building and deploying ML pipelines for automated data collection and analysis using AWS cloud infrastructure</li>
+                <li>Contributed to GPT API integration and web scraping technologies to streamline data workflows</li>
+                <li>Collaborated on designing and launching the ByteMasters team website (https://bytemasters.softr.app/team-members) circa September 2023, showcasing team member profiles and project portfolios</li>
+                <li>Assisted with UI/UX design improvements to enhance platform usability and accessibility for end users</li>
+                <li>Gained hands-on experience with machine learning applications in web scraping and data processing workflows</li>
+            </ul>
+            
+            <h3>Website Development</h3>
+            <div style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <p><strong>ByteMasters Team Platform:</strong> Contributed to the design and deployment of a comprehensive team showcase website featuring interactive member profiles, project highlights, and technical expertise demonstrations. The platform serves as a central hub for team collaboration and external visibility.</p>
+                <div style="margin-top:1rem;">
+                    <a href="https://bytemasters.softr.app/team-members" target="_blank" style="color:#00ff41;text-decoration:underline;">Visit ByteMasters Team Website →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-private-tutor" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Private Tutor | Varsity Tutors & Grade Potential Tutoring</h2>
+            <p><strong>Duration:</strong> Aug 2025 - Present</p>
+            <p><strong>Location:</strong> Remote & Greater Chicago Area</p>
+            
+            <h3>Varsity Tutors (Online Platform)</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Provide personalized online tutoring for children and adults across 26+ approved subjects</li>
+                <li>Specialize in AP Computer Science A & Principles, AP Calculus AB & BC, Programming Languages, and Artificial Intelligence</li>
+                <li>Cover advanced mathematics including Calculus 2-3, College Algebra, Linear Algebra</li>
+                <li>Teach Technology & Coding, Electrical and Computer Engineering concepts</li>
+                <li>Strategic planning and educational development for diverse learning needs</li>
+            </ul>
+            
+            <h3>Grade Potential Tutoring (In-Person)</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Conduct private in-person tutoring sessions for students of all ages in Greater Chicago Area</li>
+                <li>Focus on test preparation, mathematics, and individualized academic development</li>
+                <li>Enhance classroom performance through tailored learning strategies</li>
+                <li>Provide comprehensive support for academic growth and confidence building</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Project Detail Modals -->
+    <!-- Highlight Project Modals (placeholders for future demo videos) -->
+    <div id="highlight-personal-projects" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Personal Projects Demo</h2>
+            <p>Demo video coming soon! This will showcase interactive and creative web projects built with HTML, CSS, and JavaScript.</p>
+            <div style="background:#222;padding:1rem;border-radius:6px;text-align:center;color:#00ff41;">[Demo video placeholder]</div>
+        </div>
+    </div>
+    <div id="highlight-dsa-library" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>DSA_Library Demo</h2>
+            <p>Demo video coming soon! This will highlight the features and performance of the C++ DSA library.</p>
+            <div style="background:#222;padding:1rem;border-radius:6px;text-align:center;color:#00ff41;">[Demo video placeholder]</div>
+        </div>
+    </div>
+    <div id="highlight-embedded-systems" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Embedded_Systems Demo</h2>
+            <p>Demo video coming soon! This will showcase embedded systems projects, hardware integration, and real-time applications.</p>
+            <div style="background:#222;padding:1rem;border-radius:6px;text-align:center;color:#00ff41;">[Demo video placeholder]</div>
+        </div>
+    </div>
+    
+    <!-- MATRIX AI Project Modal -->
+    <div id="project-matrix" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>MATRIX - Voice AI Assistant</h2>
+            <p><strong>Status:</strong> Public Release</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">A sophisticated voice AI assistant that brings the Matrix aesthetic to conversational AI. Built with Python and powered by ElevenLabs' cutting-edge Conversational AI API, this application delivers real-time voice processing with an immersive cyberpunk interface.</p>
+            
+            <h3>Core Features</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Real-time Voice Processing:</strong> Continuous speech recognition with sub-second response times</li>
+                <li><strong>Neural Voice Synthesis:</strong> High-quality, natural-sounding AI voice responses</li>
+                <li><strong>Matrix-themed Interface:</strong> Immersive terminal experience with animated ASCII art</li>
+                <li><strong>Contextual Conversations:</strong> Maintains conversation history for coherent dialogue</li>
+                <li><strong>Cross-platform Audio:</strong> Optimized for Linux/WSL2 with PulseAudio integration</li>
+            </ul>
+            
+            <h3>Technical Architecture</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Backend:</strong> Python application with Matrix-themed CLI interface</li>
+                <li><strong>AI Integration:</strong> ElevenLabs Conversational AI with WebSocket streaming</li>
+                <li><strong>Audio Pipeline:</strong> ALSA → PulseAudio → PyAudio → ElevenLabs</li>
+                <li><strong>Performance:</strong> Sub-200ms response times with optimized memory management</li>
+                <li><strong>Scalability:</strong> Modular architecture prepared for web application integration</li>
+            </ul>
+            
+            <h3>Key Technologies</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">
+                <strong>Core:</strong> Python 3.12+, ElevenLabs SDK, PyAudio, WebSocket Protocol<br>
+                <strong>Audio:</strong> PulseAudio, ALSA utilities, Real-time audio streaming<br>
+                <strong>Interface:</strong> ANSI color management, ASCII art system, Terminal enhancements<br>
+                <strong>Infrastructure:</strong> Environment-based configuration, Comprehensive logging, Cross-platform compatibility
+            </p>
+            
+            <div style="margin-top:1rem;">
+                <a href="https://github.com/ak23bar/NEO" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>lamhaa.ai - AI-Powered Photo Management Platform</h2>
+            <p><strong>Status:</strong> In Active Development</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Advanced AI-powered FastAPI application designed to revolutionize photo organization, ranking, and delivery for photographers, creators, and businesses.</p>
+            <h3>Technical Architecture</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Backend:</strong> FastAPI with async support for high-performance API endpoints</li>
+                <li><strong>AI/ML:</strong> Custom computer vision models for intelligent photo analysis and categorization</li>
+                <li><strong>Infrastructure:</strong> Docker containerization with scalable deployment architecture</li>
+                <li><strong>Features:</strong> Automated photo ranking, smart organization, and efficient delivery systems</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Wildfire Detection Pipeline</h2>
+            <p><strong>Status:</strong> Research Project Completed</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">This repository supports video preprocessing, optical flow estimation, and inference using pretrained fire detection models (EfficientNetV2, ResNet18). Originally developed during a wildfire detection internship, this pipeline was used in conjunction with the Vision Mamba project for experimental evaluation.<br><br>
+Vision Mamba itself is not included, but this codebase contains adaptable tools for working with video datasets and classification models, and can be extended for use with other architectures or real-time fire detection tasks.</p>
+            <h3>Technical Features</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Video Preprocessing:</strong> Prepare and segment video datasets for analysis</li>
+                <li><strong>Optical Flow Estimation:</strong> Motion analysis for fire detection in video streams</li>
+                <li><strong>Model Inference:</strong> Use pretrained EfficientNetV2 and ResNet18 models for fire classification</li>
+                <li><strong>Extensible Pipeline:</strong> Adaptable for other architectures and real-time detection tasks</li>
+                <li><strong>Integration:</strong> Originally used for experimental evaluation with Vision Mamba</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Embedded Systems Projects</h2>
+            <p><strong>Status:</strong> Coursework Completed</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">ARM-based microcontroller projects with sensor integration and real-time systems. Focus on low-level mixed C & assembly programming with hardware interfaces, culminating in an independent Ultra Heat Sensor alarm system.</p>
+            
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;"><strong>Note:</strong> While these projects were structured as group assignments, all code development, hardware integration, and system design were completed individually, representing solely my own work and technical contributions.</p>
+            
+            <h3>Featured Project: Ultra Heat Sensor Alarm System</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Independent final project implementing a comprehensive safety monitoring system combining ultrasonic distance detection, temperature monitoring, visual displays, and audio alerts. Developed as a real-world safety device using modular programming and hardware integration principles.</p>
+            
+            <h3>Hardware Components & Integration</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Microcontroller:</strong> Tiva C with ARM Cortex-M4 processor for real-time control</li>
+                <li><strong>Ultrasonic Sensors:</strong> HC-SR04 modules for precise distance measurement and object detection</li>
+                <li><strong>Temperature Monitoring:</strong> Analog sensors with ADC sampling for heat detection</li>
+                <li><strong>Seven-Segment Displays:</strong> Multi-digit numeric output for real-time sensor readings</li>
+                <li><strong>PWM Buzzer System:</strong> Variable frequency audio alerts with intensity control</li>
+                <li><strong>LED Status Arrays:</strong> Visual feedback system with pattern-based alerts</li>
+            </ul>
+            
+            <h3>Programming Concepts & Implementation</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Modular Design:</strong> Function-based architecture with separate sensor, display, and alarm modules</li>
+                <li><strong>Real-time Response:</strong> Interrupt-driven programming for immediate threat detection</li>
+                <li><strong>ADC Sampling:</strong> Continuous analog-to-digital conversion for temperature monitoring</li>
+                <li><strong>PWM Control:</strong> Pulse-width modulation for buzzer frequency and LED brightness</li>
+                <li><strong>GPIO Management:</strong> Digital I/O control for sensor triggers and display multiplexing</li>
+                <li><strong>UART Communication:</strong> Serial debugging and data logging capabilities</li>
+                <li><strong>Timer Systems:</strong> Precise timing control for sensor polling and display refresh</li>
+            </ul>
+            
+            <h3>System Features & Logic</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Dual Sensor Logic:</strong> Combined distance and temperature thresholds for alarm triggering</li>
+                <li><strong>Escalating Alerts:</strong> Progressive warning system from visual to audio notifications</li>
+                <li><strong>Real-time Display:</strong> Continuous sensor value updates on seven-segment displays</li>
+                <li><strong>Fail-safe Design:</strong> Sensor error detection and system reliability measures</li>
+                <li><strong>Calibration System:</strong> User-adjustable sensitivity and threshold settings</li>
+            </ul>
+            
+            <h3>Development Notes</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">This project demonstrated independent problem-solving in embedded systems design, from hardware selection to software architecture. Emphasis on practical safety applications, modular code structure, and real-world deployment considerations. Successfully integrated multiple sensor types with coordinated response logic for reliable safety monitoring.</p>
+            
+            <div style="margin-top:1rem;">
+                <a href="https://github.com/ak23bar/Embedded_Systems" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web-Dev Collection Modal -->
+    <div id="project5" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Web-Dev Collection</h2>
+            <p><strong>Status:</strong> Public Repository</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">A curated collection of mini website projects and creative ideas built with HTML, CSS, and JavaScript. Each project demonstrates modern design principles, interactive functionality, and responsive layouts.</p>
+            <h3>Technical Implementation</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Frontend Technologies:</strong> Pure HTML5, CSS3, and vanilla JavaScript</li>
+                <li><strong>Design Focus:</strong> Modern UI/UX principles with responsive design patterns</li>
+                <li><strong>Interactive Elements:</strong> Dynamic content, animations, and user engagement features</li>
+                <li><strong>Cross-browser Compatibility:</strong> Optimized for all major browsers and devices</li>
+            </ul>
+            <h3>Featured Projects</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Bool Challenge Solutions:</strong> Creative website templates refined and enhanced for CodeHS competitions</li>
+                <li><strong>Interactive Demos:</strong> Animation showcases, layout experiments, and UI component libraries</li>
+                <li><strong>Responsive Layouts:</strong> Mobile-first design approaches with flexible grid systems</li>
+                <li><strong>Creative Solutions:</strong> Innovative approaches to common web development challenges</li>
+            </ul>
+            <h3>Key Features</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Modern Design:</strong> Clean, professional aesthetics with attention to detail</li>
+                <li><strong>Performance Optimized:</strong> Lightweight code with fast loading times</li>
+                <li><strong>Educational Value:</strong> Well-commented code for learning and reference</li>
+                <li><strong>Expandable Collection:</strong> Regularly updated with new projects and ideas</li>
+            </ul>
+            
+            <div style="margin-top:1rem;">
+                <a href="https://github.com/ak23bar/web-dev-collection" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personal Projects Modal -->
+    <div id="project-personal-projects" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>AI Album Finder</h2>
+            <p><strong>Tech Stack:</strong> Python, Flask, REST API, Docker, JavaScript, Spotify API</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">AI-powered music discovery and analysis platform that leverages Spotify's Web API and artificial intelligence for deep music insights, mood analysis, and personalized recommendations.</p>
+            
+            <h3>Key Features</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Audio Analysis:</strong> Advanced audio feature extraction and mood profiling</li>
+                <li><strong>Smart Recommendations:</strong> AI-powered personalized music suggestions</li>
+                <li><strong>REST API:</strong> Flask-based backend with comprehensive endpoints</li>
+                <li><strong>Production Ready:</strong> Dockerized deployment with scalable infrastructure</li>
+            </ul>
+
+            <h3>Technical Implementation</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Integrated Spotify Web API for comprehensive music data access</li>
+                <li>Implemented machine learning algorithms for mood and preference analysis</li>
+                <li>Built responsive frontend with modern JavaScript and interactive UI</li>
+                <li>Containerized application using Docker for consistent deployment</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CoderSchool Projects Modal -->
+    <div id="project-coderschool" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Student Projects</h2>
+            <p><strong>Tech Stack:</strong> Python, JavaScript, HTML/CSS, Web Development</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">A curated repository of educational projects designed and taught to students across multiple establishments, covering beginner to intermediate programming concepts.</p>
+            
+            <h3>Educational Focus</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Python Fundamentals:</strong> Core programming concepts and data structures</li>
+                <li><strong>Web Development:</strong> HTML, CSS, and JavaScript projects</li>
+                <li><strong>Interactive Projects:</strong> Games, calculators, and creative applications</li>
+                <li><strong>Collaborative Learning:</strong> Team-based coding exercises and challenges</li>
+            </ul>
+
+            <h3>Teaching Methodology</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Hands-on project-based learning with immediate practical application</li>
+                <li>Progressive difficulty scaling from basic syntax to complex applications</li>
+                <li>Regular code reviews and pair programming sessions</li>
+                <li>Real-world problem solving and debugging techniques</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Portfolio Website Modal -->
+    <div id="project-portfolio-website" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Portfolio Website</h2>
+            <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Responsive Design</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Professional portfolio website demonstrating advanced front-end development capabilities through modern web technologies and performance optimization techniques.</p>
+            
+            <h3>Core Features</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Interactive Terminal:</strong> Fully functional CLI with 26+ Linux-style commands</li>
+                <li><strong>Dynamic Content:</strong> Typing animations with layout stability optimization</li>
+                <li><strong>Modal System:</strong> Comprehensive project and experience detail views</li>
+                <li><strong>Responsive Architecture:</strong> Mobile-first design with cross-device compatibility</li>
+            </ul>
+
+            <h3>Technical Architecture</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Vanilla JavaScript ES6+ with modular component structure</li>
+                <li>CSS Grid and Flexbox for responsive layout implementation</li>
+                <li>Semantic HTML5 with accessibility compliance (WCAG 2.1)</li>
+                <li>Performance optimization including lazy loading and code splitting</li>
+                <li>Cross-browser compatibility testing and progressive enhancement</li>
+            </ul>
+
+            <h3>Deployment & Performance</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Cloudflare Pages:</strong> Automated CI/CD pipeline with GitHub integration</li>
+                <li><strong>Global CDN:</strong> Edge caching and worldwide content delivery</li>
+                <li><strong>Performance:</strong> Optimized for fast loading and smooth user experience</li>
+                <li><strong>SEO Implementation:</strong> Semantic HTML and structured data</li>
+                <li><strong>Live URL:</strong> <a href="https://ak23bar.pages.dev" target="_blank" style="color:#00ff41;">ak23bar.pages.dev</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project4" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Data Structures & Algorithms Library</h2>
+            <p><strong>Tech Stack:</strong> Modern C++, STL</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">A comprehensive C++ library implementing fundamental data structures and algorithms, developed through coursework in Data Structures. Features practical applications from text processing to pathfinding, with emphasis on performance optimization and modern C++ practices.</p>
+            
+            <h3>Key Components</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Search Engine:</strong> Document search tool with AND/OR logic using inverted index, implemented with sets and maps</li>
+                <li><strong>Custom HashMap:</strong> Open addressing implementation with linear probing, dynamic resizing based on load factor</li>
+                <li><strong>BST Implementation:</strong> Complete binary search tree with recursive operations and visualization tools</li>
+                <li><strong>Graph Navigator:</strong> OpenStreetMap-based pathfinding using Dijkstra's and A* algorithms</li>
+            </ul>
+
+            <h3>Technical Highlights</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Implemented advanced data structures: linked lists, circular vectors, hash tables, and binary trees</li>
+                <li>Focused on memory safety, OOP principles, and template design patterns</li>
+                <li>Extensive performance analysis and benchmarking against STL containers</li>
+                <li>Real-world applications including text analysis, path computation, and drawing systems</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- LeetCode Modal -->
+    <div id="project-leetcode" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>LeetCode Solutions</h2>
+            <p><strong>Tech Stack:</strong> Python, Java, Algorithms, Problem Solving</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Comprehensive collection of LeetCode problem solutions designed for technical interview preparation and algorithmic skill development.</p>
+            
+            <h3>Key Features</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Multiple Languages:</strong> Solutions implemented in Python and Java with clean, readable code</li>
+                <li><strong>Detailed Explanations:</strong> Each solution includes approach explanation and complexity analysis</li>
+                <li><strong>Test Cases:</strong> Comprehensive test coverage to verify solution correctness</li>
+                <li><strong>Interview Focus:</strong> Optimized for technical interview scenarios and time constraints</li>
+            </ul>
+
+            <h3>Problem Categories</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Array and String manipulation with optimal time/space complexity</li>
+                <li>Dynamic Programming solutions for complex optimization problems</li>
+                <li>Tree and Graph algorithms including DFS, BFS, and shortest path</li>
+                <li>Data structure design and implementation challenges</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- External JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/modals.js"></script>
+    <script src="assets/js/animations.js"></script>
+    
+    <!-- ElevenLabs Conversational AI Widget Script -->
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>
