@@ -17,6 +17,7 @@ let historyIndex = 0;
 
 
 const enhancedTerminalCommands = {
+    // ...existing commands...
     help: () => {
         return '<div style="color: #00ff41;">PORTFOLIO TERMINAL HELP<br><br>Navigation: ls, cd, pwd, tree<br>Content: cat, grep, head, tail<br>System: whoami, ps, top, date, version, clear, history<br>Contact: email, linkedin, github, resume, cv<br><br>Type "commands" for a simple list or "man &lt;command&gt;" for detailed help.</div>';
     },
@@ -848,30 +849,46 @@ Try 'help' for command overview</span>`;
     },
 
     tree: (args) => {
-        return `<div style="color: #00ff41; font-family: 'Courier New', monospace;">
-<span style="color: #ffff00;">🌳 PORTFOLIO WEBSITE STRUCTURE</span>
-<span style="color: #00ccff;">portfolio-website/</span>
-├── <span style="color: #00ff41;">📁 about/</span>          <span style="color: #888888;"># Personal background and journey</span>
-├── <span style="color: #00ff41;">📁 experience/</span>     <span style="color: #888888;"># Professional work history</span>
-├── <span style="color: #00ff41;">📁 education/</span>      <span style="color: #888888;"># Academic achievements</span>
-├── <span style="color: #00ff41;">📁 projects/</span>       <span style="color: #888888;"># Showcase of completed work</span>
-│   ├── <span style="color: #ffffff;">🚀 lamhaa.ai/</span>      <span style="color: #888888;"># AI-powered visual asset management</span>
-│   ├── <span style="color: #ffffff;">💻 portfolio-site/</span> <span style="color: #888888;"># This interactive website</span>
-│   └── <span style="color: #ffffff;">🔧 embedded-projects/</span> <span style="color: #888888;"># Hardware/firmware projects</span>
-├── <span style="color: #00ff41;">📁 skills/</span>         <span style="color: #888888;"># Technical expertise overview</span>
-├── <span style="color: #00ff41;">📁 contact/</span>        <span style="color: #888888;"># Ways to get in touch</span>
-├── <span style="color: #ffffff;">📄 bio.txt</span>         <span style="color: #888888;"># Professional summary</span>
-├── <span style="color: #ffffff;">📋 resume.pdf</span>      <span style="color: #888888;"># Latest CV document</span>
-├── <span style="color: #ffffff;">🔧 skills.json</span>     <span style="color: #888888;"># Technical skills data</span>
-├── <span style="color: #ffffff;">💼 current_roles.txt</span> <span style="color: #888888;"># Active professional positions</span>
-└── <span style="color: #ffffff;">📊 gpa.txt</span>         <span style="color: #888888;"># Academic performance metrics</span>
-
-<span style="color: #ff6b6b;">💡 Navigation tips:</span>
-  • Use '<span style="color: #00ccff;">cd <section></span>' to explore each area
-  • Use '<span style="color: #00ccff;">cat <file></span>' to read file contents
-  • Use '<span style="color: #00ccff;">ls -l</span>' for detailed file listings
+    const showAll = args.includes('-a');
+    return `<div style="color: #00ff41; font-family: 'Courier New', monospace; line-height: 1.6;">
+╭─────────────────────────────────────────────────────────────╮
+│ <span style="color: #ffff00; font-weight: bold;">🌳 PORTFOLIO STRUCTURE TREE</span>                           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ <span style="color: #00ccff;">portfolio-website/</span>                                   │
+│ ├── <span style="color: #00ff41;">📁 about/</span>          <span style="color: #888888;"># Personal background</span>      │
+│ │   ├── <span style="color: #ffffff;">bio.txt</span>                                       │
+│ │   ├── <span style="color: #ffffff;">skills.json</span>                                  │
+│ │   └── <span style="color: #ffffff;">interests.md</span>                                 │
+│ ├── <span style="color: #00ff41;">📁 experience/</span>     <span style="color: #888888;"># Professional history</span>     │
+│ │   ├── <span style="color: #ffffff;">current_roles.txt</span>                           │
+│ │   ├── <span style="color: #ffffff;">research.txt</span>                                │
+│ │   └── <span style="color: #ffffff;">teaching.txt</span>                                │
+│ ├── <span style="color: #00ff41;">📁 education/</span>      <span style="color: #888888;"># Academic background</span>      │
+│ │   ├── <span style="color: #ffffff;">uic.txt</span>                                      │
+│ │   ├── <span style="color: #ffffff;">gpa.txt</span>                                      │
+│ │   └── <span style="color: #ffffff;">coursework.txt</span>                              │
+│ ├── <span style="color: #00ff41;">📁 projects/</span>       <span style="color: #888888;"># Technical projects</span>       │
+│ │   ├── <span style="color: #00ccff;">🚀 lamhaa.ai/</span>                               │
+│ │   │   ├── <span style="color: #ffffff;">README.md</span>                               │
+│ │   │   ├── <span style="color: #ffffff;">requirements.txt</span>                        │
+│ │   │   └── <span style="color: #ffffff;">main.py</span>                                 │
+│ │   ├── <span style="color: #00ccff;">💻 VisionMamba/</span>                             │
+│ │   │   ├── <span style="color: #ffffff;">model.py</span>                                │
+│ │   │   └── <span style="color: #ffffff;">dataset.py</span>                              │
+│ │   └── <span style="color: #00ccff;">🔧 Embedded_Systems/</span>                        │
+│ ├── <span style="color: #00ff41;">📁 skills/</span>         <span style="color: #888888;"># Technical expertise</span>      │
+│ │   ├── <span style="color: #ffffff;">programming.txt</span>                             │
+│ │   └── <span style="color: #ffffff;">frameworks.txt</span>                              │
+│ ├── <span style="color: #00ff41;">📁 contact/</span>        <span style="color: #888888;"># Contact information</span>     │
+│ └── <span style="color: #ffffff;">📋 resume.pdf</span>      <span style="color: #888888;"># Latest resume</span>           │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ <span style="color: #ff6b6b;">💡 Navigation:</span> Use <span style="color: #00ccff;">cd &lt;directory&gt;</span> to explore sections    │
+│ <span style="color: #ff6b6b;">📖 Read files:</span> Use <span style="color: #00ccff;">cat &lt;filename&gt;</span> to view content      │
+╰─────────────────────────────────────────────────────────────╯
 </div>`;
-    },
+},
 
     cd: (args) => {
         const target = args[0] || '/';
@@ -1298,10 +1315,14 @@ function executeEnhancedCommand(command) {
 
     const cmdFunc = enhancedTerminalCommands[cmd.toLowerCase()];
     let response;
-    
     if (cmdFunc) {
         try {
             response = typeof cmdFunc === 'function' ? cmdFunc(args) : cmdFunc;
+            console.log('Command response:', cmd, response); // Debug line
+            // Check if response is empty or undefined
+            if (!response || response.trim() === '') {
+                response = `<span style="color: #ffff00;">Command '${cmd}' executed but returned empty output</span>`;
+            }
         } catch (error) {
             console.error('Error executing command:', cmd, error);
             response = `<span style="color: #ff6b6b;">Error executing command: ${error.message}</span>`;
@@ -1310,14 +1331,9 @@ function executeEnhancedCommand(command) {
         response = `<span style="color: #ff6b6b;">bash: ${cmd}: command not found</span>
 <span style="color: #888888;">Type 'help' for available commands or 'ls' to see sections</span>`;
     }
-    
-    // Check if response is empty or undefined
-    if (!response || response.trim() === '') {
-        response = `<span style="color: #ffff00;">Command '${cmd}' executed but returned no output</span>`;
-    }
-    
     output.innerHTML += inputLine + `<div class="cli-output" style="margin-bottom:1rem; line-height: 1.4;">${response}</div>`;
     output.scrollTop = output.scrollHeight;
+        // ...existing code...
 }
 
 // Enhanced AI Assistant
@@ -1395,22 +1411,19 @@ function createLoadingMatrixRain() {
     
     for (let c = 0; c < columns; c++) {
         const col = document.createElement('div');
-        col.style.cssText = `
-            position: absolute;
-            left: ${c * 20}px;
-            top: -100px;
-            width: 20px;
-            height: calc(100vh + 200px);
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 14px;
-            color: #00ff41;
-            text-shadow: 0 0 5px #00ff41;
-            animation: matrix-fall ${3 + Math.random() * 4}s linear infinite;
-            animation-delay: ${Math.random() * 2}s;
-            overflow: hidden;
-            opacity: ${0.4 + Math.random() * 0.6};
-        `;
-        
+        col.style.position = 'absolute';
+        col.style.left = (c * 20) + 'px';
+        col.style.top = '-100px';
+        col.style.width = '20px';
+        col.style.height = 'calc(100vh + 200px)';
+        col.style.fontFamily = 'Share Tech Mono, monospace';
+        col.style.fontSize = '14px';
+        col.style.color = '#00ff41';
+        col.style.textShadow = '0 0 5px #00ff41';
+        col.style.animation = `matrix-fall ${3 + Math.random() * 4}s linear infinite`;
+        col.style.animationDelay = `${Math.random() * 2}s`;
+        col.style.overflow = 'hidden';
+        col.style.opacity = (0.4 + Math.random() * 0.6).toString();
         let rain = '';
         const numChars = Math.ceil((window.innerHeight + 200) / 16);
         for (let r = 0; r < numChars; r++) {
