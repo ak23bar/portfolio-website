@@ -1645,13 +1645,15 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.0",
-    lastUpdated: "August 27, 2025",
+    current: "1.1",
+    lastUpdated: "September 2, 2025",
     changelog: [
-        "Initial portfolio launch with Matrix theme",
-        "Complete terminal CLI with Linux-like commands",
-        "Interactive navigation and smooth animations",
-        "Comprehensive project showcase"
+        "Mobile nav bug fix: 'contact' link now visible",
+        "About section typing/layout improved",
+        "Resume/skills synced with website",
+        "Expanded skills and frameworks",
+        "Version display and tooltip improved",
+        "General UI/UX polish"
     ]
 };
 
@@ -1744,23 +1746,41 @@ document.addEventListener('DOMContentLoaded', () => {
     loadVersionConfig();
     initVersionDisplay();
     initEngineerTypeAnimation();
+
+    // Hide version card when clicking outside
+    const versionDisplay = document.getElementById('versionDisplay');
+    const versionTooltip = document.getElementById('versionTooltip');
+    if (versionDisplay && versionTooltip) {
+        // Make versionDisplay act as a button
+        versionDisplay.style.cursor = 'pointer';
+        versionDisplay.addEventListener('click', (e) => {
+            e.stopPropagation();
+            versionTooltip.classList.toggle('show');
+        });
+        // Hide tooltip when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!versionDisplay.contains(e.target) && !versionTooltip.contains(e.target)) {
+                versionTooltip.classList.remove('show');
+            }
+        });
+    }
 });
 
 // Engineer Type Typing Animation
 function initEngineerTypeAnimation() {
     const engineerTypes = [
-        'Computer',
-        'Software',
-        'Hardware',
-        'Full Stack',
-        'ML',
-        'Data Science',
-        'Signal Processing',
-        'Embedded',
-        'AI',
-        'Systems',
-        'Robotics',
-        'Cybersecurity'
+        'Computer Engineer',
+        'Software Engineer',
+        'Hardware Engineer',
+        'Full Stack Engineer',
+        'ML Engineer',
+        'Data Science Engineer',
+        'Signal Processing Engineer',
+        'Embedded Engineer',
+        'AI Engineer',
+        'Systems Engineer',
+        'Robotics Engineer',
+        'Cybersecurity Engineer'
     ];
     
     let currentIndex = 0;
@@ -1770,10 +1790,10 @@ function initEngineerTypeAnimation() {
     
     const element1 = document.getElementById('engineerType');
     const element2 = document.getElementById('engineerTypeAbout');
+    // The static 'Engineer' text is now outside the animated span in HTML
     
     function type() {
         const currentWord = engineerTypes[currentIndex];
-        
         if (isDeleting) {
             currentText = currentWord.substring(0, currentText.length - 1);
             typeSpeed = 50;
@@ -1781,10 +1801,9 @@ function initEngineerTypeAnimation() {
             currentText = currentWord.substring(0, currentText.length + 1);
             typeSpeed = 100;
         }
-        
-        // Update both elements with "Engineer" suffix
-        if (element1) element1.textContent = currentText + ' Engineer';
-        if (element2) element2.textContent = currentText + ' Engineer';
+        // Update both elements: animate the full word (always ends with Engineer)
+        if (element1) element1.textContent = currentText;
+        if (element2) element2.textContent = currentText;
         
         if (!isDeleting && currentText === currentWord) {
             // Pause at end of word

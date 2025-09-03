@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="shortcut icon" href="/assets/files/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/favicon_animated.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -75,18 +77,20 @@
             <div class="nav-right">
                 <div class="version-display" id="versionDisplay">
                     <span class="version-label">v</span>
-                    <span class="version-number" id="versionNumber">1.0</span>
+                    <span class="version-number" id="versionNumber">1.1</span>
                     <div class="version-tooltip" id="versionTooltip">
                         <div class="version-details">
-                            <div class="version-title">Portfolio Version 1.0</div>
-                            <div class="version-date">Last Updated: August 27, 2025</div>
+                            <div class="version-title">Portfolio Version 1.1</div>
+                            <div class="version-date">Last Updated: September 2, 2025</div>
                             <div class="version-changes">
                                 <div class="change-title">Latest Updates:</div>
                                 <ul>
-                                    <li>Initial portfolio launch with Matrix theme</li>
-                                    <li>Complete terminal CLI with Linux-like commands</li>
-                                    <li>Interactive navigation and smooth animations</li>
-                                    <li>Comprehensive project showcase</li>
+                                    <li>Mobile navigation menu bug fix: 'contact' link now visible and scrollable on all devices</li>
+                                    <li>About section layout and animated typing improved for mobile and desktop</li>
+                                    <li>Resume and skills sections synced with website content</li>
+                                    <li>Expanded skills, frameworks, and interests on website to match resume</li>
+                                    <li>Added version display and tooltip improvements</li>
+                                    <li>General UI/UX polish and accessibility improvements</li>
                                 </ul>
                             </div>
                         </div>
@@ -121,7 +125,7 @@
                     <img src="assets/files/neo.png" alt="Neo" class="terminal-neo-image" style="display:block;margin:1.5rem auto 1rem auto;max-width:150px;width:100%;height:auto;box-shadow:0 0 0 4px #00ff41;">
                 </div>
                 <div class="hero-text-wrap" style="padding:1.5rem 0 0 0;">
-                    <h1 style="margin-bottom: 2.2rem; text-align: center; margin-left: auto; margin-right: auto; display: block; font-size: 3.2rem; text-shadow: 0 0 30px #00ff41, 0 0 60px #00ff41;">Akbar Aman</h1>
+                    <h1 style="margin-bottom: 2.2rem; text-align: center; margin-left: auto; margin-right: auto; display: block; font-size: 3.2rem; text-shadow: 0 0 15px rgba(0, 255, 65, 0.6), 0 0 25px rgba(0, 255, 65, 0.3);">Akbar Aman</h1>
                     <div class="terminal-window" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
                         <div class="terminal-header" style="background:#00ff41; border-top-left-radius:16px; border-top-right-radius:16px; padding:0.8rem 1.2rem; display:flex; align-items:center; justify-content:space-between;">
                             <span style="color:#000; font-family:'Share Tech Mono', monospace; font-size:1.45rem; font-weight:600; letter-spacing:1px;">akbar@portfolio:~$</span>
@@ -170,7 +174,8 @@
             <div class="about-text" style="margin-top: -2rem; align-self: flex-start;">
                 <h3>whoami</h3>
                 <p style="font-size:1.15rem; color:#cccccc; margin-bottom:1.5rem;">
-I am a <span id="engineerTypeAbout" style="display: inline-block; min-width: 220px; text-align: left;">Computer Engineer</span> dedicated to merging creativity and precision in both hardware and software. My work spans data science, AI, ML, fullstack engineering, hardware design and integration, & more. I take great pride in solving meaningful problems that contribute to the greater good.
+I am a <span style="display: inline-block; min-width: 220px; text-align: left; font-weight: bold; color: #00ff41;"><span id="engineerTypeAbout">Computer</span></span><br>
+dedicated to merging creativity and precision in both hardware and software. My work spans data science, AI, ML, fullstack engineering, hardware design and integration, & more. I take great pride in solving meaningful problems that contribute to the greater good.
 </p>
 <p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
 I firmly believe that technology's true value lies in its ability to improve lives. Whether I am building efficient systems, advancing AI techniques, or addressing complex engineering challenges, my goal is to create solutions that will stand the test of time and positively impact society.
@@ -223,6 +228,8 @@ I firmly believe that technology's true value lies in its ability to improve liv
                         <span class="skill-tag">Bash</span>
                         <span class="skill-tag">TypeScript</span>
                         <span class="skill-tag">Rust</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">Go (Golang)</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -265,6 +272,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
                         <span class="skill-tag">Calculus I-III</span>
                         <span class="skill-tag">Probability and Randomness</span>
                         <span class="skill-tag">Applied Linear Algebra</span>
+                        <span class="skill-tag">Applied Statistical Methods</span>
                         <span class="skill-tag">Electricity and Magnetism</span>
                         <span class="skill-tag">Thermodynamics</span>
                         <span class="skill-tag">Circuit Analysis</span>
@@ -700,8 +708,8 @@ I firmly believe that technology's true value lies in its ability to improve liv
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2 class="section-title">Contact</h2>
-        <div class="terminal-window" style="margin-bottom: 3rem;">
-            <div class="terminal-header">
+        <div class="terminal-window" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
+            <div class="terminal-header" style="background:#00ff41; border-top-left-radius:16px; border-top-right-radius:16px; padding:0.8rem 1.2rem; display:flex; align-items:center; justify-content:space-between;">
                 <span>akbar@contact:~$</span>
                 <div class="terminal-buttons">
                     <div class="terminal-btn"></div>
@@ -758,8 +766,8 @@ I firmly believe that technology's true value lies in its ability to improve liv
 
        <!-- TALK TO THE MATRIX Section -->
 <div style="margin-top: 3rem; text-align: center;">
-    <div class="terminal-window" style="max-width: 800px; margin: 0 auto;">
-        <div class="terminal-header">
+    <div class="terminal-window" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
+        <div class="terminal-header" style="background:#00ff41; border-top-left-radius:16px; border-top-right-radius:16px; padding:0.8rem 1.2rem; display:flex; align-items:center; justify-content:space-between;">
             <span>akbar@matrix:~$</span>
             <div class="terminal-buttons">
                 <div class="terminal-btn"></div>
