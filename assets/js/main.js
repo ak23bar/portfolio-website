@@ -1645,15 +1645,15 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.1",
-    lastUpdated: "September 2, 2025",
+    current: "1.2",
+    lastUpdated: "September 15, 2025",
     changelog: [
-        "Mobile nav bug fix: 'contact' link now visible",
-        "About section typing/layout improved",
-        "Resume/skills synced with website",
-        "Expanded skills and frameworks",
-        "Version display and tooltip improved",
-        "General UI/UX polish"
+        "Added Founding Engineer role at Arkboosted LLC",
+        "Integrated AArkboosted Website Auditor project",
+        "Added Arkboostedads.com business website",
+        "Updated skills: Ruby, PHP, Swift, Spring Boot",
+        "Enhanced modals with technical documentation",
+        "Complete resume-website synchronization"
     ]
 };
 

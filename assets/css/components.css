@@ -20,6 +20,10 @@
     .terminal-header .dot {
         font-size: 1.1rem;
     }
+    /* Hide terminal buttons on mobile to avoid clashing with cards */
+    .terminal-buttons {
+        display: none;
+    }
 }
 .terminal-header {
    background: #00ff41;

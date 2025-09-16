@@ -130,6 +130,7 @@
 
     .timeline-item .timeline-dot {
         left: 12.5px !important;
+        display: none; /* Hide green circle on mobile */
     }
 
     /* Projects Responsive */
