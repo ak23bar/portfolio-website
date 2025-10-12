@@ -1645,15 +1645,15 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.2",
-    lastUpdated: "September 15, 2025",
+    current: "1.3",
+    lastUpdated: "October 9, 2025",
     changelog: [
-        "Added Founding Engineer role at Arkboosted LLC",
-        "Integrated AArkboosted Website Auditor project",
-        "Added Arkboostedads.com business website",
-        "Updated skills: Ruby, PHP, Swift, Spring Boot",
-        "Enhanced modals with technical documentation",
-        "Complete resume-website synchronization"
+        "Added AI Systems Engineer Intern at Talent Strategy Experts",
+        "Added Software Development Intern at IDXExchange",
+        "Added Neuerra Platform project (enterprise)",
+        "Added Property Search Website with MLS integration",
+        "Updated experience timeline with October 2025 roles",
+        "Enhanced project portfolio with confidential work"
     ]
 };
 
