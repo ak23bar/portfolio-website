@@ -1341,7 +1341,7 @@ const aiResponses = [
     { keywords: ['akbar', 'about', 'who'], response: 'Akbar Aman is a Computer Engineering professional at UIC, specializing in AI/ML, embedded systems, and full-stack development. He has 6+ professional roles spanning research, teaching, and industry applications.' },
     { keywords: ['experience', 'work', 'job', 'career'], response: 'Akbar currently holds multiple roles: AI Trainer at Outlier and Handshake, Teaching Assistant and Mentor at UIC, and Code Coach at TheCoderSchool. He has research experience in deep learning and computer vision at UIC ECE Department.' },
     { keywords: ['skills', 'technical', 'programming', 'languages'], response: 'Technical expertise includes: Python, C++, C, JavaScript, Java, ARM Assembly, MATLAB, AI/ML frameworks (PyTorch, TensorFlow), Linux, FastAPI, Docker, AWS, circuit design, and signal processing.' },
-    { keywords: ['education', 'degree', 'university', 'school'], response: 'Akbar is pursuing a Joint BS in Computer Engineering and MS in Electrical and Computer Engineering at University of Illinois Chicago, with a current GPA of 3.65. Expected graduation: BS May 2027, MS May 2028.' },
+    { keywords: ['education', 'degree', 'university', 'school'], response: 'Akbar is pursuing a Joint BS in Computer Engineering and MS in Electrical and Computer Engineering at University of Illinois Chicago, with a current GPA of 3.65. He has completed three ECE tracks: Data Science & Engineering, Signal Processing, and Computer & Networked Systems. Expected graduation: BS May 2027, MS May 2028.' },
     { keywords: ['projects', 'portfolio', 'code', 'github'], response: 'Key projects include: lamhaa.ai (AI-powered photo organization platform), VisionMamba (wildfire detection CNN), DSA library in C++, embedded systems with ARM, and various web applications. Check his GitHub: ak23bar' },
     { keywords: ['contact', 'email', 'reach', 'hire'], response: 'Contact Akbar at akbaraman797@gmail.com for opportunities, collaborations, or his resume. Also available on LinkedIn (akbar-aman-94b1b6263) and GitHub (ak23bar).' },
     { keywords: ['ai', 'machine learning', 'ml', 'deep learning'], response: 'Akbar has extensive AI/ML experience including: AI training and validation at Outlier/Handshake, computer vision research (wildfire detection), PyTorch/TensorFlow projects, and building AI-powered applications like lamhaa.ai.' },
@@ -1645,15 +1645,15 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.3",
-    lastUpdated: "October 9, 2025",
+    current: "1.4",
+    lastUpdated: "November 8, 2025",
     changelog: [
-        "Added AI Systems Engineer Intern at Talent Strategy Experts",
-        "Added Software Development Intern at IDXExchange",
-        "Added Neuerra Platform project (enterprise)",
-        "Added Property Search Website with MLS integration",
-        "Updated experience timeline with October 2025 roles",
-        "Enhanced project portfolio with confidential work"
+        "Added LLM: Evaluation Specialist at Alignerr",
+        "Updated education to reflect BS/MS program structure",
+        "Added three ECE tracks: Computer & Networked Systems, Data Science & Engineering, Signal Processing",
+        "Added clickable link to UIC ECE tracks page",
+        "Enhanced experience section with LLMOps expertise",
+        "Updated November 2025 professional timeline"
     ]
 };
 
