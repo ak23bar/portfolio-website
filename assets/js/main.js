@@ -1645,15 +1645,12 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.4",
-    lastUpdated: "November 8, 2025",
+    current: "1.5",
+    lastUpdated: "November 18, 2025",
     changelog: [
-        "Added LLM: Evaluation Specialist at Alignerr",
-        "Updated education to reflect BS/MS program structure",
-        "Added three ECE tracks: Computer & Networked Systems, Data Science & Engineering, Signal Processing",
-        "Added clickable link to UIC ECE tracks page",
-        "Enhanced experience section with LLMOps expertise",
-        "Updated November 2025 professional timeline"
+        "Added Ultra Heat Sensor Alarm System as standalone embedded project",
+        "Launched Full-Stack MLS Property Platform with live demo (akbar.califorsale.org)",
+        "Integrated Neuerraa platform links across AI Systems Engineer experience"
     ]
 };
 

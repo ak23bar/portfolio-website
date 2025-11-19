@@ -97,20 +97,17 @@
             <div class="nav-right">
                 <div class="version-display" id="versionDisplay">
                     <span class="version-label">v</span>
-                    <span class="version-number" id="versionNumber">1.4</span>
+                    <span class="version-number" id="versionNumber">1.5</span>
                     <div class="version-tooltip" id="versionTooltip">
                         <div class="version-details">
-                            <div class="version-title">Portfolio Version 1.4</div>
-                            <div class="version-date">Last Updated: November 8, 2025</div>
+                            <div class="version-title">Portfolio Version 1.5</div>
+                            <div class="version-date">Last Updated: November 18, 2025</div>
                             <div class="version-changes">
-                                <div class="change-title">Major Updates (v1.4):</div>
+                                <div class="change-title">Major Updates (v1.5):</div>
                                 <ul>
-                                    <li><strong>New Professional Role:</strong> Added LLM: Evaluation Specialist position at Alignerr, focusing on large-scale LLM evaluation and alignment</li>
-                                    <li><strong>Education Update:</strong> Updated degree format to reflect BS/MS program structure in Electrical and Computer Engineering</li>
-                                    <li><strong>ECE Tracks Completion:</strong> Added three completed ECE tracks - Computer & Networked Systems, Data Science & Engineering, and Signal Processing</li>
-                                    <li><strong>Enhanced Education Section:</strong> Added clickable reference link to UIC ECE tracks program for detailed information</li>
-                                    <li><strong>LLMOps Expertise:</strong> Expanded professional experience to include model evaluation, data labeling, and human preference assessments</li>
-                                    <li><strong>Professional Timeline Growth:</strong> Updated November 2025 experience with cutting-edge AI/ML evaluation work</li>
+                                    <li><strong>Ultra Heat Sensor Project:</strong> Added standalone embedded safety monitoring system with ARM Cortex-M4F implementation</li>
+                                    <li><strong>Live MLS Platform:</strong> Launched Full-Stack Property Search at akbar.califorsale.org with SD6 team leadership</li>
+                                    <li><strong>Neuerraa Integration:</strong> Added platform links to AI Systems Engineer role and enterprise project showcase</li>
                                 </ul>
                             </div>
                         </div>
@@ -555,25 +552,25 @@ I firmly believe that technology's true value lies in its ability to improve liv
 
             <div class="project-card" onclick="openModal('project-property-search')">
                 <div class="project-header">
-                    <h3>Property Search Website</h3>
+                    <h3>Full-Stack MLS Property Platform</h3>
                     <span class="project-status">LIVE</span>
                 </div>
-                <p><strong>Team-led full-stack real estate platform integrating California Regional MLS data at enterprise scale.</strong> Leading six interns in developing comprehensive property search website with live CRMLS integration via Cotality's Trestle API. Managing full development lifecycle from database architecture to production deployment, conducting sprint reviews, and coordinating collaborative development workflows for scalable real estate technology.<br><br>
-<b>Leadership Focus:</b> Team coordination, MLS data architecture, production deployment management, agile development practices, GitHub repository maintenance, and cross-functional collaboration with senior engineers.</p>
+                <p><strong>Pro-bono real estate search platform built with SD6 Team @ IDXExchange.</strong> Sophisticated full-stack platform integrating live MLS data from CRMLS (California Regional MLS) via Trestle API. Led team of 6 developers through complete lifecycle: OAuth 2.0 authentication, automated cron job synchronization, advanced search/filtering, and production deployment on Linux VPS with 1,000+ active listings.<br><br>
+<b>Key Achievements:</b> Dual view modes (grid/list), session-based favorites, CSV export, real-time statistics dashboard, hourly data sync automation, and responsive design optimized for all devices. Live at akbar.califorsale.org/search.php</p>
                 <div class="project-tech">
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">React</span>
                     <span class="tech-tag">PHP</span>
-                    <span class="tech-tag">Python</span>
                     <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">REST APIs</span>
-                    <span class="tech-tag">CRMLS/Trestle API</span>
-                    <span class="tech-tag">Linux VPS</span>
-                    <span class="tech-tag">Apache/Nginx</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">JavaScript (ES6+)</span>
+                    <span class="tech-tag">OAuth 2.0</span>
+                    <span class="tech-tag">Trestle API</span>
+                    <span class="tech-tag">Linux/Nginx</span>
+                    <span class="tech-tag">Cron Automation</span>
+                    <span class="tech-tag">PDO/MySQL</span>
                     <span class="tech-tag">Responsive Design</span>
                 </div>
                 <div class="project-links">
-                    <a href="#" onclick="event.stopPropagation()">in development</a>
+                    <a href="https://akbar.califorsale.org/search.php" target="_blank" onclick="event.stopPropagation()">live demo</a>
                     <a href="#" onclick="event.stopPropagation()">details</a>
                 </div>
             </div>
@@ -736,14 +733,41 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 </div>
             </div>
 
+            <div class="project-card" onclick="openModal('project-ultra-heat')">
+                <div class="project-header">
+                    <h3>Ultra Heat Sensor Alarm System</h3>
+                    <span class="project-status">EMBEDDED</span>
+                </div>
+                <p><strong>Real-time embedded safety monitoring system built on ARM Cortex-M4F microcontroller.</strong> Sophisticated dual-mode operation featuring ultrasonic distance detection and temperature sensing with visual/audible alerts. Showcases advanced firmware engineering, hardware-software integration, and real-time event-driven architecture—all implemented in C and ARM assembly.<br><br>
+<b>Key Features:</b> Precision ranging up to 5+ feet, three-tier alert system with color-coded LEDs, PWM-based musical tone generation, high-precision temperature sensing with 0.1°F resolution, and non-blocking event-driven architecture with WFI power optimization.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">ARM Cortex-M4F</span>
+                    <span class="tech-tag">C Programming</span>
+                    <span class="tech-tag">ARM Assembly</span>
+                    <span class="tech-tag">Tiva C (TM4C123)</span>
+                    <span class="tech-tag">Real-Time Systems</span>
+                    <span class="tech-tag">Interrupt-Driven Architecture</span>
+                    <span class="tech-tag">PWM Control</span>
+                    <span class="tech-tag">ADC Sampling</span>
+                    <span class="tech-tag">Ultrasonic Sensors</span>
+                    <span class="tech-tag">I2C Communication</span>
+                    <span class="tech-tag">Timer Capture</span>
+                    <span class="tech-tag">Event Scheduler</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/Ultra_Heat_Sensor" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
             
             <div class="project-card" onclick="openModal('project3')">
                 <div class="project-header">
                     <h3>Embedded_Systems</h3>
                     <span class="project-status">COURSEWORK</span>
                 </div>
-                <p><strong>Comprehensive embedded systems development portfolio showcasing ARM microcontroller expertise.</strong> Collection of real-time applications demonstrating sensor integration, interrupt handling, and hardware-software interfacing. Features custom sensor implementations and performance-optimized embedded solutions.<br><br>
-<b>Final Project:</b> Ultra Heat Sensor Alarm System combining ultrasonic distance detection, temperature monitoring, seven-segment displays, PWM-driven buzzer alerts, and real-time response logic. Designed as a complete safety alert device with adjustable thresholds and modular embedded C/ARM assembly programming.</p>
+                <p><strong>Comprehensive embedded systems development portfolio showcasing ARM microcontroller expertise.</strong> Collection of real-time applications demonstrating sensor integration, interrupt handling, and hardware-software interfacing. Features custom sensor implementations, GPIO programming, timer/PWM control, and performance-optimized embedded solutions.<br><br>
+<b>Focus Areas:</b> Real-time systems programming, hardware abstraction layers, interrupt service routines, peripheral configuration (ADC, UART, I2C), and modular embedded C/ARM assembly development demonstrating bare-metal firmware expertise.</p>
                 <div class="project-tech">
                     <span class="tech-tag">ARM Assembly</span>
                     <span class="tech-tag">C Programming</span>
@@ -1456,51 +1480,64 @@ I firmly believe that technology's true value lies in its ability to improve liv
     <div id="project-property-search" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Property Search Website</h2>
-            <p><strong>Status:</strong> Active Development (IDXExchange Internship)</p>
+            <h2>Full-Stack MLS Property Platform</h2>
+            <p><strong>Status:</strong> Live Production | SD6 Team @ IDXExchange (Fall 2025)</p>
+            <p><strong>Live Demo:</strong> <a href="https://akbar.califorsale.org/search.php" target="_blank" style="color:#00ff41;text-decoration:underline;">akbar.califorsale.org/search.php</a></p>
             
-            <h3>Team Leadership & Project Scope</h3>
-            <p>Leading a team of six interns in building a comprehensive Property Search Website that allows end users to search for single-family residential homes in California. Managing the full development lifecycle while integrating live data from the California Regional Multiple Listing Service (CRMLS) - the largest MLS in the United States. Coordinating team efforts, conducting sprint reviews, and overseeing production deployments for enterprise-scale real estate technology.</p>
-            
-            <h3>Technical Implementation</h3>
-            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #00ff41;margin:1rem 0;">
-                <p style="color:#00ff41;font-family:'Fira Code',monospace;"><strong>Database Integration:</strong></p>
-                <p style="color:#cccccc;margin:0.5rem 0;">Connected to CRMLS via Cotality's Trestle API for real-time property data access. Implemented optimized SQL queries for efficient data retrieval and storage.</p>
-            </div>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Pro-bono real estate search platform engineered to integrate live MLS data from CRMLS (California Regional MLS) via the Trestle API. Led SD6 team of 6 developers in building a sophisticated platform with advanced property search, filtering, and visualization capabilities for 1,000+ California real estate listings.</p>
             
             <h3>Key Features</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Advanced Search:</strong> Filter by city, ZIP code, price range, and number of bedrooms</li>
-                <li><strong>Responsive Design:</strong> Optimized interface across all device sizes</li>
-                <li><strong>MLS Integration:</strong> Live CRMLS data through Trestle API</li>
-                <li><strong>Performance Optimization:</strong> Efficient database queries and caching</li>
-                <li><strong>Property Cards:</strong> Dynamic display with photos, pricing, and key details</li>
-                <li><strong>Pagination System:</strong> Seamless navigation through large datasets</li>
+                <li><strong>Advanced Search & Filtering:</strong> Multi-criteria filtering (city, ZIP, price range, beds/baths, sqft) with real-time dynamic query building and sorting capabilities</li>
+                <li><strong>Dual View Modes:</strong> Grid and list layouts with interactive property modals featuring image galleries</li>
+                <li><strong>Session Management:</strong> Favorites system and recently viewed properties tracking</li>
+                <li><strong>Data Export:</strong> CSV export functionality for data analysis and real-time statistics dashboard</li>
+                <li><strong>Live Data Integration:</strong> Hourly automated synchronization with CRMLS via cron jobs</li>
+                <li><strong>Responsive Design:</strong> Mobile-first approach optimized for all devices with keyboard shortcuts</li>
             </ul>
             
-            <h3>Development Milestones</h3>
-            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #ff6b35;margin:1rem 0;">
-                <p style="color:#ff6b35;font-family:'Fira Code',monospace;"><strong>Current Progress:</strong></p>
+            <h3>Technical Architecture</h3>
+            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #00ff41;margin:1rem 0;">
+                <p style="color:#00ff41;font-family:'Fira Code',monospace;"><strong>Backend Infrastructure:</strong></p>
                 <ul style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
-                    <li>✓ Subdomain setup and initial interface development</li>
-                    <li>✓ Database connection and MLS data integration</li>
-                    <li>→ Advanced filtering implementation (in progress)</li>
-                    <li>→ UI/UX optimization and performance testing</li>
-                    <li>→ Team collaboration for final deployment</li>
+                    <li>OAuth 2.0 authentication with Trestle API and automated token refresh system</li>
+                    <li>Cron job scheduling for hourly data synchronization (generate_token.php, fetch_property.php)</li>
+                    <li>Custom MySQL schema optimized for property data with PDO-based secure operations</li>
+                    <li>OData Protocol for efficient property data retrieval from CRMLS</li>
                 </ul>
             </div>
             
-            <h3>Technical Stack</h3>
+            <h3>Database Schema</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Frontend:</strong> JavaScript, React, HTML/CSS with responsive design</li>
-                <li><strong>Backend:</strong> PHP and Python for API integration and data processing</li>
-                <li><strong>Database:</strong> MySQL with optimized queries for property data</li>
-                <li><strong>Deployment:</strong> Linux VPS with Apache/Nginx configuration</li>
-                <li><strong>APIs:</strong> CRMLS integration via Cotality's Trestle API</li>
+                <li><strong>Database:</strong> boxgra6_cali with primary table rets_property</li>
+                <li><strong>Core Fields:</strong> L_ListingID (PK), L_Address, L_City, L_Zip, L_SystemPrice, L_Keyword2 (beds), LM_Int2_3 (baths), LM_Dec_3 (sqft), L_Photos (JSON), L_UpdateDate</li>
+                <li><strong>Supporting Tables:</strong> token (OAuth storage), app_state (API offset/sync status)</li>
             </ul>
             
-            <div style="text-align:center;margin-top:2rem;">
-                <span style="background:#ff6b35;color:#000;padding:0.75rem 1.5rem;border-radius:4px;font-weight:bold;">In Active Development</span>
+            <h3>Technology Stack</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Frontend:</strong> HTML5/CSS3 (modern gradient UI with flexbox/grid), Vanilla JavaScript ES6+</li>
+                <li><strong>Backend:</strong> PHP 7.2+ (server logic, API integration), Python 3.x (data processing)</li>
+                <li><strong>Database:</strong> MySQL 8.0+ with optimized queries and indexing</li>
+                <li><strong>DevOps:</strong> Linux VPS, Nginx web server, cPanel hosting management, automated cron tasks</li>
+                <li><strong>APIs:</strong> Trestle API (CoreLogic CRMLS), OAuth 2.0, OData Protocol</li>
+            </ul>
+            
+            <h3>Team Leadership & Development</h3>
+            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #ff6b35;margin:1rem 0;">
+                <p style="color:#ff6b35;font-family:'Fira Code',monospace;"><strong>SD6 Team Accomplishments:</strong></p>
+                <ul style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
+                    <li>Led 6-member development team through full software lifecycle</li>
+                    <li>Coordinated sprint reviews, GitHub repository maintenance, and production deployments</li>
+                    <li>Implemented agile development practices with cross-functional collaboration</li>
+                    <li>Managed database architecture, API integration, and system automation</li>
+                    <li>Delivered production-ready platform with 1,000+ active property listings</li>
+                </ul>
+            </div>
+            
+            <div style="margin-top:1rem;">
+                <a href="https://akbar.califorsale.org/search.php" target="_blank" style="color:#00ff41;text-decoration:underline;margin-right:1rem;">View Live Demo →</a>
             </div>
         </div>
     </div>
@@ -1696,54 +1733,161 @@ Vision Mamba itself is not included, but this codebase contains adaptable tools 
         </div>
     </div>
 
+    <!-- Ultra Heat Sensor Alarm System Modal -->
+    <div id="project-ultra-heat" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ultra Heat Sensor Alarm System</h2>
+            <p><strong>Status:</strong> Real-Time Embedded Safety Monitoring System</p>
+            <p><strong>Platform:</strong> Texas Instruments Tiva C (TM4C123GH6PM) - ARM Cortex-M4F</p>
+            
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Sophisticated embedded safety monitoring system providing real-time environmental monitoring through dual-mode operation: distance detection using ultrasonic ranging and temperature sensing with visual/audible alerts. Showcases advanced firmware engineering, hardware-software integration, and real-time event-driven architecture—all implemented in C and ARM assembly.</p>
+            
+            <h3>Key Highlights</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>⚡ Real-time multi-sensor processing with interrupt-driven architecture</li>
+                <li>🎯 Dual operational modes - distance detection and heat monitoring</li>
+                <li>🔊 Dynamic audio feedback with PWM-controlled buzzer system</li>
+                <li>📊 Multi-level alert system with color-coded LED indicators</li>
+                <li>🧮 Custom seven-segment display driver for real-time data visualization</li>
+                <li>🛠️ Mixed C/Assembly implementation demonstrating low-level hardware control</li>
+            </ul>
+            
+            <h3>Distance Detection Mode (Ultrasonic Ranging)</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Precision Ranging:</strong> Up to 5+ feet with inch-level accuracy</li>
+                <li><strong>Safe Zone (≥5 ft):</strong> Green LED, no alarm</li>
+                <li><strong>Caution Zone (2-5 ft):</strong> Yellow LED, intermittent low-volume buzzer</li>
+                <li><strong>Danger Zone (<2 ft):</strong> Red LED, continuous high-volume alarm</li>
+                <li><strong>Real-time Display:</strong> Distance shown as XX:XX (feet:inches) format</li>
+            </ul>
+            
+            <h3>Temperature Monitoring Mode</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>High-Precision Sensing:</strong> 0.1°F resolution with continuous ADC sampling</li>
+                <li><strong>Digital Filtering:</strong> Signal conditioning for accurate readings</li>
+                <li><strong>Normal (<90°F):</strong> Green LED indicator</li>
+                <li><strong>Critical (≥90°F):</strong> Red LED + audible alarm</li>
+                <li><strong>Live Display:</strong> Temperature with decimal precision</li>
+            </ul>
+            
+            <h3>Technical Implementation</h3>
+            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #00ff41;margin:1rem 0;">
+                <p style="color:#00ff41;font-family:'Fira Code',monospace;"><strong>Interrupt Service Routines (ISRs):</strong></p>
+                <ul style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
+                    <li>Timer Capture ISR: Microsecond-precision ultrasonic echo measurement</li>
+                    <li>ADC Completion ISR: Temperature sensor reading processing</li>
+                    <li>GPIO ISR: Debounced button press detection for mode switching</li>
+                </ul>
+            </div>
+            
+            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #ff6b35;margin:1rem 0;">
+                <p style="color:#ff6b35;font-family:'Fira Code',monospace;"><strong>Peripheral Configuration:</strong></p>
+                <ul style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
+                    <li>Wide Timer 2: Ultrasonic pulse measurement via edge detection</li>
+                    <li>ADC0 Sequencer 0: Temperature sampling with processor trigger</li>
+                    <li>Wide Timer 0: PWM generation for buzzer (variable frequency/duty cycle)</li>
+                    <li>Timer 0/1: LED PWM for RGB color mixing</li>
+                </ul>
+            </div>
+            
+            <h3>Advanced Audio System</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>PWM Tone Generation:</strong> Programmable pitch (C4-B4 musical scale)</li>
+                <li><strong>Volume Control:</strong> Three-level intensity (10%, 20%, 40% duty cycle)</li>
+                <li><strong>Pattern Differentiation:</strong> Separate alarm patterns for distance vs. temperature alerts</li>
+                <li><strong>Assembly Optimization:</strong> PWM configuration for precise timing</li>
+            </ul>
+            
+            <h3>Event-Driven Architecture</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Non-Blocking Operation:</strong> Event scheduler and timer interrupts</li>
+                <li><strong>Concurrent Sensor Polling:</strong> No processor stalling</li>
+                <li><strong>State Machine:</strong> Efficient mode management implementation</li>
+                <li><strong>Power Optimization:</strong> WFI (Wait For Interrupt) instruction usage</li>
+            </ul>
+            
+            <h3>Performance Metrics</h3>
+            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;margin:1rem 0;">
+                <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                    <li>Distance Range: 2 inches - 5+ feet</li>
+                    <li>Distance Resolution: ±1 inch</li>
+                    <li>Temperature Range: 0°F - 150°F</li>
+                    <li>Temperature Resolution: 0.1°F</li>
+                    <li>Sensor Polling Rate: 2 Hz (500ms intervals)</li>
+                    <li>Alert Response Time: <100ms</li>
+                    <li>Audio Frequency Range: 261 Hz (C4) - 494 Hz (B4)</li>
+                    <li>Power Consumption: ~200mA @ 5V (active mode)</li>
+                </ul>
+            </div>
+            
+            <h3>Skills Demonstrated</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>✅ Bare-metal firmware development (no RTOS)</li>
+                <li>✅ Interrupt-driven event scheduling</li>
+                <li>✅ Hardware abstraction layer (HAL) design</li>
+                <li>✅ Mixed C and ARM assembly programming</li>
+                <li>✅ Direct peripheral register manipulation</li>
+                <li>✅ ADC sampling and signal conditioning</li>
+                <li>✅ PWM generation and control principles</li>
+                <li>✅ State machine implementation</li>
+                <li>✅ Sensor fusion (combining multiple inputs)</li>
+                <li>✅ Power-efficient design patterns</li>
+            </ul>
+            
+            <div style="margin-top:1rem;">
+                <a href="https://github.com/ak23bar/Ultra_Heat_Sensor" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
+            </div>
+        </div>
+    </div>
+
     <div id="project3" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Embedded Systems Projects</h2>
-            <p><strong>Status:</strong> Coursework Completed</p>
+            <h2>Embedded Systems Portfolio</h2>
+            <p><strong>Status:</strong> Coursework Collection</p>
             <h3>Project Overview</h3>
-            <p style="color:#cccccc;font-family:'Fira Code',monospace;">ARM-based microcontroller projects with sensor integration and real-time systems. Focus on low-level mixed C & assembly programming with hardware interfaces, culminating in an independent Ultra Heat Sensor alarm system.</p>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Comprehensive collection of ARM-based microcontroller projects demonstrating expertise in real-time systems, sensor integration, and bare-metal firmware development. Focus on low-level mixed C & assembly programming with direct hardware interfacing and peripheral control.</p>
             
             <p style="color:#cccccc;font-family:'Fira Code',monospace;"><strong>Note:</strong> While these projects were structured as group assignments, all code development, hardware integration, and system design were completed individually, representing solely my own work and technical contributions.</p>
             
-            <h3>Featured Project: Ultra Heat Sensor Alarm System</h3>
-            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Independent final project implementing a comprehensive safety monitoring system combining ultrasonic distance detection, temperature monitoring, visual displays, and audio alerts. Developed as a real-world safety device using modular programming and hardware integration principles.</p>
-            
-            <h3>Hardware Components & Integration</h3>
+            <h3>Core Technologies & Hardware</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Microcontroller:</strong> Tiva C with ARM Cortex-M4 processor for real-time control</li>
-                <li><strong>Ultrasonic Sensors:</strong> HC-SR04 modules for precise distance measurement and object detection</li>
-                <li><strong>Temperature Monitoring:</strong> Analog sensors with ADC sampling for heat detection</li>
-                <li><strong>Seven-Segment Displays:</strong> Multi-digit numeric output for real-time sensor readings</li>
-                <li><strong>PWM Buzzer System:</strong> Variable frequency audio alerts with intensity control</li>
-                <li><strong>LED Status Arrays:</strong> Visual feedback system with pattern-based alerts</li>
+                <li><strong>Microcontroller Platform:</strong> Texas Instruments Tiva C Series (ARM Cortex-M4F)</li>
+                <li><strong>Development Tools:</strong> Code Composer Studio, TivaWare Peripheral Driver Library</li>
+                <li><strong>Sensor Integration:</strong> Ultrasonic sensors, temperature sensors, accelerometers, light sensors</li>
+                <li><strong>Communication Protocols:</strong> I2C, UART, SPI for device interfacing</li>
+                <li><strong>Output Devices:</strong> Seven-segment displays, LED arrays, LCD screens, PWM buzzers</li>
+                <li><strong>Power Management:</strong> WFI (Wait For Interrupt) optimization techniques</li>
             </ul>
             
             <h3>Programming Concepts & Implementation</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Modular Design:</strong> Function-based architecture with separate sensor, display, and alarm modules</li>
-                <li><strong>Real-time Response:</strong> Interrupt-driven programming for immediate threat detection</li>
-                <li><strong>ADC Sampling:</strong> Continuous analog-to-digital conversion for temperature monitoring</li>
-                <li><strong>PWM Control:</strong> Pulse-width modulation for buzzer frequency and LED brightness</li>
-                <li><strong>GPIO Management:</strong> Digital I/O control for sensor triggers and display multiplexing</li>
-                <li><strong>UART Communication:</strong> Serial debugging and data logging capabilities</li>
-                <li><strong>Timer Systems:</strong> Precise timing control for sensor polling and display refresh</li>
+                <li><strong>Interrupt-Driven Architecture:</strong> ISR implementation for timers, GPIO, ADC completion</li>
+                <li><strong>Real-Time Response:</strong> Event schedulers and state machines for concurrent operations</li>
+                <li><strong>ADC Sampling:</strong> Analog-to-digital conversion with signal filtering and calibration</li>
+                <li><strong>PWM Control:</strong> Pulse-width modulation for motor control, audio generation, LED dimming</li>
+                <li><strong>GPIO Management:</strong> Digital I/O control, debouncing, edge detection</li>
+                <li><strong>Timer Systems:</strong> Capture/compare modes, periodic interrupts, microsecond-precision timing</li>
+                <li><strong>Memory Management:</strong> Direct register manipulation, memory-mapped I/O, pointer optimization</li>
+                <li><strong>Mixed C/Assembly:</strong> Performance-critical sections in ARM assembly for efficiency</li>
             </ul>
             
-            <h3>System Features & Logic</h3>
+            <h3>Key Skills Demonstrated</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Dual Sensor Logic:</strong> Combined distance and temperature thresholds for alarm triggering</li>
-                <li><strong>Escalating Alerts:</strong> Progressive warning system from visual to audio notifications</li>
-                <li><strong>Real-time Display:</strong> Continuous sensor value updates on seven-segment displays</li>
-                <li><strong>Fail-safe Design:</strong> Sensor error detection and system reliability measures</li>
-                <li><strong>Calibration System:</strong> User-adjustable sensitivity and threshold settings</li>
+                <li><strong>Bare-Metal Development:</strong> Firmware without RTOS, direct hardware control</li>
+                <li><strong>Hardware Abstraction:</strong> Modular driver design for peripheral reusability</li>
+                <li><strong>System Architecture:</strong> Event-driven design patterns and state management</li>
+                <li><strong>Debugging Expertise:</strong> Logic analyzer usage, UART debugging, hardware troubleshooting</li>
+                <li><strong>Performance Optimization:</strong> Timing analysis, power consumption reduction, code efficiency</li>
             </ul>
             
-            <h3>Development Notes</h3>
-            <p style="color:#cccccc;font-family:'Fira Code',monospace;">This project demonstrated independent problem-solving in embedded systems design, from hardware selection to software architecture. Emphasis on practical safety applications, modular code structure, and real-world deployment considerations. Successfully integrated multiple sensor types with coordinated response logic for reliable safety monitoring.</p>
+            <h3>Project Highlights</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Projects include sensor-based monitoring systems, real-time data acquisition, motor control applications, multi-device communication networks, and custom peripheral drivers. Each project emphasizes modular code structure, hardware-software co-design, and practical embedded systems engineering principles.</p>
             
             <div style="margin-top:1rem;">
-                <a href="https://github.com/ak23bar/Embedded_Systems" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
+                <a href="https://github.com/ak23bar/Embedded-Systems" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
             </div>
         </div>
     </div>
