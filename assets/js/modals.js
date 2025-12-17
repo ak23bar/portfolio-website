@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>AI Trainer - Software Developer | Outlier</h2>
-                <p><strong>Duration:</strong> April 2025 - Present</p>
+                <p><strong>Duration:</strong> April 2025 - Dec 2025</p>
                 <p><strong>Location:</strong> Remote</p>
                 <h3>Key Responsibilities</h3>
                 <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>Code Coach | The Coder School</h2>
-                <p><strong>Duration:</strong> Jan 2025 - Present</p>
+                <p><strong>Duration:</strong> Jan 2025 - Dec 2025</p>
                 <p><strong>Location:</strong> Lombard, IL</p>
                 <h3>Key Responsibilities</h3>
                 <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
