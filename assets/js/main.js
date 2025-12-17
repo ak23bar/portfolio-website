@@ -25,7 +25,7 @@ const enhancedTerminalCommands = {
     // Enhanced help with better formatting
     helpme: () => {
         const sections = [
-            '<div style="color: #ffff00; font-weight: bold;">PORTFOLIO TERMINAL v1.0</div>',
+            '<div style="color: #ffff00; font-weight: bold;">PORTFOLIO TERMINAL v1.6</div>',
             '<div style="color: #888888; margin: 10px 0;">═══════════════════════════════════════</div>',
             '',
             '<div style="color: #ffff00;">📂 NAVIGATION COMMANDS</div>',
@@ -1245,7 +1245,7 @@ Type 'man &lt;command&gt;' for detailed help.
         return `<div style="color: #00ff41;">
 <div style="color: #ffff00;">TERMINAL STATUS</div>
 <div style="color: #888888;">═════════════════</div>
-System: Portfolio OS v1.0<br>
+System: Portfolio OS v1.6<br>
 Commands loaded: ${commandCount}<br>
 Current path: ${currentPath}<br>
 History entries: ${commandHistory.length}<br>
@@ -1272,7 +1272,7 @@ function openTerminalCli() {
         output.innerHTML = `<div class="cli-output" style="color: #00ff41; font-family: 'Courier New', monospace;">
 <span style="color: #ffff00;">🖥️  Welcome to Akbar's Interactive Portfolio Terminal</span>
 <span style="color: #888888;">─────────────────────────────────────────────────</span>
-<span style="color: #00ccff;">System:</span> Portfolio OS v1.0 | <span style="color: #00ccff;">User:</span> akbar@portfolio-system
+<span style="color: #00ccff;">System:</span> Portfolio OS v1.6 | <span style="color: #00ccff;">User:</span> akbar@portfolio-system
 <span style="color: #888888;">Type 'help' for available commands, 'ls' to see sections, 'tree' for structure</span>
 <span style="color: #ff6b6b;">💡 Tip: Use 'cd projects' to explore my work, 'cat bio.txt' to learn more!</span>
 </div>`;
@@ -1645,12 +1645,12 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.5",
-    lastUpdated: "November 18, 2025",
+    current: "1.6",
+    lastUpdated: "December 17, 2025",
     changelog: [
-        "Added Ultra Heat Sensor Alarm System as standalone embedded project",
-        "Launched Full-Stack MLS Property Platform with live demo (akbar.califorsale.org)",
-        "Integrated Neuerraa platform links across AI Systems Engineer experience"
+        "Added Nexus position - Founding Full Stack Engineer role",
+        "Integrated Nexus as OPEN-SOURCE project with detailed modal",
+        "Enhanced experience section with comprehensive Nexus platform details"
     ]
 };
 

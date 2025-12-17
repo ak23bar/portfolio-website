@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>CS Teaching Assistant | University of Illinois Chicago</h2>
-                <p><strong>Duration:</strong> Jan 2025 - Present</p>
+                <p><strong>Duration:</strong> Jan 2025 - Dec 2025</p>
                 <p><strong>Location:</strong> Chicago, IL</p>
                 <h3>Key Responsibilities</h3>
                 <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
