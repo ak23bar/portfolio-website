@@ -41,8 +41,7 @@ assets/
 		Akbar_Resume.pdf      # Downloadable resume
 		neo.png               # Profile image
 	js/
-		animations.js         # Matrix rain, loading, and other animations
-		main.js               # Main site logic, event handlers
+		main.js               # Main site logic, event handlers, terminal, loading, and animation effects
 		modals.js             # Modal popups and overlays
 LICENSE                   # License information
 README.md                 # Project documentation

@@ -4,9 +4,9 @@ const fileSystem = {
     '/about': ['bio.txt', 'skills.json', 'interests.md', 'timeline.log'],
     '/experience': ['current_roles.txt', 'research.txt', 'teaching.txt', 'mentorship.txt'],
     '/education': ['uic.txt', 'coursework.txt', 'gpa.txt', 'degree_plan.txt'],
-    '/projects': ['lamhaa.ai/', 'VisionMamba/', 'DSA_Library/', 'Embedded_Systems/', 'Web-Dev/'],
-    '/projects/lamhaa.ai': ['README.md', 'requirements.txt', 'main.py'],
-    '/projects/VisionMamba': ['model.py', 'dataset.py', 'train.py', 'results.json'],
+    '/projects': ['RAG_Support_Agent/', 'Property_Platform/', 'CodeLingo/', 'Quant_ML/', 'Embedded_Systems/'],
+    '/projects/RAG_Support_Agent': ['overview.md', 'stack.txt', 'architecture.txt'],
+    '/projects/CodeLingo': ['README.md', 'app.py', 'prompting.md'],
     '/skills': ['programming.txt', 'frameworks.txt', 'tools.txt', 'certifications.txt']
 };
 
@@ -193,8 +193,10 @@ const enhancedTerminalCommands = {
        <span style="color: #ffffff;">skills.json</span>       Technical skills in JSON format
        <span style="color: #ffffff;">current_roles.txt</span> Current professional positions
        <span style="color: #ffffff;">gpa.txt</span>           Academic performance details
-       <span style="color: #ffffff;">README.md</span>         Project documentation (lamhaa.ai)
-       <span style="color: #ffffff;">requirements.txt</span>  Technical dependencies
+       <span style="color: #ffffff;">README.md</span>         Project documentation (CodeLingo)
+       <span style="color: #ffffff;">overview.md</span>      RAG Support Agent overview
+       <span style="color: #ffffff;">stack.txt</span>        RAG Support Agent stack
+       <span style="color: #ffffff;">app.py</span>           CodeLingo application entry point
 
 <span style="color: #00ccff;">EXAMPLES</span>
        <span style="color: #ffffff;">cat bio.txt</span>           Read professional biography
@@ -869,13 +871,13 @@ Try 'help' for command overview</span>`;
 │ │   ├── <span style="color: #ffffff;">gpa.txt</span>                                      │
 │ │   └── <span style="color: #ffffff;">coursework.txt</span>                              │
 │ ├── <span style="color: #00ff41;">📁 projects/</span>       <span style="color: #888888;"># Technical projects</span>       │
-│ │   ├── <span style="color: #00ccff;">🚀 lamhaa.ai/</span>                               │
-│ │   │   ├── <span style="color: #ffffff;">README.md</span>                               │
-│ │   │   ├── <span style="color: #ffffff;">requirements.txt</span>                        │
-│ │   │   └── <span style="color: #ffffff;">main.py</span>                                 │
-│ │   ├── <span style="color: #00ccff;">💻 VisionMamba/</span>                             │
-│ │   │   ├── <span style="color: #ffffff;">model.py</span>                                │
-│ │   │   └── <span style="color: #ffffff;">dataset.py</span>                              │
+│ │   ├── <span style="color: #00ccff;">🚀 RAG_Support_Agent/</span>                        │
+│ │   │   ├── <span style="color: #ffffff;">overview.md</span>                             │
+│ │   │   ├── <span style="color: #ffffff;">stack.txt</span>                               │
+│ │   │   └── <span style="color: #ffffff;">architecture.txt</span>                        │
+│ │   ├── <span style="color: #00ccff;">🏠 Property_Platform/</span>                       │
+│ │   ├── <span style="color: #00ccff;">🧠 CodeLingo/</span>                               │
+│ │   ├── <span style="color: #00ccff;">📈 Quant_ML/</span>                                │
 │ │   └── <span style="color: #00ccff;">🔧 Embedded_Systems/</span>                        │
 │ ├── <span style="color: #00ff41;">📁 skills/</span>         <span style="color: #888888;"># Technical expertise</span>      │
 │ │   ├── <span style="color: #ffffff;">programming.txt</span>                             │
@@ -955,13 +957,17 @@ Try 'help' for command overview</span>`;
         if (!file) return 'cat: missing file operand\nTry \'cat --help\' for more information.';
         
         const fileContents = {
-            'bio.txt': 'Computer Engineering professional specializing in AI/ML, embedded systems, and full-stack development.\nCurrently pursuing Joint BS/MS at UIC with 6+ professional roles and research experience.',
+            'bio.txt': 'Computer Engineer and entrepreneur building practical software, AI-enabled products, automation workflows, web platforms, and computer engineering systems.\nExperience spans industry, research, teaching, client-facing engineering, and AI evaluation.',
             'resume.pdf': 'PDF document - Contact akbaraman797@gmail.com for latest resume\nSize: 2.4MB\nLast modified: Aug 26, 2025',
-            'current_roles.txt': 'Active Professional Roles:\n• AI Trainer - Outlier & Handshake\n• Teaching Assistant - UIC ECE Department\n• Code Coach - TheCoderSchool\n• Research Assistant - UIC Computer Vision Lab',
+            'current_roles.txt': 'Active Professional Roles:\n• AI Intern - AHEAD\n• AI Red Team Prompt Engineer - LinkedIn\n• Software Engineer - ArkBoosted LLC\n• Engineering Success Mentor - University of Illinois Chicago\n• Private Tutor - Varsity Tutors',
             'skills.json': '{\n  "languages": ["Python", "C++", "JavaScript", "C", "Java", "ARM Assembly"],\n  "frameworks": ["PyTorch", "TensorFlow", "FastAPI", "Docker", "AWS"],\n  "domains": ["AI/ML", "Embedded Systems", "Web Development", "Computer Vision"],\n  "tools": ["Linux", "Git", "MATLAB", "Altium Designer", "Node.js"]\n}',
             'gpa.txt': 'Academic Performance:\nCurrent GPA: 3.65/4.0\nExpected BS: May 2027\nExpected MS: May 2028\nDean\'s List: Fall 2023, Spring 2024',
-            'README.md': '# lamhaa.ai\nAI-powered visual asset management platform\n\n## Features\n- Smart photo organization\n- Duplicate detection\n- Burst grouping\n- Quality assessment\n\n## Tech Stack\nPython, FastAPI, PyTorch, OpenCV, CLIP, BLIP',
-            'requirements.txt': 'torch>=1.9.0\nopencv-python>=4.5.0\ntransformers>=4.0.0\nfastapi>=0.68.0\nuvicorn>=0.15.0\nnumpy>=1.21.0\npillow>=8.3.0'
+            'README.md': '# CodeLingo\nAI-powered code explanation tool for students learning to read and reason through code.\n\n## Features\n- Level-based explanations\n- Streaming output\n- Quiz mode\n- Misconception review\n\n## Tech Stack\nPython, Streamlit, Groq API, Llama 3.3',
+            'app.py': '# CodeLingo Streamlit app entry point\n# Handles code input, explanation level selection, streaming responses, and quiz mode.',
+            'prompting.md': '# Prompting Strategy\nStructured explanations with beginner, student, and teacher modes plus misconception-focused review.',
+            'overview.md': '# RAG Support Agent\nRetrieval and support automation system for multi-tenant SaaS support workflows.',
+            'stack.txt': 'FastAPI, PostgreSQL, pgvector, LLM workflows, vector search, support automation',
+            'architecture.txt': 'Retrieval layer, source-grounded responses, intake workflow, escalation handoff, operational feedback loop'
         };
         
         return fileContents[file] || `cat: ${file}: No such file or directory`;
@@ -1125,18 +1131,18 @@ Example: find "machine learning"</span>`;
         }
         
         const searchableContent = {
-            'bio.txt': 'Computer Engineering professional specializing in AI/ML, embedded systems, and full-stack development. Currently pursuing Joint BS/MS at UIC with 6+ professional roles and research experience.',
+            'bio.txt': 'Computer Engineer entrepreneur practical software AI-enabled products automation web platforms computer engineering systems industry research teaching client work',
             'skills.json': 'Python C++ JavaScript C Java ARM Assembly PyTorch TensorFlow FastAPI Docker AWS AI ML Embedded Systems Web Development Computer Vision Linux Git MATLAB Altium Designer Node.js',
-            'current_roles.txt': 'AI Trainer Outlier Handshake Teaching Assistant UIC ECE Department Code Coach TheCoderSchool Research Assistant UIC Computer Vision Lab',
+            'current_roles.txt': 'AI Intern AHEAD AI Red Team Prompt Engineer LinkedIn Software Engineer ArkBoosted LLC Engineering Success Mentor UIC Private Tutor Varsity Tutors',
             'gpa.txt': 'Academic Performance Current GPA 3.65 Expected BS May 2027 Expected MS May 2028 Deans List Fall 2023 Spring 2024',
-            'README.md': 'lamhaa.ai AI-powered visual asset management platform Smart photo organization Duplicate detection Burst grouping Quality assessment Python FastAPI PyTorch OpenCV CLIP BLIP'
+            'README.md': 'CodeLingo AI-powered code explanation tool level-based explanations streaming output quiz mode misconception review Python Streamlit Groq API Llama 3.3'
         };
         
         const sectionContent = {
             'about': 'Personal background professional journey computer engineering UIC artificial intelligence machine learning',
-            'experience': 'professional work history AI trainer teaching assistant code coach research assistant computer vision embedded systems',
+            'experience': 'professional work history AHEAD LinkedIn ArkBoosted UIC Varsity Tutors AI evaluation teaching client engineering automation',
             'education': 'academic background achievements University Illinois Chicago electrical computer engineering joint degree',
-            'projects': 'portfolio technical projects lamhaa.ai wildfire detection VisionMamba DSA library embedded systems ARM',
+            'projects': 'portfolio technical projects RAG support agent property platform CodeLingo quantitative ML hls4ml DSA embedded systems ARM',
             'skills': 'technical expertise Python C++ JavaScript PyTorch TensorFlow machine learning artificial intelligence',
             'contact': 'get in touch connect email LinkedIn GitHub akbaraman797 gmail com'
         };
@@ -1340,14 +1346,14 @@ function executeEnhancedCommand(command) {
 
 // Enhanced AI Assistant
 const aiResponses = [
-    { keywords: ['akbar', 'about', 'who'], response: 'Akbar Aman is a Computer Engineering professional at UIC, specializing in AI/ML, embedded systems, and full-stack development. He has 6+ professional roles spanning research, teaching, and industry applications.' },
-    { keywords: ['experience', 'work', 'job', 'career'], response: 'Akbar currently holds multiple roles: AI Trainer at Outlier and Handshake, Teaching Assistant and Mentor at UIC, and Code Coach at TheCoderSchool. He has research experience in deep learning and computer vision at UIC ECE Department.' },
+    { keywords: ['akbar', 'about', 'who'], response: 'Akbar Aman is a Computer Engineer and entrepreneur building practical software, AI-enabled products, automation workflows, web platforms, and computer engineering systems across industry, research, teaching, and client work.' },
+    { keywords: ['experience', 'work', 'job', 'career'], response: 'Akbar currently works across enterprise AI enablement, AI safety evaluation, client-facing software engineering, engineering mentorship, and private tutoring, with experience at AHEAD, LinkedIn, ArkBoosted, UIC, and other technical organizations.' },
     { keywords: ['skills', 'technical', 'programming', 'languages'], response: 'Technical expertise includes: Python, C++, C, JavaScript, Java, ARM Assembly, MATLAB, AI/ML frameworks (PyTorch, TensorFlow), Linux, FastAPI, Docker, AWS, circuit design, and signal processing.' },
-    { keywords: ['education', 'degree', 'university', 'school'], response: 'Akbar is pursuing a Joint BS in Computer Engineering and MS in Electrical and Computer Engineering at University of Illinois Chicago, with a current GPA of 3.65. He has completed three ECE tracks: Data Science & Engineering, Signal Processing, and Computer & Networked Systems. Expected graduation: BS May 2027, MS May 2028.' },
-    { keywords: ['projects', 'portfolio', 'code', 'github'], response: 'Key projects include: lamhaa.ai (AI-powered photo organization platform), VisionMamba (wildfire detection CNN), DSA library in C++, embedded systems with ARM, and various web applications. Check his GitHub: ak23bar' },
+    { keywords: ['education', 'degree', 'university', 'school'], response: 'Akbar is pursuing Computer Engineering at the University of Illinois Chicago, with coursework spanning computer and networked systems, digital systems and VLSI, data science, mathematics, and embedded systems.' },
+    { keywords: ['projects', 'portfolio', 'code', 'github'], response: 'Key projects include a RAG support agent, full-stack MLS property platform, CodeLingo, quantitative ML research work, hls4ml FPGA projects, DSA implementations, embedded systems, and independent tools. Check his GitHub: ak23bar' },
     { keywords: ['contact', 'email', 'reach', 'hire'], response: 'Contact Akbar at akbaraman797@gmail.com for opportunities, collaborations, or his resume. Also available on LinkedIn (akbar-aman-94b1b6263) and GitHub (ak23bar).' },
-    { keywords: ['ai', 'machine learning', 'ml', 'deep learning'], response: 'Akbar has extensive AI/ML experience including: AI training and validation at Outlier/Handshake, computer vision research (wildfire detection), PyTorch/TensorFlow projects, and building AI-powered applications like lamhaa.ai.' },
-    { keywords: ['teaching', 'mentor', 'instructor'], response: 'Akbar is actively involved in education as a TA for CS 109 (MATLAB), Engineering Success Program Mentor, and Code Coach teaching Python, C++, Java, and web development to students of all levels.' },
+    { keywords: ['ai', 'machine learning', 'ml', 'deep learning'], response: 'Akbar has AI/ML experience across enterprise AI enablement, red-team evaluation, RAG systems, LLM APIs, recommendation interfaces, quantitative ML research, and computer vision workflows.' },
+    { keywords: ['teaching', 'mentor', 'instructor'], response: 'Akbar is actively involved in technical education through engineering mentorship, private tutoring, coding instruction, curriculum design, and student project guidance.' },
     { keywords: ['matrix', 'linux', 'terminal'], response: 'Welcome to the Matrix! This portfolio showcases Akbar\'s love for Linux and terminal environments. Try the interactive terminal (CLI icon) for system commands, or explore the Matrix-themed interface.' },
     { keywords: ['help', 'commands', 'what can you do'], response: 'I can provide information about Akbar\'s professional experience, technical skills, education, projects, and career. Ask me about his work, skills, background, or how to contact him!' }
 ];
