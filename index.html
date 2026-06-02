@@ -6,24 +6,24 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta name="description" content="Akbar Aman - Computer Engineer & Founding Engineer at Arkboosted LLC. Expertise in AI/ML, full-stack development, enterprise software architecture, and embedded systems. Building innovative solutions that drive business growth and technological advancement through scalable systems and automation.">
-    <meta name="keywords" content="Computer Engineer, Founding Engineer, Entrepreneur, Arkboosted, Full-Stack Developer, React, Python, JavaScript, AI/ML, PyTorch, Enterprise Software, Business Automation, Web Development, Embedded Systems, Software Architecture, Startup Founder">
+    <meta name="description" content="Akbar Aman - AI & Systems Engineer building applied AI systems, automation, backend infrastructure, and scalable engineering solutions across industry, research, and teaching.">
+    <meta name="keywords" content="AI Engineer, Systems Engineer, Computer Engineer, Applied AI, Automation, Backend Systems, Infrastructure, FastAPI, React, Python, JavaScript, AI/ML, PyTorch, Enterprise Software, RAG Systems, Embedded Systems, Software Architecture">
     <meta name="author" content="Akbar Aman">
     
     <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Akbar Aman - Computer Engineer & Entrepreneur">
-    <meta property="og:description" content="Founding Engineer at Arkboosted LLC building innovative business solutions. Expertise in AI/ML, full-stack development, enterprise software architecture, and scalable automation systems.">
+    <meta property="og:title" content="Akbar Aman - AI & Systems Engineer">
+    <meta property="og:description" content="Building applied AI systems, automation, backend infrastructure, and scalable engineering solutions across industry, research, and teaching.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ak23bar.pages.dev">
     <meta property="og:image" content="https://ak23bar.pages.dev/assets/files/neo.png">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Akbar Aman - Computer Engineer & Entrepreneur">
-    <meta name="twitter:description" content="Founding Engineer at Arkboosted LLC. Building innovative business solutions with AI/ML, full-stack development, and enterprise software architecture.">
+    <meta name="twitter:title" content="Akbar Aman - AI & Systems Engineer">
+    <meta name="twitter:description" content="Building applied AI systems, automation, backend infrastructure, and scalable engineering solutions.">
     <meta name="twitter:image" content="https://ak23bar.pages.dev/assets/files/neo.png">
     
-    <title>Akbar Aman - Computer Engineer & Entrepreneur</title>
+    <title>Akbar Aman - AI & Systems Engineer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -61,7 +61,10 @@
             <button onclick="toggleTerminalCli()" style="background:none;border:none;color:#000;font-size:1.2rem;cursor:pointer;">&times;</button>
         </div>
         <div class="terminal-cli-content" id="terminalCliContent">
-            <div class="cli-output">Type 'help' for available commands</div>
+            <div class="cli-output" data-terminal-welcome="true">
+                <span style="color:#ffff00;">Site Terminal</span><br>
+                <span style="color:#888888;">Try:</span> ls · tree · cd projects · cat bio.txt · email · resume · help
+            </div>
         </div>
         <div class="cli-input-line">
             <span class="cli-prompt">akbar@portfolio:<span id="cliPath">~</span>$</span>
@@ -71,14 +74,14 @@
 
     <!-- Quick Actions -->
     <div class="quick-actions">
-        <div class="quick-action" onclick="toggleTerminalCli()" title="Terminal">
+        <div class="quick-action" onclick="toggleTerminalCli()" title="Open Site Terminal" aria-label="Open site terminal">
             <i class="fas fa-terminal"></i>
         </div>
-        <div class="quick-action" onclick="scrollToTop()" title="Scroll to Top">
+        <div class="quick-action" onclick="scrollToTop()" title="Back to Top" aria-label="Back to top">
             <i class="fas fa-arrow-up"></i>
         </div>
-        <div class="quick-action" onclick="downloadResume()" title="Download Resume">
-            <i class="fas fa-file-download"></i>
+        <div class="quick-action" onclick="scrollToContact()" title="Contact" aria-label="Go to contact section">
+            <i class="fas fa-envelope"></i>
         </div>
     </div>
 
@@ -90,24 +93,24 @@
                 <li><a href="#home">home</a></li>
                 <li><a href="#about">about</a></li>
                 <li><a href="#experience">experience</a></li>
-                <li><a href="#education">education</a></li>
                 <li><a href="#projects">projects</a></li>
                 <li><a href="#contact">contact</a></li>
             </ul>
             <div class="nav-right">
                 <div class="version-display" id="versionDisplay">
                     <span class="version-label">v</span>
-                    <span class="version-number" id="versionNumber">1.7</span>
+                    <span class="version-number" id="versionNumber">1.8</span>
                     <div class="version-tooltip" id="versionTooltip">
                         <div class="version-details">
-                            <div class="version-title">Portfolio Version 1.7</div>
-                            <div class="version-date">Last Updated: February 4, 2026</div>
+                            <div class="version-title">Portfolio Version 1.8</div>
+                            <div class="version-date">Last Updated: June 2, 2026</div>
                             <div class="version-changes">
-                                <div class="change-title">Major Updates (v1.7):</div>
+                                <div class="change-title">Major Updates (v1.8):</div>
                                 <ul>
-                                    <li><strong>Crypt0nest Position:</strong> Added Quantitative Research & AI/ML Engineering Intern role with crypto portfolio intelligence systems</li>
-                                    <li><strong>Pocket Brain Project:</strong> New offline quantized LLM assistant with CPU-only constraints and structured interaction modes</li>
-                                    <li><strong>Updated Positions:</strong> Nexus (Technical Consultant), Arkboosted (enhanced with RAG agent and AI tooling details)</li>
+                                    <li><strong>Professional Rebrand:</strong> Updated positioning around AI systems, backend infrastructure, automation, and client-facing engineering work</li>
+                                    <li><strong>Experience Tree:</strong> Reorganized roles into a categorized professional experience graph instead of a linear timeline</li>
+                                    <li><strong>Engineering Portfolio:</strong> Rebuilt projects into structured buckets with new AI, research, platform, hardware, and independent tooling entries</li>
+                                    <li><strong>Copy & Contact Polish:</strong> Tightened homepage, about, project, and contact language for a more professional audience</li>
                                 </ul>
                             </div>
                         </div>
@@ -128,7 +131,6 @@
         <a href="#home" onclick="toggleMobileNav()">home</a>
         <a href="#about" onclick="toggleMobileNav()">about</a>
         <a href="#experience" onclick="toggleMobileNav()">experience</a>
-        <a href="#education" onclick="toggleMobileNav()">education</a>
         <a href="#projects" onclick="toggleMobileNav()">projects</a>
         <a href="#contact" onclick="toggleMobileNav()">contact</a>
     </div>
@@ -142,45 +144,71 @@
                     <img src="assets/files/neo.png" alt="Neo" class="terminal-neo-image" style="display:block;margin:1.5rem auto 1rem auto;max-width:150px;width:100%;height:auto;box-shadow:0 0 0 4px #00ff41;">
                 </div>
                 <div class="hero-text-wrap" style="padding:1.5rem 0 0 0;">
-                    <h1 style="margin-bottom: 2.2rem; text-align: center; margin-left: auto; margin-right: auto; display: block; font-size: 3.2rem; text-shadow: 0 0 15px rgba(0, 255, 65, 0.6), 0 0 25px rgba(0, 255, 65, 0.3);">Akbar Aman</h1>
-                    <div class="terminal-window" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
+                    <h1 class="hero-name" style="margin-bottom: 0.35rem; text-align: center; margin-left: auto; margin-right: auto; display: block; font-size: 2.8rem; text-shadow: 0 0 10px rgba(0, 255, 65, 0.45);">Akbar Aman</h1>
+                    <div class="hero-professional-title">AI & Systems Engineer</div>
+                    <div class="terminal-window hero-terminal-window" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
                         <div class="terminal-header" style="background:#00ff41; border-top-left-radius:16px; border-top-right-radius:16px; padding:0.8rem 1.2rem; display:flex; align-items:center; justify-content:space-between;">
-                            <span style="color:#000; font-family:'Share Tech Mono', monospace; font-size:1.45rem; font-weight:600; letter-spacing:1px;">akbar@portfolio:~$</span>
+                            <span style="color:#000; font-family:'Share Tech Mono', monospace; font-size:1.45rem; font-weight:600; letter-spacing:1px;">akbar@systems:~$</span>
                             <div style="display:flex; gap:0.5rem;">
                                 <span style="width:16px; height:16px; background:#ff0040; border-radius:50%; display:inline-block;"></span>
                                 <span style="width:16px; height:16px; background:#ffff00; border-radius:50%; display:inline-block;"></span>
                                 <span style="width:16px; height:16px; background:#00ff41; border-radius:50%; display:inline-block;"></span>
                             </div>
                         </div>
-                        <div class="terminal-content" style="border: 4px solid #00ff41; border-radius: 0 0 16px 16px; padding: 1.2rem 0.5rem; background: transparent;">
-                            <div class="terminal-line terminal-prompt">cat summary.txt</div>
-                            <div class="terminal-line">Computer Engineer with a passion for building impactful solutions at the intersection of software and hardware.</div>
-                            <div class="terminal-line">I specialize in designing efficient systems, integrating AI and embedded technologies, and solving real-world problems through creative engineering.</div>
-                            <div class="terminal-line">My work is driven by curiosity, a commitment to lifelong learning, and a desire to advance technology for the benefit of society.</div>
+                        <div class="terminal-content hero-terminal-content" style="border: 4px solid #00ff41; border-radius: 0 0 16px 16px; padding: 1.2rem 0.5rem; background: transparent;">
+                            <div class="terminal-line terminal-prompt">cat positioning.txt</div>
+                            <div class="terminal-line hero-summary">Building applied AI systems, automation workflows, and scalable engineering infrastructure across enterprise AI, backend systems, applied ML, teaching, and client-facing technical delivery.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="home-panel">
+            <div class="home-section-label">current_roles</div>
+            <div class="current-roles-grid">
+                <div class="role-card">
+                    <span class="role-title">AI Intern</span>
+                    <span class="role-org">AHEAD </span>
+                </div>
+                <div class="role-card">
+                    <span class="role-title">AI Red Team Prompt Engineer</span>
+                    <span class="role-org">LinkedIn </span>
+                </div>
+                <div class="role-card">
+                    <span class="role-title">Software Engineer</span>
+                    <span class="role-org">ArkBoosted LLC </span>
+                </div>
+                <div class="role-card">
+                    <span class="role-title">Engineering Success Mentor</span>
+                    <span class="role-org">University of Illinois Chicago</span>
+                </div>
+                <div class="role-card">
+                    <span class="role-title">Private Tutor</span>
+                    <span class="role-org">Varsity Tutors </span>
+                </div>
+            </div>
+        </div>
+
         <div class="professional-stats">
             <div class="stat-card">
-                <span class="number">10+</span>
-                <span class="label">Professional & Research Roles</span>
-            </div>
-            <div class="stat-card">
                 <span class="number">20+</span>
-                <span class="label">Technical Skills & Frameworks</span>
+                <span class="label">Industry, Research, & Teaching Roles</span>
             </div>
             <div class="stat-card">
                 <span class="number">30+</span>
-                <span class="label">Projects & Implementations</span>
+                <span class="label">Technical Projects, Systems & Implementations</span>
+            </div>
+            <div class="stat-card">
+                <span class="number">500+</span>
+                <span class="label">Students Supported Through Teaching & Mentorship</span>
             </div>
         </div>
 
         <div class="cta-buttons">
-            <a href="#projects" class="btn btn-primary">View Portfolio</a>
-            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            <a href="assets/files/Akbar_Resume.pdf" target="_blank" class="btn btn-primary">View Resume</a>
+            <a href="#projects" class="btn btn-secondary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Contact</a>
         </div>
     </section>
 
@@ -191,16 +219,70 @@
             <div class="about-text" style="margin-top: -2rem; align-self: flex-start;">
                 <h3>whoami</h3>
                 <p style="font-size:1.15rem; color:#cccccc; margin-bottom:1.5rem;">
+I work across the stack, building practical systems across machine intelligence, infrastructure, automation, and <span style="display: inline-block; min-width: 225px; text-align: left; font-weight: bold; color: #00ff41;"><span id="engineerTypeAbout">Computer Engineering</span></span>
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+My edge is range: I can move between software, hardware, applied ML, teaching, and client-facing delivery without losing the system-level perspective needed to build reliable solutions.
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+I care most about systems that are reliable, maintainable, and genuinely useful. Whether building AI-powered applications, backend infrastructure, or mentoring future engineers, I focus on work that continues delivering value long after the initial implementation.
+</p>
+
+<!-- Archived verbose about copy; preserved for future reference.
+<p style="font-size:1.15rem; color:#cccccc; margin-bottom:1.5rem;">
+I work across <span style="display: inline-block; min-width: 125px; text-align: left; font-weight: bold; color: #00ff41;"><span id="engineerTypeAbout">Computer</span></span> Engineering, focused on building practical software systems that solve real-world problems.
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+My work spans AI applications, backend infrastructure, automation workflows, and computer engineering systems, with experience across industry, research, teaching, and client-facing environments.
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+My background combines software engineering, applied machine learning, and computer engineering fundamentals. That lets me work across the full stack of modern systems, from backend services and AI pipelines to embedded systems and hardware-software integration.
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+I am most interested in systems that are reliable, scalable, and genuinely useful. Whether building AI-powered applications, engineering backend infrastructure, or mentoring future engineers, I focus on solutions that continue to deliver value after the initial implementation.
+</p>
+-->
+
+<!-- Archived Phase 3 about copy; preserved for future reference.
+<p style="font-size:1.15rem; color:#cccccc; margin-bottom:1.5rem;">
+I am an <span style="display: inline-block; min-width: 220px; text-align: left; font-weight: bold; color: #00ff41;">AI & Systems Engineer</span><br>
+building applied AI tools, automation workflows, and backend systems across industry, research, teaching, and client-facing environments.
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+My work connects full-stack engineering, applied ML, infrastructure, and computer engineering fundamentals, with experience delivering production-oriented systems and explaining complex technical ideas to students, teams, and clients.
+</p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+I care about systems that are reliable, understandable, and useful in the real world, built with enough discipline to hold up beyond the demo.
+</p>
+-->
+
+<!-- Archived original about copy; preserved for future reference.
+<p style="font-size:1.15rem; color:#cccccc; margin-bottom:1.5rem;">
 I am a <span style="display: inline-block; min-width: 220px; text-align: left; font-weight: bold; color: #00ff41;"><span id="engineerTypeAbout">Computer</span></span><br>
 dedicated to merging creativity and precision in both hardware and software. My work spans data science, AI, ML, fullstack engineering, hardware design and integration, & more. I take great pride in solving meaningful problems that contribute to the greater good.
 </p>
 <p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
 I firmly believe that technology's true value lies in its ability to improve lives. Whether I am building efficient systems, advancing AI techniques, or addressing complex engineering challenges, my goal is to create solutions that will stand the test of time and positively impact society.
 </p>
-<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;"> 
-            I am committed to making a lasting contribution in my time on this earth, not only through the systems I design, but by pushing myself to be <span style="color: #00ff41; font-weight: bold;">أكبر</span> (akbar - "the greatest").
-        </p>
+<p style="font-size:1.05rem; color:#cccccc; margin-bottom:1.5rem;">
+I am committed to making a lasting contribution in my time on this earth, not only through the systems I design, but by pushing myself to be <span style="color: #00ff41; font-weight: bold;">أكبر</span> (akbar - "the greatest").
+</p>
+-->
         
+        <div class="skill-category" style="margin-top: 2rem; margin-bottom: 0.5rem;">
+            <h4>ai_systems</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">Applied AI</span>
+                <span class="skill-tag">RAG Systems</span>
+                <span class="skill-tag">LLM Evaluation</span>
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">AI Pipelines</span>
+                <span class="skill-tag">Prompt Engineering</span>
+                <!-- Previous visible tags: PyTorch, OpenCV, Model Evaluation -->
+            </div>
+        </div>
+
+        <!-- Archived longer frameworks/tools list; preserved for future reference.
         <div class="skill-category" style="margin-top: 2rem; margin-bottom: 0.5rem;">
             <h4>frameworks_tools</h4>
             <div class="skill-tags">
@@ -243,6 +325,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 <span class="skill-tag">VS Code</span>
             </div>
         </div>
+        -->
         
         <!-- Passions & Interests Section - Commented Out
         <div class="skill-category" style="margin-top: 2rem; margin-bottom: 0.5rem;">
@@ -281,7 +364,45 @@ I firmly believe that technology's true value lies in its ability to improve liv
         -->
             </div>
             <div class="skills-grid">
-            
+                <div class="skill-category">
+                    <h4>backend_infrastructure</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Backend Services</span>
+                        <span class="skill-tag">APIs</span>
+                        <span class="skill-tag">System Architecture</span>
+                        <span class="skill-tag">Multi-Tenant Systems</span>
+                        <span class="skill-tag">Cloud Deployment</span>
+                        <span class="skill-tag">Automation Workflows</span>
+                        <!-- Previous visible tags: FastAPI, React, SQL, Docker, Linux, REST APIs, Data Systems -->
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>systems_foundations</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Computer Engineering</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">Systems Programming</span>
+                        <span class="skill-tag">Computer Architecture</span>
+                        <span class="skill-tag">Digital Systems</span>
+                        <span class="skill-tag">Hardware-Software Integration</span>
+                        <!-- Previous visible tags: ARM Assembly, C/C++, Hardware Integration -->
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>teaching_communication</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Teaching</span>
+                        <span class="skill-tag">Technical Mentorship</span>
+                        <span class="skill-tag">Stakeholder Communication</span>
+                        <span class="skill-tag">Technical Writing</span>
+                        <span class="skill-tag">Curriculum Design</span>
+                        <!-- Previous visible tags: Mentorship, CS Instruction, Engineering Seminar Support, Private Tutoring, Curriculum Development -->
+                    </div>
+                </div>
+
+               <!-- Archived longer language/coursework lists; preserved for future reference.
                <div class="skill-category">
                     <h4>programming_languages</h4>
                     <div class="skill-tags">
@@ -338,6 +459,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
                         <span class="skill-tag">Computer Communication Networks</span>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </section>
@@ -345,178 +467,346 @@ I firmly believe that technology's true value lies in its ability to improve liv
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item" onclick="openModal('modal-crypt0nest')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Quantitative Research & AI/ML Engineering Intern</div>
-                    <div class="company">Crypt0nest.io (Tekly Studio)</div>
-                    <div class="date-location">Jan 2026 - Present | Remote</div>
-                    <div class="job-description">
-                        <p>Working within Tekly Studio's Crypt0nest quantitative research lab on the development of AI-driven portfolio intelligence systems for crypto markets. Contributing to data pipelines, feature engineering, and machine learning workflows used to replicate and validate quantitative trading strategies under strict backtesting and data integrity constraints. Engaging in a high-agency, production-oriented environment focused on reproducible research, clean system design, and translating machine learning theory into end-to-end applied infrastructure.</p>
-                    </div>
-                </div>
+        <div class="experience-tree">
+            <div class="experience-root">
+                <div class="tree-path">experience_tree/</div>
+                <div class="tree-root-title">Professional Experience</div>
+                <p>A categorized view of the professional environments where I have built systems, evaluated AI, conducted research, taught technical concepts, and delivered engineering solutions.</p>
             </div>
 
-            <div class="timeline-item" onclick="openModal('modal-nexus')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Technical Consultant</div>
-                    <div class="company">Nexus</div>
-                    <div class="date-location">Dec 2025 - Jan 2026 | Princeton, NJ (Remote)</div>
-                    <div class="job-description">
-                        <p>Collaborated with the founding team to assess product direction for a developer-focused AI platform, delivering architectural guidance and system-level recommendations to shape platform scope, agentic workflows, and technical feasibility. Performed hands-on full-stack development work completing assigned tasks across frontend and backend, led team members on technical implementations, and provided strategic system design advisory to establish technical clarity during the initial engagement phase.</p>
+            <details class="experience-branch">
+                <summary class="branch-header">
+                    <span class="branch-name">industry_engineering/</span>
+                    <span class="branch-description">Product, platform, and engineering roles inside organization-led teams.</span>
+                    <span class="branch-meta">4 roles · AHEAD, Talent Strategy Experts, IDXExchange, Fibinaci</span>
+                </summary>
+                <div class="branch-roles">
+                    <div class="timeline-item" onclick="openModal('modal-ahead')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">AI Intern</div>
+                            <div class="company">AHEAD</div>
+                            <div class="date-location">May 2026 - Present | Chicago, IL (Hybrid)</div>
+                            <div class="job-description">
+                                <p>Supporting enterprise AI enablement by helping transform internal AI platforms into governed, scalable workflows that improve knowledge access, operational efficiency, and organizational adoption.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal-ai-systems-engineer')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">AI Systems Engineer</div>
-                    <div class="company">Talent Strategy Experts</div>
-                    <div class="date-location">Oct 2025 - Present | San Jose, CA (Remote)</div>
-                    <div class="job-description">
-                        <p>Working directly with the TSE CEO on end-to-end development of core AI systems powering the Neuerra Platform. Tackling the fundamental challenge of fixing the disconnect between talent strategy and business goals through scalable multi-tenant architecture, AI-driven recruitment automation, and seamless full-stack integration.</p>
+                    <div class="timeline-item" onclick="openModal('modal-ai-systems-engineer')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">AI Systems Engineer</div>
+                            <div class="company">Talent Strategy Experts</div>
+                            <div class="date-location">Oct 2025 - Mar 2026 | San Jose, CA (Remote)</div>
+                            <div class="job-description">
+                                <p>Worked directly with the TSE CEO on end-to-end development of core AI systems powering the Neuerra Platform. Tackled the fundamental challenge of fixing the disconnect between talent strategy and business goals through scalable multi-tenant architecture, AI-driven recruitment automation, and seamless full-stack integration.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal-software-dev-intern')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Software Development Intern</div>
-                    <div class="company">IDXExchange</div>
-                    <div class="date-location">Oct 2025 - Dec 2025| Idaho (Remote)</div>
-                    <div class="job-description">
-                        <p>Leading a team of six interns in designing and enhancing web-based real estate applications. Overseeing full-stack development efforts integrating live MLS data through Cotality's Trestle API, managing deployments on InMotion Hosting, and conducting weekly sprint reviews while maintaining GitHub repositories for effective team collaboration.</p>
+                    <div class="timeline-item" onclick="openModal('modal-software-dev-intern')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Software Development Intern</div>
+                            <div class="company">IDXExchange</div>
+                            <div class="date-location">Oct 2025 - Dec 2025| Idaho (Remote)</div>
+                            <div class="job-description">
+                                <p>Led a team of six interns in designing and enhancing web-based real estate applications. Oversaw full-stack development efforts integrating live MLS data through Cotality's Trestle API, managed deployments on InMotion Hosting, and conducted weekly sprint reviews while maintaining GitHub repositories for effective team collaboration.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal-founding-engineer')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Founding Engineer</div>
-                    <div class="company">Arkboosted LLC</div>
-                    <div class="date-location">Sep 2025 - Present | Chicago, IL (Remote)</div>
-                    <div class="job-description">
-                        <p>Owned end-to-end execution of secure, scalable web and AI systems for client organizations, including system architecture, backend development, deployment, and iteration with a security-first development approach. Delivered production websites and high-converting landing pages, and designed an AI-powered support and intake system by building a pgvector-backed RAG agent serving a 700+ organization network to unify knowledge retrieval, automate intake, and support escalation. Additionally, built internal AI tooling using FastAPI and React to automate SEO, security, and performance audits and generate actionable reports, reducing manual audit time by approximately 90%.</p>
+                    <div class="timeline-item" onclick="openModal('modal-nexus')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Technical Consultant</div>
+                            <div class="company">Fibinaci (formerly Nexus)</div>
+                            <div class="date-location">Dec 2025 - Jan 2026 | Princeton, NJ (Remote)</div>
+                            <div class="job-description">
+                                <p>Helped the founding team redefine Nexus into Fibinaci's enterprise-agent mapping direction, advising on platform scope, agentic workflows, technical feasibility, and early system design.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="timeline-item" onclick="openModal('modal2')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">ML Red Team Fellow</div>
-                    <div class="company">Handshake (MOVE Fellowship)</div>
-                    <div class="date-location">Sep 2025 - Present | Remote</div>
-                    <div class="job-description">
-                        <p>Collaborating with leading researchers to red team LLMs, exposing vulnerabilities and unsafe outputs. Performed penetration testing with 200+ adversarial prompts, logging 50+ exploits.</p>
+            <details class="experience-branch">
+                <summary class="branch-header">
+                    <span class="branch-name">ai_evaluation_safety/</span>
+                    <span class="branch-description">LLM evaluation, red teaming, alignment review, and applied AI validation.</span>
+                    <span class="branch-meta">4 roles · LinkedIn, Handshake, Alignerr, Outlier</span>
+                </summary>
+                <div class="branch-roles">
+                    <div class="timeline-item" onclick="openModal('modal-linkedin-red-team')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">AI Safety Evaluator / Red Team Prompt Engineer</div>
+                            <div class="company">LinkedIn (Contract)</div>
+                            <div class="date-location">Apr 2026 - July 2026 | Remote</div>
+                            <div class="job-description">
+                                <p>Generated adversarial prompts, applied structured safety classifications, and produced policy-grounded rationales to improve LLM reliability, robustness, and trustworthiness.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal-alignerr')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">LLM: Evaluation Specialist</div>
-                    <div class="company">Alignerr (Contract)</div>
-                    <div class="date-location">Sep 2025 - Present | Chicago, IL (Remote)</div>
-                    <div class="job-description">
-                        <p>Executed 4+ large-scale LLM evaluation and alignment initiatives spanning reasoning, coding, and function-calling domains. Led rubric-based and human-preference assessments on thousands of samples to enhance model accuracy, coherence, and developer usability.</p>
+                    <div class="timeline-item" onclick="openModal('modal2')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">ML Red Team Fellow</div>
+                            <div class="company">Handshake (MOVE Fellowship)</div>
+                            <div class="date-location">Aug 2025 - Apr 2026 | Remote</div>
+                            <div class="job-description">
+                                <p>Collaborating with leading researchers to red team LLMs, exposing vulnerabilities and unsafe outputs. Performed penetration testing with 200+ adversarial prompts, logging 50+ exploits.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal-eng-success')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Engineering Success Program Mentor</div>
-                    <div class="company">University of Illinois Chicago</div>
-                    <div class="date-location">Aug 2025 - Present | Chicago, IL (Fall & Spring Semesters)</div>
-                    <div class="job-description">
-                        <p>Facilitating ENGR 100/101: Engineering Success Seminar series across multiple sections, serving 120+ students with curriculum development and academic guidance.</p>
+                    <div class="timeline-item" onclick="openModal('modal-alignerr')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">LLM: Evaluation Specialist</div>
+                            <div class="company">Alignerr (Contract)</div>
+                            <div class="date-location">Sep 2025 - Apr 2026 | Chicago, IL (Remote)</div>
+                            <div class="job-description">
+                                <p>Executed 4+ large-scale LLM evaluation and alignment initiatives spanning reasoning, coding, and function-calling domains. Led rubric-based and human-preference assessments on thousands of samples to enhance model accuracy, coherence, and developer usability.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal3')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">CS Teaching Assistant</div>
-                    <div class="company">University of Illinois Chicago</div>
-                    <div class="date-location">Jan 2025 - May 2025, Aug 2025 - Dec 2025 | Chicago, IL</div>
-                    <div class="job-description">
-                        <p>Selected for re-appointment teaching CS 109: Programming for Engineers with MATLAB, supporting 600+ students across Spring and Fall 2025 semesters.</p>
+                    <div class="timeline-item" onclick="openModal('modal1')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Software Developer: AI Trainer</div>
+                            <div class="company">Outlier (Scale AI, Meta-backed)</div>
+                            <div class="date-location">April 2025 - Dec 2025 | Remote</div>
+                            <div class="job-description">
+                                <p>Improved AI model performance by designing and validating prompts across coding, mathematics, & science domains. Consistently earned 5/5 task feedback across 15+ projects.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="timeline-item" onclick="openModal('modal-private-tutor')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Private Tutor</div>
-                    <div class="company">Varsity Tutors & Grade Potential Tutoring</div>
-                    <div class="date-location">Aug 2025 - Present | Remote & Greater Chicago Area</div>
-                    <div class="job-description">
-                        <p>Tutoring in AI/ML, DSA, and STEM fields via Varsity Tutors and Grade Potential, providing personalized instruction across 30+ subjects.</p>
+            <details class="experience-branch">
+                <summary class="branch-header">
+                    <span class="branch-name">research_applied_ml/</span>
+                    <span class="branch-description">Research internships and applied ML work tied to computer vision and data workflows.</span>
+                    <span class="branch-meta">3 roles · Crypt0nest, UIC ECE, STEM-Away</span>
+                </summary>
+                <div class="branch-roles">
+                    <div class="timeline-item" onclick="openModal('modal-crypt0nest')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Quantitative Research & AI/ML Engineering Intern</div>
+                            <div class="company">Crypt0nest.io (Tekly Studio)</div>
+                            <div class="date-location">Jan 2026 - May 2026 | Remote</div>
+                            <div class="job-description">
+                                <p>Worked within Tekly Studio's Crypt0nest quantitative research lab on AI-driven portfolio intelligence systems for crypto markets, contributing to data pipelines, feature engineering, ML workflows, and peer code review as Intern Lead.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal1')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Software Developer: AI Trainer</div>
-                    <div class="company">Outlier (Scale AI, Meta-backed)</div>
-                    <div class="date-location">April 2025 - Dec 2025 | Remote</div>
-                    <div class="job-description">
-                        <p>Improved AI model performance by designing and validating prompts across coding, mathematics, & science domains. Consistently earned 5/5 task feedback across 15+ projects.</p>
+                    <div class="timeline-item" onclick="openModal('modal5')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Deep Learning/AI Intern</div>
+                            <div class="company">UIC Department of Electrical & Computer Engineering</div>
+                            <div class="date-location">Jun 2024 - Aug 2024 | Chicago, IL</div>
+                            <div class="job-description">
+                                <p>Led a team of 5 interns in data collection, curation, & fine-tuning of PyTorch models for wildfire image classification. Designed Vision Mamba, achieving 30% accuracy improvement.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal4')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Code Coach</div>
-                    <div class="company">The Coder School</div>
-                    <div class="date-location">Jan 2025 - Feb 2026 | Lombard, IL</div>
-                    <div class="job-description">
-                        <p>Teaching Python, Java, C++, & web dev in 1-on-1/group sessions. Directed 2 coding summer camps in Pygame & Java, retained 6+ long-term students from trials.</p>
+                    <div class="timeline-item" onclick="openModal('modal6')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">UI/UX & Machine Learning Intern</div>
+                            <div class="company">STEM-Away</div>
+                            <div class="date-location">Jun 2023 - Sep 2023 | San Francisco, CA (Remote)</div>
+                            <div class="job-description">
+                                <p>Designed and deployed ML pipelines on AWS with 10+ interns, integrating GPT API workflows. Contributed to deploying the ByteMasters platform with improved UI & UX designs.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="timeline-item" onclick="openModal('modal5')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">Deep Learning/AI Intern</div>
-                    <div class="company">UIC Department of Electrical & Computer Engineering</div>
-                    <div class="date-location">Jun 2024 - Aug 2024 | Chicago, IL</div>
-                    <div class="job-description">
-                        <p>Led a team of 5 interns in data collection, curation, & fine-tuning of PyTorch models for wildfire image classification. Designed Vision Mamba, achieving 30% accuracy improvement.</p>
+            <details class="experience-branch">
+                <summary class="branch-header">
+                    <span class="branch-name">teaching_mentorship/</span>
+                    <span class="branch-description">Instruction, tutoring, and mentorship across university and private learning contexts.</span>
+                    <span class="branch-meta">6 roles · UIC, Varsity/Grade Potential, theCoderSchool, iCode, Arrayscape</span>
+                </summary>
+                <div class="branch-roles">
+                    <div class="timeline-item" onclick="openModal('modal-eng-success')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Engineering Success Program Mentor</div>
+                            <div class="company">University of Illinois Chicago</div>
+                            <div class="date-location">Jun 2025 - Present | Chicago, IL</div>
+                            <div class="job-description">
+                                <p>Facilitating ENGR 100/101: Engineering Success Seminar series across multiple sections, serving 120+ students with curriculum development and academic guidance.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="timeline-item" onclick="openModal('modal6')">
-                <div class="timeline-content">
-                    <div class="timeline-dot"></div>
-                    <div class="job-title">UI/UX & Machine Learning Intern</div>
-                    <div class="company">STEM-Away</div>
-                    <div class="date-location">Jun 2023 - Sep 2023 | San Francisco, CA (Remote)</div>
-                    <div class="job-description">
-                        <p>Designed and deployed ML pipelines on AWS with 10+ interns, integrating GPT API workflows. Contributed to deploying the ByteMasters platform with improved UI & UX designs.</p>
+                    <div class="timeline-item" onclick="openModal('modal3')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">CS Teaching Assistant</div>
+                            <div class="company">University of Illinois Chicago</div>
+                            <div class="date-location">Jan 2025 - May 2025, Aug 2025 - Dec 2025 | Chicago, IL</div>
+                            <div class="job-description">
+                                <p>Selected for re-appointment teaching CS 109: Programming for Engineers with MATLAB, supporting 600+ students across Spring and Fall 2025 semesters.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" onclick="openModal('modal-private-tutor')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Private Tutor</div>
+                            <div class="company">Varsity Tutors & Grade Potential Tutoring</div>
+                            <div class="date-location">Aug 2025 - Present | Remote & Greater Chicago Area</div>
+                            <div class="job-description">
+                                <p>Providing personalized online and in-person tutoring across 26+ subjects, including advanced mathematics, computer science, AI, ECE, test preparation, and individualized academic support.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" onclick="openModal('modal4')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Code Coach</div>
+                            <div class="company">The Coder School</div>
+                            <div class="date-location">Jan 2025 - Feb 2026 | Lombard, IL</div>
+                            <div class="job-description">
+                                <p>Teaching Python, Java, C++, & web dev in 1-on-1/group sessions. Directed 2 coding summer camps in Pygame & Java, retained 6+ long-term students from trials.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" onclick="openModal('modal-icode')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Technical Lead</div>
+                            <div class="company">iCode School Franchise</div>
+                            <div class="date-location">Jan 2025 - Jun 2025 | Glen Ellyn, IL</div>
+                            <div class="job-description">
+                                <p>Served as lead STEM instructor for trial and group sessions for students ages 5-15, teaching robotics, digital logic, and programming fundamentals.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" onclick="openModal('modal-arrayscape')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Scratch/Minecraft Instructor</div>
+                            <div class="company">Arrayscape Gaming, Inc.</div>
+                            <div class="date-location">Mar 2025 - Jul 2025 | Chicago, IL</div>
+                            <div class="job-description">
+                                <p>Introduced children to programming through Scratch and Minecraft-based learning sessions hosted across the Chicagoland area.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legacy separate Grade Potential card preserved after recombining private tutoring into one card.
+                    <div class="timeline-item" onclick="openModal('modal-grade-potential')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Private Tutor</div>
+                            <div class="company">Grade Potential Tutoring</div>
+                            <div class="date-location">Aug 2025 - Oct 2025 | Greater Chicago Area</div>
+                            <div class="job-description">
+                                <p>Provided private in-person tutoring for students across test preparation, mathematics, classroom performance, and individualized academic development.</p>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </details>
+
+            <details class="experience-branch">
+                <summary class="branch-header">
+                    <span class="branch-name">client_contract_engineering/</span>
+                    <span class="branch-description">Client-facing engineering, architecture, automation, and delivery work.</span>
+                    <span class="branch-meta">1 role · ArkBoosted LLC</span>
+                </summary>
+                <div class="branch-roles">
+                    <div class="timeline-item" onclick="openModal('modal-founding-engineer')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">Software Engineer</div>
+                            <div class="company">Arkboosted LLC</div>
+                            <div class="date-location">Sep 2025 - Present | Chicago, IL (Remote)</div>
+                            <div class="job-description">
+                                <p>Owned end-to-end execution of secure, scalable web and AI systems for client organizations, including system architecture, backend development, deployment, and iteration with a security-first development approach. Delivered production websites and high-converting landing pages, and designed an AI-powered support and intake system by building a pgvector-backed RAG agent serving a 700+ organization network to unify knowledge retrieval, automate intake, and support escalation. Additionally, built internal AI tooling using FastAPI and React to automate SEO, security, and performance audits and generate actionable reports, reducing manual audit time by approximately 90%.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </details>
+
+            <details class="experience-branch">
+                <summary class="branch-header">
+                    <span class="branch-name">education_foundation/</span>
+                    <span class="branch-description">Formal computer engineering foundation supporting the technical work above.</span>
+                    <span class="branch-meta">UIC · BS Computer Engineering · May 2027</span>
+                </summary>
+                <div class="branch-roles education-branch-content">
+                    <div class="education-card">
+                        <div class="education-content">
+                            <div class="university-name">University of Illinois Chicago</div>
+                            <div class="degree">BS in Computer Engineering
+                                <div style="margin-top: 0.5rem; font-size: 0.9em; color: #00ff41; font-style: italic;">
+                                    Minor in Mathematics (Applied Stats Focus)
+                                </div>
+                            </div>
+                            <div class="education-stats">
+                                <div class="edu-stat">
+                                    <span class="value">3.54</span>
+                                    <span class="label">Current GPA</span>
+                                </div>
+                                <div class="edu-stat">
+                                    <span class="value">May 2027</span>
+                                    <span class="label">Expected BS</span>
+                                </div>
+                            </div>
+
+                            <div style="background: rgba(0, 0, 0, 0.9); border: 1px solid #00ff41; border-radius: 5px; padding: 1rem; margin: 1rem 0; font-family: 'Fira Code', monospace; color: #00ff41;">
+                                <span style="color: #666;">// ECE Tracks Completed</span><br>
+                                <span style="color: #ff0040;">const</span> specializations = [<br>
+                                &nbsp;&nbsp;<span style="color: #ffff00;">"Computer & Networked Systems"</span>,<br>
+                                &nbsp;&nbsp;<span style="color: #ffff00;">"Data Science & Engineering"</span>,<br>
+                                &nbsp;&nbsp;<span style="color: #ffff00;">"Signal Processing"</span>,<br>
+                                ];<br><br>
+                                <span style="color: #ff0040;">const</span> minor = <span style="color: #ffff00;">"Mathematics"</span>;<br>
+                                <span style="color: #666;">// <a href="https://ece.uic.edu/undergraduate/tracks/" target="_blank" style="color: #00ff41; text-decoration: underline; cursor: pointer;">View UIC ECE Tracks</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legacy hls4ml training card preserved after removing Northwestern from education_foundation.
+                    <div class="timeline-item" onclick="openModal('modal-hls4ml')">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="job-title">hls4ml Summer School</div>
+                            <div class="company">Northwestern University / CERN / NSF</div>
+                            <div class="date-location">Aug 2024 | Evanston, IL</div>
+                            <div class="job-description">
+                                <p>Selected for a competitive edge-AI hardware accelerator program focused on converting ML models into FPGA-ready high-level synthesis workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </details>
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Legacy standalone Education section preserved after moving the card into experience_tree/.
     <section id="education" class="education">
         <h2 class="section-title">Education</h2>
         <div class="education-card">
@@ -529,7 +819,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 </div>
                 <div class="education-stats">
                     <div class="edu-stat">
-                        <span class="value">3.65</span>
+                        <span class="value">3.54</span>
                         <span class="label">Current GPA</span>
                     </div>
                     <div class="edu-stat">
@@ -552,32 +842,46 @@ I firmly believe that technology's true value lies in its ability to improve liv
             </div>
         </div>
     </section>
+    -->
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card" onclick="openModal('project-neuerra')">
+        <div class="project-index">
+            <div class="project-index-root">
+                <div class="project-index-path">engineering_portfolio/</div>
+                <div class="project-index-title">Engineering Portfolio</div>
+                <p>A collection of software systems, AI applications, infrastructure projects, research initiatives, and engineering tools built across industry, research, and independent work.</p>
+            </div>
+
+            <details class="project-bucket" open>
+                <summary class="project-bucket-header">
+                    <span class="project-bucket-name">client_platforms[]</span>
+                    <span class="project-bucket-description">Client, enterprise, and organization-backed systems delivered as usable platforms.</span>
+                    <span class="project-bucket-meta">4 systems</span>
+                </summary>
+                <div class="projects-grid project-bucket-grid">
+            <div class="project-card" onclick="openModal('project-enterprise-rag')">
                 <div class="project-header">
-                    <h3>Neuerra Platform </h3>
-                    <span class="project-status">ENTERPRISE</span>
+                    <h3>Enterprise RAG Support Agent</h3>
+                    <span class="project-status">PLATFORM AI</span>
                 </div>
-                <p><strong>Revolutionary AI-powered platform designed to eliminate the disconnect between talent strategy and business goals.</strong> Working directly with CEO Zohra Veach at Talent Strategy Experts to develop Neuerra (coming soon!), an enterprise-grade system tackling fundamental challenges in modern recruiting through end-to-end AI systems, multi-tenant architecture, and intelligent automation that defines the future of talent strategy.<br><br>
-<b>Mission Impact:</b> Fixing the disconnect between talent and business goals, revolutionizing recruiting through AI-driven insights, seamless candidate analysis, and strategic interview coordination that transforms how organizations approach talent acquisition.</p>
+                <p><strong>Scalable retrieval and support automation system for a multi-tenant SaaS environment.</strong> Built RAG infrastructure serving a 700+ organization network, using vector search, PostgreSQL/pgvector, and LLM workflows to improve knowledge retrieval, intake automation, and support escalation.<br><br>
+<b>Engineering Focus:</b> Multi-tenant retrieval architecture, vector query performance, source-grounded responses, support workflow automation, and reliable handoff paths for unresolved cases.</p>
                 <div class="project-tech">
-                    <span class="tech-tag">Multi-Tenant Architecture</span>
-                    <span class="tech-tag">Role-Based Access Control</span>
-                    <span class="tech-tag">AI Integration</span>
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">SQL</span>
-                    <span class="tech-tag">REST APIs</span>
-                    <span class="tech-tag">Backend Development</span>
-                    <span class="tech-tag">System Architecture</span>
-                    <span class="tech-tag">Data Security</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">pgvector</span>
+                    <span class="tech-tag">RAG Systems</span>
+                    <span class="tech-tag">LLMs</span>
+                    <span class="tech-tag">Vector Search</span>
+                    <span class="tech-tag">Multi-Tenant SaaS</span>
+                    <span class="tech-tag">Retrieval Infrastructure</span>
+                    <span class="tech-tag">Query Optimization</span>
+                    <span class="tech-tag">Support Automation</span>
+                    <span class="tech-tag">API Design</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://neuerraa.com/" target="_blank" onclick="event.stopPropagation()">visit neuerraa.com</a>
                     <a href="#" onclick="event.stopPropagation()">details</a>
                 </div>
             </div>
@@ -607,13 +911,38 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 </div>
             </div>
 
+            <div class="project-card" onclick="openModal('project-neuerra')">
+                <div class="project-header">
+                    <h3>Neuerra Platform </h3>
+                    <span class="project-status">ENTERPRISE</span>
+                </div>
+                <p><strong>Enterprise talent strategy platform built around multi-tenant AI systems, recruiting workflows, and business-alignment diagnostics.</strong> Worked on backend logic, RBAC, React modules, dashboards, API integrations, and deployment validation for a system designed to improve visibility across talent and business goals.<br><br>
+<b>Engineering Focus:</b> Multi-tenant architecture, data isolation, workflow automation, candidate analysis, and strategic interview coordination.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Multi-Tenant Architecture</span>
+                    <span class="tech-tag">Role-Based Access Control</span>
+                    <span class="tech-tag">AI Integration</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">REST APIs</span>
+                    <span class="tech-tag">Backend Development</span>
+                    <span class="tech-tag">System Architecture</span>
+                    <span class="tech-tag">Data Security</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://neuerraa.com/" target="_blank" onclick="event.stopPropagation()">visit neuerraa.com</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
             <div class="project-card" onclick="openModal('project-nexus')">
                 <div class="project-header">
-                    <h3>Nexus - Open Source Dev Platform</h3>
-                    <span class="project-status">OPEN-SOURCE</span>
+                    <h3>Fibinaci Enterprise Agent Map</h3>
+                    <span class="project-status">ENTERPRISE AI</span>
                 </div>
-                <p><strong>The home of the Open Source Revolution - collaborative dev platform for creators.</strong> Building a democratized ecosystem where tools are not paywalled but open sourced to the community. Features include advanced IDE with AI assistance, cloud Drive for version control, Community Feed for developer networking, and Turing AI assistant. Built by students, for students to shatter the status quo of bloated development tools.<br><br>
-<b>Technical Role:</b> Served as Technical Consultant combining hands-on full-stack development with strategic guidance. Completed development tasks across frontend and backend, led team members on technical implementations, and provided architectural recommendations on platform scope, agentic workflows, and system design during the initial engagement phase (Dec 2025 - Jan 2026).</p>
+                <p><strong>Enterprise AI infrastructure concept focused on mapping company systems, data, permissions, and workflows for agents.</strong> Fibinaci repositions the former Nexus platform around a sharper business problem: giving agents reliable enterprise context so they can act with less guessing, better governance, and stronger operational accuracy.<br><br>
+<b>Technical Role:</b> Helped shape the early redefinition from a broad developer platform into an enterprise-agent mapping direction, advising on platform scope, agentic workflows, feasibility, and system design.</p>
                 <div class="project-tech">
                     <span class="tech-tag">React</span>
                     <span class="tech-tag">Node.js</span>
@@ -621,46 +950,22 @@ I firmly believe that technology's true value lies in its ability to improve liv
                     <span class="tech-tag">JavaScript</span>
                     <span class="tech-tag">AWS</span>
                     <span class="tech-tag">Cloud Databases</span>
-                    <span class="tech-tag">WebSockets</span>
-                    <span class="tech-tag">Real-Time Collaboration</span>
-                    <span class="tech-tag">AI Integration</span>
+                    <span class="tech-tag">Enterprise AI</span>
+                    <span class="tech-tag">Agentic Workflows</span>
+                    <span class="tech-tag">Data Mapping</span>
                     <span class="tech-tag">LLMs</span>
-                    <span class="tech-tag">Open Source</span>
-                    <span class="tech-tag">Team Leadership</span>
+                    <span class="tech-tag">Governance</span>
+                    <span class="tech-tag">System Architecture</span>
                     <span class="tech-tag">GitHub Projects</span>
                     <span class="tech-tag">Agile Workflow</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://nexusdevops.com/" target="_blank" onclick="event.stopPropagation()">visit nexusdevops.com</a>
+                    <a href="https://fibinaci.com/" target="_blank" onclick="event.stopPropagation()">visit fibinaci.com</a>
                     <a href="#" onclick="event.stopPropagation()">details</a>
                 </div>
             </div>
 
-            <div class="project-card" onclick="openModal('project-arkboosted')">
-                <div class="project-header">
-                    <h3>AArkboosted Website Auditor</h3>
-                    <span class="project-status">TOOL</span>
-                </div>
-                <p><strong>Automated website audit tool for security, SEO, and UI/UX analysis.</strong> Comprehensive auditing platform that automates security checks, SEO optimization analysis, and user experience evaluations. Generates exportable PDF reports that cut manual audit time by 40%+, providing actionable insights for website optimization.<br><br>
-<b>Key Features:</b> Automated security scanning, SEO analysis, performance metrics, UI/UX evaluation, PDF report generation, and comprehensive website health scoring.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Tailwind CSS</span>
-                    <span class="tech-tag">SQLite</span>
-                    <span class="tech-tag">Google PageSpeed API</span>
-                    <span class="tech-tag">PDF Generation</span>
-                    <span class="tech-tag">Security Analysis</span>
-                    <span class="tech-tag">SEO Optimization</span>
-                    <span class="tech-tag">Performance Testing</span>
-                    <span class="tech-tag">Web Scraping</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/ak23bar/AArkboosted-Website-Auditor" target="_blank">repo</a>
-                    <a href="#" onclick="event.stopPropagation()">details</a>
-                </div>
-            </div>
-
+            <!-- Legacy standalone Arkboostedads.com card preserved after integrating it into Website Auditor.
             <div class="project-card" onclick="openModal('project-arkboostedads')">
                 <div class="project-header">
                     <h3>Arkboostedads.com</h3>
@@ -685,14 +990,50 @@ I firmly believe that technology's true value lies in its ability to improve liv
                     <a href="#" onclick="event.stopPropagation()">details</a>
                 </div>
             </div>
+            -->
+
+                </div>
+            </details>
+
+            <details class="project-bucket" open>
+                <summary class="project-bucket-header">
+                    <span class="project-bucket-name">applied_ai_interfaces[]</span>
+                    <span class="project-bucket-description">User-facing AI tools for code explanation, voice interaction, and recommendation workflows.</span>
+                    <span class="project-bucket-meta">4 systems</span>
+                </summary>
+                <div class="projects-grid project-bucket-grid">
+            <div class="project-card" onclick="openModal('project-codelingo')">
+                <div class="project-header">
+                    <h3>CodeLingo</h3>
+                    <span class="project-status">AI EDUCATION</span>
+                </div>
+                <p><strong>AI-powered code explanation tool built for students learning to read and reason through code.</strong> CodeLingo translates Python, JavaScript, and Java snippets into structured explanations at beginner, student, and teacher levels, with streaming output, quizzes, misconception review, and shareable snippets.<br><br>
+<b>Educational Focus:</b> Helps learners move beyond writing code into understanding execution flow, line-by-line logic, beginner mistakes, and core programming concepts.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Streamlit</span>
+                    <span class="tech-tag">Groq API</span>
+                    <span class="tech-tag">Llama 3.3</span>
+                    <span class="tech-tag">AI Education</span>
+                    <span class="tech-tag">Code Explanation</span>
+                    <span class="tech-tag">Prompt Engineering</span>
+                    <span class="tech-tag">Streaming UI</span>
+                    <span class="tech-tag">Quiz Generation</span>
+                    <span class="tech-tag">Python/JS/Java</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/CodeLingo" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
 
             <div class="project-card" onclick="openModal('project-matrix')">
                 <div class="project-header">
                     <h3>MATRIX-AI Voice Assistant</h3>
-                    <span class="project-status">PUBLIC</span>
+                    <span class="project-status">VOICE AI</span>
                 </div>
-                <p><strong>Voice AI assistant with real-time speech processing and neural voice synthesis.</strong> Advanced conversational AI powered by ElevenLabs neural voice synthesis with real-time speech processing and immersive Matrix-themed interface. Features continuous speech recognition, contextual conversations, and cross-platform audio optimization.<br><br>
-                <b>Key Features:</b> Real-time voice processing, neural voice synthesis, Matrix-themed CLI, continuous speech recognition, contextual conversations, ANSI terminal interface, and immersive cyberpunk experience.</p>
+                <p><strong>Voice AI assistant focused on real-time speech interaction, audio pipeline design, and conversational interface engineering.</strong> Built with Python and ElevenLabs to explore low-latency voice input/output, streaming responses, contextual interaction, and cross-platform audio behavior.<br><br>
+                <b>Key Features:</b> Speech recognition, neural voice synthesis, WebSocket streaming, terminal-based interaction, conversation context, audio routing, and system-level performance tuning.</p>
                 <div class="project-tech">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">ElevenLabs API</span>
@@ -715,11 +1056,11 @@ I firmly believe that technology's true value lies in its ability to improve liv
 
             <div class="project-card" onclick="openModal('project-personal-projects')">
                 <div class="project-header">
-                    <h3>AI Album Finder <span style="font-size:1.1rem;vertical-align:middle;"> </span></h3>
-                    <span class="project-status">PUBLIC</span>
+                    <h3>AI Album Finder</h3>
+                    <span class="project-status">RECOMMENDER AI</span>
                 </div>
-                <p><strong>AI-powered music discovery and analysis platform.</strong> Leverages Spotify's Web API and artificial intelligence for deep music insights, mood analysis, and personalized recommendations. Demonstrates advanced web development, API integration, and AI-powered data analysis.<br><br>
-<b>Key Features:</b> Audio feature analysis, mood profiling, smart recommendations, interactive frontend, and production-ready infrastructure with containerized deployment.</p>
+                <p><strong>User-facing recommendation interface that turns Spotify audio data into structured music discovery insights.</strong> Built as an applied AI web system for analyzing listening context, surfacing similar albums, and translating raw audio features into usable recommendations.<br><br>
+<b>Interface Focus:</b> Spotify API integration, audio feature analysis, recommendation logic, interactive frontend behavior, and containerized deployment for repeatable local execution.</p>
                 <div class="project-tech">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Flask</span>
@@ -728,10 +1069,10 @@ I firmly believe that technology's true value lies in its ability to improve liv
                     <span class="tech-tag">JavaScript</span>
                     <span class="tech-tag">HTML/CSS</span>
                     <span class="tech-tag">Spotify API</span>
-                    <span class="tech-tag">AI Integration</span>
-                    <span class="tech-tag">CLIP Models</span>
-                    <span class="tech-tag">Data Analysis</span>
-                    <span class="tech-tag">Web Development</span>
+                    <span class="tech-tag">Recommendation Systems</span>
+                    <span class="tech-tag">Audio Feature Analysis</span>
+                    <span class="tech-tag">Data Interfaces</span>
+                    <span class="tech-tag">Applied AI</span>
                     <span class="tech-tag">Containerization</span>
                 </div>
                 <div class="project-links">
@@ -740,110 +1081,64 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 </div>
             </div>
 
-            <div class="project-card" onclick="openModal('project-coderschool')">
+            <div class="project-card" onclick="openModal('project-language-feedback-api')">
                 <div class="project-header">
-                    <h3>Student Projects</h3>
-                    <span class="project-status">EDUCATION</span>
+                    <h3>LLM Language Feedback API</h3>
+                    <span class="project-status">AI API</span>
                 </div>
-                <p><strong>Educational programming repository showcasing student-guided development projects.</strong> Comprehensive collection of coding exercises and projects designed to build fundamental programming skills through hands-on learning. Features progressive difficulty levels from basic syntax to complex application development.<br><br>
-<b>Educational Impact:</b> Direct mentorship of 15+ students across multiple programming languages, custom curriculum development, and real-world project implementation experience.</p>
+                <p><strong>FastAPI microservice for reliable, multilingual language feedback from LLMs.</strong> Built a schema-safe correction API that analyzes learner-written sentences and returns structured feedback with defensive parsing, provider fallback, bounded repair retry, and validated response caching.<br><br>
+<b>System Focus:</b> Structured LLM output, multilingual behavior, correction reliability, OpenAI/Anthropic routing, JSON schema validation, and predictable API failure handling.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">OpenAI API</span>
+                    <span class="tech-tag">Anthropic API</span>
+                    <span class="tech-tag">LLM Reliability</span>
+                    <span class="tech-tag">Structured Output</span>
+                    <span class="tech-tag">JSON Schema</span>
+                    <span class="tech-tag">Multilingual AI</span>
+                    <span class="tech-tag">Provider Fallback</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Pytest</span>
+                    <span class="tech-tag">API Design</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/intern-task-2026" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+                </div>
+            </details>
+
+            <details class="project-bucket" open>
+                <summary class="project-bucket-header">
+                    <span class="project-bucket-name">ai_research[]</span>
+                    <span class="project-bucket-description">Academic and research-oriented AI work across vision, quant ML, and edge-AI hardware acceleration.</span>
+                    <span class="project-bucket-meta">3 systems</span>
+                </summary>
+                <div class="projects-grid project-bucket-grid">
+            <div class="project-card" onclick="openModal('project-cryptonest-quant')">
+                <div class="project-header">
+                    <h3>Crypt0nest Quant ML Workspaces</h3>
+                    <span class="project-status">QUANT ML</span>
+                </div>
+                <p><strong>Applied quantitative research and ML engineering workspaces developed during the Crypt0nest internship.</strong> Includes strategy replication, feature engineering, data hygiene, portfolio metrics, and model-oriented trading research across two Tekly Studio repositories.<br><br>
+<b>Research Focus:</b> Built and documented notebooks, audits, and quantitative experiments around market data pipelines, technical indicators, ML4T foundations, and mean-reversion strategy validation.</p>
                 <div class="project-tech">
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">HTML/CSS</span>
-                    <span class="tech-tag">Scratch</span>
-                    <span class="tech-tag">Web Development</span>
-                    <span class="tech-tag">Game Development</span>
-                    <span class="tech-tag">CLI Applications</span>
-                    <span class="tech-tag">Educational Design</span>
-                    <span class="tech-tag">Curriculum Development</span>
-                    <span class="tech-tag">Student Mentorship</span>
+                    <span class="tech-tag">Quant Research</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Trading Strategies</span>
+                    <span class="tech-tag">Feature Engineering</span>
+                    <span class="tech-tag">Data Hygiene</span>
+                    <span class="tech-tag">Backtesting</span>
+                    <span class="tech-tag">Portfolio Metrics</span>
+                    <span class="tech-tag">Jupyter Notebooks</span>
+                    <span class="tech-tag">Technical Indicators</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/ak23bar/Student-Projects" target="_blank">repo</a>
-                    <a href="#" onclick="event.stopPropagation()">details</a>
-                </div>
-            </div>
-            
-            <div class="project-card" onclick="openModal('project4')">
-                <div class="project-header">
-                    <h3>DSA_Library</h3>
-                    <span class="project-status">COURSEWORK</span>
-                </div>
-                <p><strong>Comprehensive data structures and algorithms implementation library showcasing advanced programming expertise.</strong> Features custom implementations of fundamental CS concepts through challenging coursework projects. Demonstrates deep understanding of algorithmic complexity, memory management, and performance optimization.<br><br>
-<b>Highlight Projects:</b> Search Engine with boolean logic operators, custom HashMap with linear probing collision resolution, and OpenStreetMap navigation system using Dijkstra's shortest path algorithm. All projects achieved maximum scores with additional extra credit recognition.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">STL Containers</span>
-                    <span class="tech-tag">Data Structures</span>
-                    <span class="tech-tag">Algorithms</span>
-                    <span class="tech-tag">Hash Tables</span>
-                    <span class="tech-tag">Graph Algorithms</span>
-                    <span class="tech-tag">Dijkstra's Algorithm</span>
-                    <span class="tech-tag">Search Engines</span>
-                    <span class="tech-tag">OpenStreetMap API</span>
-                    <span class="tech-tag">Performance Optimization</span>
-                    <span class="tech-tag">Memory Management</span>
-                    <span class="tech-tag">Template Programming</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/ak23bar/Data-Structures-and-Algorithms" target="_blank">repo</a>
-                    <a href="#" onclick="event.stopPropagation()">details</a>
-                    <a href="#" onclick="event.stopPropagation();" style="margin-left:0.5rem; color:#00ff41; text-decoration:underline;">highlight project</a>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="openModal('project-ultra-heat')">
-                <div class="project-header">
-                    <h3>Ultra Heat Sensor Alarm System</h3>
-                    <span class="project-status">EMBEDDED</span>
-                </div>
-                <p><strong>Real-time embedded safety monitoring system built on ARM Cortex-M4F microcontroller.</strong> Sophisticated dual-mode operation featuring ultrasonic distance detection and temperature sensing with visual/audible alerts. Showcases advanced firmware engineering, hardware-software integration, and real-time event-driven architecture—all implemented in C and ARM assembly.<br><br>
-<b>Key Features:</b> Precision ranging up to 5+ feet, three-tier alert system with color-coded LEDs, PWM-based musical tone generation, high-precision temperature sensing with 0.1°F resolution, and non-blocking event-driven architecture with WFI power optimization.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">ARM Cortex-M4F</span>
-                    <span class="tech-tag">C Programming</span>
-                    <span class="tech-tag">ARM Assembly</span>
-                    <span class="tech-tag">Tiva C (TM4C123)</span>
-                    <span class="tech-tag">Real-Time Systems</span>
-                    <span class="tech-tag">Interrupt-Driven Architecture</span>
-                    <span class="tech-tag">PWM Control</span>
-                    <span class="tech-tag">ADC Sampling</span>
-                    <span class="tech-tag">Ultrasonic Sensors</span>
-                    <span class="tech-tag">I2C Communication</span>
-                    <span class="tech-tag">Timer Capture</span>
-                    <span class="tech-tag">Event Scheduler</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/ak23bar/Ultra_Heat_Sensor" target="_blank">repo</a>
-                    <a href="#" onclick="event.stopPropagation()">details</a>
-                </div>
-            </div>
-
-            
-            <div class="project-card" onclick="openModal('project3')">
-                <div class="project-header">
-                    <h3>Embedded_Systems</h3>
-                    <span class="project-status">COURSEWORK</span>
-                </div>
-                <p><strong>Comprehensive embedded systems development portfolio showcasing ARM microcontroller expertise.</strong> Collection of real-time applications demonstrating sensor integration, interrupt handling, and hardware-software interfacing. Features custom sensor implementations, GPIO programming, timer/PWM control, and performance-optimized embedded solutions.<br><br>
-<b>Focus Areas:</b> Real-time systems programming, hardware abstraction layers, interrupt service routines, peripheral configuration (ADC, UART, I2C), and modular embedded C/ARM assembly development demonstrating bare-metal firmware expertise.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">ARM Assembly</span>
-                    <span class="tech-tag">C Programming</span>
-                    <span class="tech-tag">Tiva C Microcontroller</span>
-                    <span class="tech-tag">Real-Time Systems</span>
-                    <span class="tech-tag">Sensor Integration</span>
-                    <span class="tech-tag">Interrupt Handling</span>
-                    <span class="tech-tag">Hardware Interfacing</span>
-                    <span class="tech-tag">GPIO Programming</span>
-                    <span class="tech-tag">Timer/PWM Control</span>
-                    <span class="tech-tag">Embedded Debug</span>
-                    <span class="tech-tag">ADC Sampling</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/ak23bar/Embedded-Systems" target="_blank">repo</a>
+                    <a href="https://github.com/teklystudio/ml-track-ak23bar" target="_blank">ml repo</a>
+                    <a href="https://github.com/teklystudio/spring-lab-ak23bar" target="_blank">lab repo</a>
                     <a href="#" onclick="event.stopPropagation()">details</a>
                 </div>
             </div>
@@ -874,6 +1169,34 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 </div>
             </div>
 
+            <div class="project-card" onclick="openModal('project-hls4ml')">
+                <div class="project-header">
+                    <h3>hls4ml Edge-AI FPGA Projects</h3>
+                    <span class="project-status">EDGE AI</span>
+                </div>
+                <p><strong>FPGA-focused edge-AI project work from the hls4ml Summer School at Northwestern Engineering.</strong> Built and tested hardware-accelerated ML workflows through hands-on tutorials, a mini-hackathon, and design challenges using hls4ml to translate ML models toward FPGA deployment.<br><br>
+<b>Project Work:</b> Cartpole-style self-balancing controller on an FPGA testbed, live Pokemon card computer vision reader, and applied training in latency, resource utilization, and hardware-aware ML design.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">hls4ml</span>
+                    <span class="tech-tag">FPGA</span>
+                    <span class="tech-tag">High-Level Synthesis</span>
+                    <span class="tech-tag">Edge AI</span>
+                    <span class="tech-tag">Hardware Acceleration</span>
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">Control Systems</span>
+                    <span class="tech-tag">PyTorch/Keras</span>
+                    <span class="tech-tag">Latency Optimization</span>
+                    <span class="tech-tag">Resource Utilization</span>
+                    <span class="tech-tag">Hardware-Software Co-Design</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://www.mccormick.northwestern.edu/news/articles/2024/09/hls4ml-summer-school-offers-students-training-in-edge-ai-hardware-accelerators/" target="_blank" onclick="event.stopPropagation()">article</a>
+                    <a href="https://github.com/orgs/hls4ml-tutorial/teams/hls4ml-2024-summer-school" target="_blank" onclick="event.stopPropagation()">team page</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <!-- Legacy Web-Dev Collection card preserved after replacing visible slot with Crypt0nest quant work.
             <div class="project-card" onclick="openModal('project5')">
                 <div class="project-header">
                     <h3>Web-Dev Collection</h3>
@@ -899,7 +1222,9 @@ I firmly believe that technology's true value lies in its ability to improve liv
                     <a href="#" onclick="event.stopPropagation();" style="margin-left:0.5rem; color:#00ff41; text-decoration:underline;">highlight project</a>
                 </div>
             </div>
+            -->
 
+            <!-- Portfolio Website card preserved but hidden from the visible project archive.
             <div class="project-card" onclick="openModal('project-portfolio-website')">
                 <div class="project-header">
                     <h3>Portfolio Website</h3>
@@ -926,14 +1251,16 @@ I firmly believe that technology's true value lies in its ability to improve liv
                     <a href="#" onclick="event.stopPropagation()">details</a>
                 </div>
             </div>
+            -->
 
+            <!-- LeetCode Solutions card preserved but hidden from the visible project archive.
             <div class="project-card" onclick="openModal('project-leetcode')">
                 <div class="project-header">
                     <h3>LeetCode Solutions</h3>
-                    <span class="project-status" style="background:rgba(0,255,65,0.2);color:#00ff41;border:1px solid #00ff41;">INTERVIEW PREP</span>
+                    <span class="project-status" style="background:rgba(0,255,65,0.2);color:#00ff41;border:1px solid #00ff41;">ALGORITHMS</span>
                 </div>
-                <p><strong>Comprehensive collection of optimized coding interview solutions demonstrating algorithmic expertise.</strong> Features well-documented implementations across multiple programming languages with detailed complexity analysis and alternative approaches. Each solution includes comprehensive test cases and explanation of thought processes.<br><br>
-<b>Interview Focus:</b> Emphasis on clean code practices, optimal time/space complexity, and clear problem-solving methodology specifically designed for technical interview preparation and code quality demonstration.</p>
+                <p><strong>Algorithmic problem-solving archive with optimized solutions across core data structures and programming patterns.</strong> Features documented Python and Java implementations with complexity analysis, alternative approaches, and test cases for correctness.<br><br>
+<b>Engineering Focus:</b> Clean implementation, time/space tradeoff analysis, pattern recognition, and disciplined problem decomposition across arrays, strings, trees, graphs, dynamic programming, and data structure design.</p>
                 <div class="project-tech">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Java</span>
@@ -950,6 +1277,195 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/ak23bar/Leet-code" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+            -->
+
+                </div>
+            </details>
+
+            <details class="project-bucket" open>
+                <summary class="project-bucket-header">
+                    <span class="project-bucket-name">technical_foundations[]</span>
+                    <span class="project-bucket-description">Coursework and teaching artifacts across CS, embedded systems, architecture, and algorithms.</span>
+                    <span class="project-bucket-meta">4 systems</span>
+                </summary>
+                <div class="projects-grid project-bucket-grid">
+            <div class="project-card" onclick="openModal('project-coderschool')">
+                <div class="project-header">
+                    <h3>Student Projects</h3>
+                    <span class="project-status">EDUCATION</span>
+                </div>
+                <p><strong>Educational programming repository showcasing student-guided development projects.</strong> Comprehensive collection of coding exercises and projects designed to build fundamental programming skills through hands-on learning. Features progressive difficulty levels from basic syntax to complex application development.<br><br>
+<b>Educational Impact:</b> Direct mentorship of 15+ students across multiple programming languages, custom curriculum development, and real-world project implementation experience.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">Scratch</span>
+                    <span class="tech-tag">Web Development</span>
+                    <span class="tech-tag">Game Development</span>
+                    <span class="tech-tag">CLI Applications</span>
+                    <span class="tech-tag">Educational Design</span>
+                    <span class="tech-tag">Curriculum Development</span>
+                    <span class="tech-tag">Student Mentorship</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/Student-Projects" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project3')">
+                <div class="project-header">
+                    <h3>Embedded_Systems</h3>
+                    <span class="project-status">COURSEWORK</span>
+                </div>
+                <p><strong>Comprehensive embedded systems development portfolio showcasing ARM microcontroller expertise.</strong> Collection of real-time applications demonstrating sensor integration, interrupt handling, and hardware-software interfacing. Features custom sensor implementations, GPIO programming, timer/PWM control, and performance-optimized embedded solutions.<br><br>
+<b>Focus Areas:</b> Real-time systems programming, hardware abstraction layers, interrupt service routines, peripheral configuration (ADC, UART, I2C), and modular embedded C/ARM assembly development demonstrating bare-metal firmware expertise.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">ARM Assembly</span>
+                    <span class="tech-tag">C Programming</span>
+                    <span class="tech-tag">Tiva C Microcontroller</span>
+                    <span class="tech-tag">Real-Time Systems</span>
+                    <span class="tech-tag">Sensor Integration</span>
+                    <span class="tech-tag">Interrupt Handling</span>
+                    <span class="tech-tag">Hardware Interfacing</span>
+                    <span class="tech-tag">GPIO Programming</span>
+                    <span class="tech-tag">Timer/PWM Control</span>
+                    <span class="tech-tag">Embedded Debug</span>
+                    <span class="tech-tag">ADC Sampling</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/Embedded-Systems" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project-computer-organization')">
+                <div class="project-header">
+                    <h3>Computer Organization Portfolio</h3>
+                    <span class="project-status">ARCHITECTURE</span>
+                </div>
+                <p><strong>Digital logic and computer architecture portfolio covering Verilog hardware design and MIPS assembly optimization.</strong> Implements adder architectures, testbenches, and low-level assembly programs that demonstrate hardware arithmetic, register management, and processor-level reasoning.<br><br>
+<b>Systems Focus:</b> Ripple-carry, carry-lookahead, and prefix-parallel adders; MIPS Fibonacci/parity programs; and tradeoff analysis across delay, area, power, and algorithmic efficiency.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Verilog</span>
+                    <span class="tech-tag">MIPS Assembly</span>
+                    <span class="tech-tag">Digital Logic</span>
+                    <span class="tech-tag">Computer Architecture</span>
+                    <span class="tech-tag">Adder Design</span>
+                    <span class="tech-tag">Testbenches</span>
+                    <span class="tech-tag">Low-Level Programming</span>
+                    <span class="tech-tag">Hardware Arithmetic</span>
+                    <span class="tech-tag">Register Management</span>
+                    <span class="tech-tag">Performance Tradeoffs</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/Computer-Organization" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project4')">
+                <div class="project-header">
+                    <h3>DSA_Library</h3>
+                    <span class="project-status">COURSEWORK</span>
+                </div>
+                <p><strong>Comprehensive data structures and algorithms implementation library showcasing advanced programming expertise.</strong> Features custom implementations of fundamental CS concepts through challenging coursework projects. Demonstrates deep understanding of algorithmic complexity, memory management, and performance optimization.<br><br>
+<b>Highlight Projects:</b> Search Engine with boolean logic operators, custom HashMap with linear probing collision resolution, and OpenStreetMap navigation system using Dijkstra's shortest path algorithm. All projects achieved maximum scores with additional extra credit recognition.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">STL Containers</span>
+                    <span class="tech-tag">Data Structures</span>
+                    <span class="tech-tag">Algorithms</span>
+                    <span class="tech-tag">Hash Tables</span>
+                    <span class="tech-tag">Graph Algorithms</span>
+                    <span class="tech-tag">Dijkstra's Algorithm</span>
+                    <span class="tech-tag">Search Engines</span>
+                    <span class="tech-tag">OpenStreetMap API</span>
+                    <span class="tech-tag">Performance Optimization</span>
+                    <span class="tech-tag">Memory Management</span>
+                    <span class="tech-tag">Template Programming</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/Data-Structures-and-Algorithms" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                    <a href="#" onclick="event.stopPropagation();" style="margin-left:0.5rem; color:#00ff41; text-decoration:underline;">highlight project</a>
+                </div>
+            </div>
+
+                </div>
+            </details>
+
+            <details class="project-bucket" open>
+                <summary class="project-bucket-header">
+                    <span class="project-bucket-name">hardware_systems[]</span>
+                    <span class="project-bucket-description">Hardware-centered systems involving sensors, microcontrollers, firmware, and real-time behavior.</span>
+                    <span class="project-bucket-meta">1 system</span>
+                </summary>
+                <div class="projects-grid project-bucket-grid">
+            <div class="project-card" onclick="openModal('project-ultra-heat')">
+                <div class="project-header">
+                    <h3>Ultra Heat Sensor Alarm System</h3>
+                    <span class="project-status">EMBEDDED</span>
+                </div>
+                <p><strong>Real-time embedded safety monitoring system built on ARM Cortex-M4F microcontroller.</strong> Sophisticated dual-mode operation featuring ultrasonic distance detection and temperature sensing with visual/audible alerts. Showcases advanced firmware engineering, hardware-software integration, and real-time event-driven architecture—all implemented in C and ARM assembly.<br><br>
+<b>Key Features:</b> Precision ranging up to 5+ feet, three-tier alert system with color-coded LEDs, PWM-based musical tone generation, high-precision temperature sensing with 0.1°F resolution, and non-blocking event-driven architecture with WFI power optimization.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">ARM Cortex-M4F</span>
+                    <span class="tech-tag">C Programming</span>
+                    <span class="tech-tag">ARM Assembly</span>
+                    <span class="tech-tag">Tiva C (TM4C123)</span>
+                    <span class="tech-tag">Real-Time Systems</span>
+                    <span class="tech-tag">Interrupt-Driven Architecture</span>
+                    <span class="tech-tag">PWM Control</span>
+                    <span class="tech-tag">ADC Sampling</span>
+                    <span class="tech-tag">Ultrasonic Sensors</span>
+                    <span class="tech-tag">I2C Communication</span>
+                    <span class="tech-tag">Timer Capture</span>
+                    <span class="tech-tag">Event Scheduler</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/Ultra_Heat_Sensor" target="_blank">repo</a>
+                    <a href="#" onclick="event.stopPropagation()">details</a>
+                </div>
+            </div>
+
+                </div>
+            </details>
+
+            <details class="project-bucket" open>
+                <summary class="project-bucket-header">
+                    <span class="project-bucket-name">independent_tools[]</span>
+                    <span class="project-bucket-description">Self-directed tools and systems built to improve workflows, validate ideas, or support my own work.</span>
+                    <span class="project-bucket-meta">2 systems</span>
+                </summary>
+                <div class="projects-grid project-bucket-grid">
+            <div class="project-card" onclick="openModal('project-arkboosted')">
+                <div class="project-header">
+                    <h3>AArkboosted Website Auditor</h3>
+                    <span class="project-status">TOOL</span>
+                </div>
+                <p><strong>Automated website audit tool for security, SEO, and UI/UX analysis.</strong> Comprehensive auditing platform that automates security checks, SEO optimization analysis, and user experience evaluations. Generates exportable PDF reports that cut manual audit time by 40%+, providing actionable insights for website optimization.<br><br>
+<b>Key Features:</b> Automated security scanning, SEO analysis, performance metrics, UI/UX evaluation, PDF report generation, and comprehensive website health scoring.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">Google PageSpeed API</span>
+                    <span class="tech-tag">PDF Generation</span>
+                    <span class="tech-tag">Security Analysis</span>
+                    <span class="tech-tag">SEO Optimization</span>
+                    <span class="tech-tag">Performance Testing</span>
+                    <span class="tech-tag">Web Scraping</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ak23bar/AArkboosted-Website-Auditor" target="_blank">repo</a>
+                    <a href="https://arkboostedads.com" target="_blank" onclick="event.stopPropagation()">arkboosted site</a>
                     <a href="#" onclick="event.stopPropagation()">details</a>
                 </div>
             </div>
@@ -980,13 +1496,15 @@ I firmly believe that technology's true value lies in its ability to improve liv
                     <a href="#" onclick="event.stopPropagation()">details</a>
                 </div>
             </div>
+                </div>
+            </details>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2 class="section-title">Contact</h2>
-        <div class="terminal-window" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
+        <div class="terminal-window contact-terminal" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
             <div class="terminal-header" style="background:#00ff41; border-top-left-radius:16px; border-top-right-radius:16px; padding:0.8rem 1.2rem; display:flex; align-items:center; justify-content:space-between;">
                 <span>akbar@contact:~$</span>
                 <div class="terminal-buttons">
@@ -996,10 +1514,10 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 </div>
             </div>
             <div class="terminal-content">
-                <div class="terminal-line terminal-prompt">echo "Ready to drive innovation and deliver results"</div>
-                <div class="terminal-line">Computer Engineer specializing in AI/ML, fullstack development, and embedded systems. Proven track record of delivering scalable solutions and driving measurable impact across diverse technical domains.</div>
-                <div class="terminal-line terminal-prompt">cat availability.txt</div>
-                <div class="terminal-line">Available for full-time roles, contract work, and strategic consulting. Let's build something extraordinary together.</div>
+                <div class="terminal-line terminal-prompt">cat contact_context.txt</div>
+                <div class="terminal-line">I build AI systems, backend infrastructure, and automation solutions across industry, research, education, and client-facing environments.</div>
+                <div class="terminal-line terminal-prompt">cat best_next_step.txt</div>
+                <div class="terminal-line">For engineering opportunities, consulting engagements, technical mentorship, or collaboration, email is the best starting point. LinkedIn and GitHub provide additional professional and technical context.</div>
 
             </div>
         </div>
@@ -1009,15 +1527,15 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 <div class="contact-icon">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <h4 style="color:#ffff00;margin-bottom:0.5rem;font-size:1.2rem;font-family:'Share Tech Mono',monospace;">Professional Email: Personal | Business Inquiries</h4>
-                <p style="color:#cccccc;margin-bottom:1rem;font-family:'Fira Code',monospace;">For Opportunities, Collaborations, and Inquiries</p>
-                <div style="font-family:'Fira Code',monospace;">
-                    <a href="mailto:akbaraman797@gmail.com" style="color:#00ff41;text-decoration:none;font-weight:500;">akbaraman797@gmail.com</a>
-                    <span style="color:#888; margin:0 0.5rem;">|</span>
-                    <a href="mailto:ak@arkboostedads.com" style="color:#00ff41;text-decoration:none;font-weight:500;">ak@arkboostedads.com</a>
+                <h4>Start a Conversation</h4>
+                <p>For engineering opportunities, consulting engagements, project discussions, technical mentorship, and professional inquiries.</p>
+                <div class="contact-links">
+                    <a href="mailto:akbaraman797@gmail.com">akbaraman797@gmail.com</a>
+                    <a href="mailto:ak@arkboostedads.com">ak@arkboostedads.com</a>
                 </div>
             </div>
 
+            <!-- Legacy direct phone card preserved; email remains the preferred contact path.
             <div class="contact-card">
                 <div class="contact-icon">
                     <i class="fas fa-phone"></i>
@@ -1034,27 +1552,43 @@ I firmly believe that technology's true value lies in its ability to improve liv
                     </div>
                 </div>
             </div>
+            -->
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h4>Resume</h4>
+                <p>A concise overview of professional experience, technical expertise, leadership, research, and selected engineering work.</p>
+                <div class="contact-links">
+                    <a href="assets/files/Akbar_Resume.pdf" target="_blank">View Resume</a>
+                </div>
+            </div>
 
             <div class="contact-card">
                 <div class="contact-icon">
                     <i class="fab fa-linkedin"></i>
                 </div>
-                <h4 style="color:#ffff00;margin-bottom:0.5rem;font-size:1.2rem;font-family:'Share Tech Mono',monospace;">LinkedIn</h4>
-                <p style="color:#cccccc;margin-bottom:1rem;font-family:'Fira Code',monospace;">Professional networking and career opportunities</p>
-                <a href="https://linkedin.com/in/akbar-aman-94b1b6263" target="_blank" style="color:#00ff41;text-decoration:none;font-weight:500;font-family:'Fira Code',monospace;">Connect →</a>
+                <h4>LinkedIn</h4>
+                <p>Professional experience, career updates, recommendations, certifications, and industry-facing profile information.</p>
+                <div class="contact-links">
+                    <a href="https://linkedin.com/in/akbar-aman-94b1b6263" target="_blank">Connect on LinkedIn</a>
+                </div>
             </div>
 
             <div class="contact-card">
                 <div class="contact-icon">
                     <i class="fab fa-github"></i>
                 </div>
-                <h4 style="color:#ffff00;margin-bottom:0.5rem;font-size:1.2rem;font-family:'Share Tech Mono',monospace;">GitHub</h4>
-                <p style="color:#cccccc;margin-bottom:1rem;font-family:'Fira Code',monospace;">Technical projects, open source contributions</p>
-                <a href="https://github.com/ak23bar" target="_blank" style="color:#00ff41;text-decoration:none;font-weight:500;font-family:'Fira Code',monospace;">@ak23bar →</a>
+                <h4>GitHub</h4>
+                <p>Engineering projects, software systems, research implementations, technical experiments, and development history.</p>
+                <div class="contact-links">
+                    <a href="https://github.com/ak23bar" target="_blank">@ak23bar</a>
+                </div>
             </div>
         </div>
 
-       <!-- TALK TO THE MATRIX Section -->
+       <!-- MATRIX Assistant Section -->
 <div style="margin-top: 3rem; text-align: center;">
     <div class="terminal-window" style="background:rgba(0,0,0,0.65);padding:0;border-radius:16px;">
         <div class="terminal-header" style="background:#00ff41; border-top-left-radius:16px; border-top-right-radius:16px; padding:0.8rem 1.2rem; display:flex; align-items:center; justify-content:space-between;">
@@ -1066,31 +1600,31 @@ I firmly believe that technology's true value lies in its ability to improve liv
             </div>
         </div>
         <div class="terminal-content" style="padding: 2.5rem; text-align: center;">
-            <div class="terminal-line terminal-prompt" style="margin-bottom: 1rem;">./start_matrix_conversation.sh</div>
-            <div class="terminal-line" style="margin-bottom: 1.5rem; color: #00ff41; font-size: 1.1rem;">MATRIX AGENT ONLINE - VOICE & TEXT READY</div>
+            <div class="terminal-line terminal-prompt" style="margin-bottom: 1rem;">cat assistant_interface.txt</div>
+            <div class="terminal-line" style="margin-bottom: 1.5rem; color: #00ff41; font-size: 1.1rem;">PORTFOLIO ASSISTANT INTERFACE</div>
             
             <h3 style="color: #ffff00; margin-bottom: 0.8rem; font-family: 'Share Tech Mono', monospace; font-size: 1.4rem;">
-                TALK TO THE MATRIX
+                Ask About My Work
             </h3>
             
-            <p style="color: #cccccc; margin-bottom: 1rem; font-family: 'Fira Code', monospace; line-height: 1.6;">
-                Experience my MATRIX voice AI assistant powered by ElevenLabs. Ask about my projects, experience, or technical skills through natural conversation - both voice and text supported.
+            <p style="color: #cccccc; margin: 0 auto 1rem; max-width: 760px; font-family: 'Fira Code', monospace; line-height: 1.6;">
+                An experimental voice and text assistant for navigating this portfolio. Use it to ask about my experience, projects, technical focus areas, teaching work, or how to get in touch.
             </p>
             
-            <div style="color: #ffff00; font-family: 'Fira Code', monospace; font-size: 0.9rem; margin-bottom: 2rem; padding: 0.8rem; background: rgba(255,255,0,0.1); border: 1px solid #ffff00; border-radius: 4px;">
-                <strong>Note:</strong> AI agent requires ElevenLabs credits to be active. Currently configured and ready for deployment when needed.
+            <div style="color: #cccccc; font-family: 'Fira Code', monospace; font-size: 0.9rem; margin: 0 auto 2rem; max-width: 760px; padding: 0.8rem; background: rgba(0,255,65,0.06); border: 1px solid rgba(0,255,65,0.35); border-radius: 4px; text-align:left;">
+                <strong style="color:#00ff41;">Prototype note:</strong> This assistant is an optional portfolio interface powered by ElevenLabs. Availability may vary depending on service credits and deployment state.
             </div>
             
             <!-- Widget Container Box - Expanded and optimized -->
             <div style="
                 background: rgba(0, 0, 0, 0.9);
-                border: 2px solid #00ff41;
-                border-radius: 12px;
+                border: 1px solid rgba(0, 255, 65, 0.5);
+                border-radius: 8px;
                 padding: 2rem;
                 margin: 2rem auto 0;
                 max-width: 700px;
                 width: 90%;
-                box-shadow: 0 0 20px rgba(0, 255, 65, 0.4), inset 0 0 10px rgba(0, 255, 65, 0.1);
+                box-shadow: 0 0 18px rgba(0, 255, 65, 0.18), inset 0 0 10px rgba(0, 255, 65, 0.08);
                 position: relative;
                 overflow: hidden;
                 backdrop-filter: blur(10px);
@@ -1117,9 +1651,9 @@ I firmly believe that technology's true value lies in its ability to improve liv
                     color: #00ff41;
                     text-align: center;
                     font-weight: bold;
-                    letter-spacing: 1px;
+                    letter-spacing: 0;
                 ">
-                    ◉ MATRIX_AI_INTERFACE_ACTIVE ◉
+                    portfolio_assistant.session
                 </div>
                 
                 <!-- Widget content area - Much larger -->
@@ -1165,11 +1699,60 @@ I firmly believe that technology's true value lies in its ability to improve liv
 </style>
 
     <!-- Experience Detail Modals -->
+    <div id="modal-ahead" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>AI Intern | AHEAD</h2>
+            <p><strong>Duration:</strong> May 2026 - Present</p>
+            <p><strong>Location:</strong> Chicago, IL (Hybrid)</p>
+            <h3>Role Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;margin-bottom:1rem;">
+                Supporting AHEAD's internal enterprise AI team by helping turn platforms like Glean and Claude into usable, governed, and scalable internal workflows. The role sits between AI platform operations, knowledge systems, workflow design, agent and skill development support, QA, documentation, and internal enablement.
+            </p>
+            <h3>Focus Areas</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Enterprise AI Enablement:</strong> Supporting internal adoption of GPT and agentic platforms across presales, operations, and business functions</li>
+                <li><strong>Connector Quality & Governance:</strong> Assessing data connectors, validating permissions and crawl behavior, and documenting setup status, risks, and blockers</li>
+                <li><strong>Agent Testing:</strong> Creating test cases, validating expected behavior, logging QA findings, and identifying edge cases or missing instructions</li>
+                <li><strong>Skills Development:</strong> Drafting reusable skill definitions with clear instructions, triggers, guardrails, ownership, and documentation</li>
+                <li><strong>Knowledge Systems:</strong> Building SOPs, templates, request guides, decision logs, and Confluence/SharePoint structures that make AI work repeatable</li>
+                <li><strong>Workflow Standardization:</strong> Translating ambiguous internal AI use cases into reusable artifacts, documentation, and business-facing summaries</li>
+            </ul>
+            <h3>Typical Deliverables</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Connector assessments, validation notes, and quality audit findings</li>
+                <li>Agent specs, QA logs, test cases, and improvement recommendations</li>
+                <li>Reusable skill definitions, catalog entries, SOP pages, templates, and request guides</li>
+                <li>Concise research summaries, slide decks, and governance recommendations for internal stakeholders</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-linkedin-red-team" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>AI Safety Evaluator / Red Team Prompt Engineer | LinkedIn</h2>
+            <p><strong>Duration:</strong> Apr 2026 - Ju 2026</p>
+            <p><strong>Location:</strong> Remote | Contract</p>
+            <h3>Role Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;margin-bottom:1rem;">
+                Supported LinkedIn's AI safety initiatives through adversarial prompt generation, structured safety classification, severity scoring, and policy-grounded rationale writing.
+            </p>
+            <h3>Key Responsibilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Generated adversarial prompts to evaluate model robustness, safety boundaries, and reliability</li>
+                <li>Applied structured safety classifications and severity scoring to model outputs</li>
+                <li>Produced policy-grounded rationales to support consistent evaluation workflows</li>
+                <li>Contributed to production-oriented LLM trustworthiness and safety evaluation processes</li>
+            </ul>
+        </div>
+    </div>
+
     <div id="modal-crypt0nest" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Quantitative Research & AI/ML Engineering Intern | Crypt0nest.io</h2>
-            <p><strong>Duration:</strong> Jan 2026 - Present (2 months)</p>
+            <p><strong>Duration:</strong> Jan 2026 - May 2026</p>
             <p><strong>Location:</strong> Remote</p>
             <p><strong>Company:</strong> Tekly Studio - Crypt0nest Quantitative Research Lab</p>
             
@@ -1185,6 +1768,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 <li><strong>Machine Learning Workflows:</strong> Building and optimizing ML workflows used to replicate and validate quantitative trading strategies</li>
                 <li><strong>Backtesting & Validation:</strong> Working under strict backtesting and data integrity constraints to ensure strategy reliability and prevent overfitting</li>
                 <li><strong>Portfolio Intelligence Systems:</strong> Contributing to AI-driven portfolio intelligence systems that analyze and optimize crypto market positions</li>
+                <li><strong>Intern Lead Support:</strong> Promoted to Intern Lead for peer pull requests, technical questions, and code review support</li>
             </ul>
 
             <h3>Technical Focus Areas</h3>
@@ -1215,7 +1799,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
     <div id="modal-founding-engineer" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Founding Engineer | Arkboosted LLC</h2>
+            <h2>Software Engineer | Arkboosted LLC</h2>
             <p><strong>Duration:</strong> Sep 2025 - Present</p>
             <p><strong>Location:</strong> Chicago, IL (Remote)</p>
             <p><strong>Company Website:</strong> <a href="https://arkboostedads.com" target="_blank" style="color:#00ff41;text-decoration:underline;">arkboostedads.com</a></p>
@@ -1256,63 +1840,30 @@ I firmly believe that technology's true value lies in its ability to improve liv
     <div id="modal-nexus" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Technical Consultant | Nexus</h2>
+            <h2>Technical Consultant | Fibinaci (formerly Nexus)</h2>
             <p><strong>Duration:</strong> Dec 2025 - Jan 2026 (2 months)</p>
             <p><strong>Location:</strong> Princeton, New Jersey, United States (Remote)</p>
-            <p><strong>Website:</strong> <a href="https://nexusdevops.com/" target="_blank" style="color: #00ff41; text-decoration: underline;">nexusdevops.com</a></p>
+            <p><strong>Website:</strong> <a href="https://fibinaci.com/" target="_blank" style="color: #00ff41; text-decoration: underline;">fibinaci.com</a></p>
             
-            <h3>About Nexus</h3>
+            <h3>Role Overview</h3>
             <p style="color:#cccccc;font-family:'Fira Code',monospace;margin-bottom:1rem;">
-                Nexus is the home of the Open Source Revolution - a collaborative dev community for creators where tools are not paywalled but instead open sourced to the community. Built by students, for students, Nexus aims to democratize the coding ecosystem and shatter the status quo of bloated, paywall-locked development tools like Cursor. We're bringing a revolution against paywalls and premium features.
+                Short contract engagement supporting the founding team during the strategic shift from Nexus into Fibinaci, an enterprise AI platform focused on building a navigable map of a company's systems, data, permissions, and workflows for agents. My work helped clarify the early direction from a broad developer platform into a sharper enterprise-agent infrastructure concept.
             </p>
 
-            <h3>Role & Responsibilities</h3>
+            <h3>Key Contributions</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Product Direction Assessment:</strong> Collaborated with founding team to evaluate and shape strategic direction for developer-focused AI platform</li>
-                <li><strong>Architectural Guidance:</strong> Delivered system-level recommendations on platform scope, technical feasibility, and agentic workflows to establish technical foundation</li>
-                <li><strong>Full-Stack Development:</strong> Performed hands-on frontend and backend development work, completing assigned tasks and implementing features while ensuring alignment with core business objectives</li>
-                <li><strong>Team Leadership:</strong> Led team members on technical implementations, provided guidance on development approaches, and coordinated work across multiple developers</li>
-                <li><strong>System Design Advisory:</strong> Provided high-level system design recommendations for cloud architecture, database optimization, and AWS infrastructure planning</li>
-                <li><strong>Strategic Planning:</strong> Advised on technical roadmap and implementation strategies to establish strategic clarity during initial engagement phase</li>
+                <li>Helped reassess product direction and narrow the platform around enterprise context, agent reliability, and operational AI use cases</li>
+                <li>Advised on system-level concepts for agentic workflows, enterprise data navigation, permissions, and implementation feasibility</li>
+                <li>Contributed early frontend/backend support while keeping technical work aligned with the emerging business thesis</li>
+                <li>Provided recommendations around cloud architecture, data modeling, collaboration workflows, and team execution structure</li>
             </ul>
-
-            <h3>Platform Features & Technology</h3>
-            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>IDE:</strong> Advanced code editor with AI assistance and real-time collaboration features</li>
-                <li><strong>Drive:</strong> Cloud storage and version control for projects and assets</li>
-                <li><strong>Community Feed:</strong> Developer network for sharing creations and collaboration</li>
-                <li><strong>Turing AI:</strong> Intelligent AI assistant for faster, smarter coding without leaving your tab</li>
-                <li><strong>Live Collab:</strong> Real-time multi-user file editing for efficient teamwork and faster project delivery</li>
-            </ul>
-
-            <h3>Team Structure & Management</h3>
-            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Architecture/Resource Team:</strong> Specializes in cloud databases, efficient resource management (storage and compute), AWS optimization, and client-side caching dynamics</li>
-                <li><strong>Algo/AI/Search Team:</strong> Handles social features, AI integration, algorithm needs, search functionality, and LLM implementation</li>
-                <li><strong>Full-Stack Developers:</strong> Each dev takes responsibility for feature sets, works on their branch, manages database integration, and submits pull requests for review</li>
-            </ul>
-
-            <h3>Weekly Development Workflow</h3>
-            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>1. Feedback Collection:</strong> Gather user feedback and prioritize feature ideas</li>
-                <li><strong>2. Task Creation:</strong> Define and document tasks in GitHub Projects</li>
-                <li><strong>3. Assignment:</strong> Distribute tasks to appropriate team members based on expertise</li>
-                <li><strong>4. Development:</strong> Design UI (using shadcn and AI-assisted design), implement backend and frontend code, and test thoroughly</li>
-                <li><strong>5. Review & Deployment:</strong> Submit pull requests, conduct code reviews, and merge approved changes</li>
-            </ul>
-
-            <h3>Impact & Contribution</h3>
-            <p style="color:#cccccc;font-family:'Fira Code',monospace;margin-bottom:1rem;">
-                Provided foundational technical guidance during the initial phase of Nexus, an open source collaborative platform challenging proprietary development tools. Helped establish technical direction and architectural framework for a platform aimed at democratizing development tools for students and developers from prestigious universities (UPenn, NYU, Rutgers, UMD, Johns Hopkins), contributing to the mission of making powerful development tools accessible through open source principles.
-            </p>
 
             <h3>Key Technologies</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Full-Stack:</strong> React, Node.js, JavaScript, TypeScript</li>
-                <li><strong>Cloud & Infrastructure:</strong> AWS, cloud databases, caching strategies, resource optimization</li>
-                <li><strong>AI Integration:</strong> LLMs, Turing AI assistant, AI-powered development tools</li>
-                <li><strong>Collaboration Tools:</strong> Real-time collaboration, WebSockets, version control</li>
-                <li><strong>Management:</strong> GitHub Projects, agile workflow, code review processes, team coordination</li>
+                <li>React, Node.js, JavaScript, TypeScript</li>
+                <li>AWS, cloud databases, caching strategies, and resource planning</li>
+                <li>LLM integration, agentic workflows, enterprise data mapping, and AI platform architecture</li>
+                <li>GitHub Projects, agile workflow, code review, and technical coordination</li>
             </ul>
         </div>
     </div>
@@ -1321,7 +1872,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>AI Systems Engineer Intern | Talent Strategy Experts</h2>
-            <p><strong>Duration:</strong> Oct 2025 - Present</p>
+            <p><strong>Duration:</strong> Oct 2025 - Mar 2026</p>
             <p><strong>Location:</strong> San Jose, CA (Remote)</p>
             <p><strong>Platform:</strong> <a href="https://neuerraa.com/" target="_blank" style="color: #00ff41; text-decoration: underline;">neuerraa.com</a></p>
             
@@ -1407,7 +1958,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>ML Red Team Fellow | Handshake (MOVE Fellowship)</h2>
-            <p><strong>Duration:</strong> Sep 2025 - Present</p>
+            <p><strong>Duration:</strong> Aug 2025 - Apr 2026</p>
             <p><strong>Location:</strong> Remote</p>
             <h3>Key Responsibilities</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
@@ -1423,7 +1974,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>LLM: Evaluation Specialist | Alignerr</h2>
-            <p><strong>Duration:</strong> Sep 2025 - Present </p>
+            <p><strong>Duration:</strong> Sep 2025 - Apr 2026</p>
             <p><strong>Location:</strong> Chicago, IL (Remote) | Contract</p>
             <h3>Key Responsibilities</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
@@ -1464,7 +2015,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Engineering Success Program Mentor (ENGR 100/101) | University of Illinois Chicago</h2>
-            <p><strong>Duration:</strong> Aug 2025 - Present (Fall & Spring Semesters)</p>
+            <p><strong>Duration:</strong> Jun 2025 - Present</p>
             <p><strong>Location:</strong> Chicago, IL (On-site)</p>
             <h3>Key Responsibilities</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
@@ -1503,6 +2054,38 @@ I firmly believe that technology's true value lies in its ability to improve liv
         </div>
     </div>
 
+    <div id="modal-icode" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Technical Lead | iCode School Franchise</h2>
+            <p><strong>Duration:</strong> Jan 2025 - Jun 2025</p>
+            <p><strong>Location:</strong> Glen Ellyn, IL (On-site)</p>
+            <h3>Key Responsibilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Served as lead STEM instructor for trial and group sessions for students ages 5-15</li>
+                <li>Taught programming fundamentals, VEX robotics, digital logic, and technical problem solving</li>
+                <li>Guided young learners through structured technical activities and hands-on STEM lessons</li>
+                <li>Supported student engagement, classroom flow, and parent-facing communication during sessions</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-arrayscape" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Scratch/Minecraft Instructor | Arrayscape Gaming, Inc.</h2>
+            <p><strong>Duration:</strong> Mar 2025 - Jul 2025</p>
+            <p><strong>Location:</strong> Chicago, IL (On-site)</p>
+            <h3>Key Responsibilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Introduced children to programming concepts through Scratch-based instruction</li>
+                <li>Used Minecraft-centered learning environments to support engagement and computational thinking</li>
+                <li>Delivered sessions across scheduled events throughout the Chicagoland area</li>
+                <li>Helped students connect creative game-based activities with core programming logic</li>
+            </ul>
+        </div>
+    </div>
+
     <div id="modal5" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -1527,6 +2110,29 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 <div style="margin-top:1rem;">
                     <a href="https://www.mccormick.northwestern.edu/news/articles/2024/09/hls4ml-summer-school-offers-students-training-in-edge-ai-hardware-accelerators/" target="_blank" style="color:#00ff41;text-decoration:underline;">Read More About hls4ml Summer School →</a>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-hls4ml" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>hls4ml Summer School | Northwestern University</h2>
+            <p><strong>Duration:</strong> Aug 2024</p>
+            <p><strong>Location:</strong> Evanston, IL (On-site)</p>
+            <h3>Program Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;margin-bottom:1rem;">
+                Selected as one of 20 students from UIC, UIUC, and Northwestern for a competitive three-day program hosted by CERN and the NSF focused on edge-AI hardware accelerators.
+            </p>
+            <h3>Technical Focus</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Gained hands-on training in hls4ml, converting PyTorch/Keras models into high-level synthesis workflows for FPGA deployment</li>
+                <li>Applied FPGA accelerators through technical talks, tutorials, and a hackathon format</li>
+                <li>Developed projects such as cartpole stabilization and a Pokemon card identifier</li>
+                <li>Explored edge AI, IoT, embedded systems, and scientific computing applications</li>
+            </ul>
+            <div style="margin-top:1rem;">
+                <a href="https://www.mccormick.northwestern.edu/news/articles/2024/09/hls4ml-summer-school-offers-students-training-in-edge-ai-hardware-accelerators/" target="_blank" style="color:#00ff41;text-decoration:underline;">Read More About hls4ml Summer School</a>
             </div>
         </div>
     </div>
@@ -1563,7 +2169,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
             <p><strong>Duration:</strong> Aug 2025 - Present</p>
             <p><strong>Location:</strong> Remote & Greater Chicago Area</p>
             
-            <h3>Varsity Tutors (Online Platform)</h3>
+            <h3>Varsity Tutors</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
                 <li>Provide personalized online tutoring for children and adults across 26+ approved subjects</li>
                 <li>Specialize in AP Computer Science A & Principles, AP Calculus AB & BC, Programming Languages, and Artificial Intelligence</li>
@@ -1571,8 +2177,23 @@ I firmly believe that technology's true value lies in its ability to improve liv
                 <li>Teach Technology & Coding, Electrical and Computer Engineering concepts</li>
                 <li>Strategic planning and educational development for diverse learning needs</li>
             </ul>
-            
-            <h3>Grade Potential Tutoring (In-Person)</h3>
+
+            <h3>Grade Potential Tutoring</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Conducted private in-person tutoring sessions for students of all ages in the Greater Chicago Area</li>
+                <li>Supported test preparation, mathematics, classroom performance, and individualized academic development</li>
+                <li>Built tailored learning strategies to improve confidence and academic performance</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-grade-potential" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Private Tutor | Grade Potential Tutoring</h2>
+            <p><strong>Duration:</strong> Aug 2025 - Oct 2025</p>
+            <p><strong>Location:</strong> Greater Chicago Area (On-site)</p>
+            <h3>Role Overview</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
                 <li>Conduct private in-person tutoring sessions for students of all ages in Greater Chicago Area</li>
                 <li>Focus on test preparation, mathematics, and individualized academic development</li>
@@ -1609,83 +2230,84 @@ I firmly believe that technology's true value lies in its ability to improve liv
         </div>
     </div>
     
-    <!-- Nexus Project Modal -->
+    <!-- Fibinaci Project Modal -->
     <div id="project-nexus" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Nexus - Open Source Dev Platform</h2>
-            <p><strong>Status:</strong> Open-Source (Active Development)</p>
-            <p><strong>Website:</strong> <a href="https://nexusdevops.com/" target="_blank" style="color: #00ff41; text-decoration: underline;">nexusdevops.com</a></p>
+            <h2>Fibinaci Enterprise Agent Map</h2>
+            <p><strong>Status:</strong> Enterprise AI Platform / Pilot Program</p>
+            <p><strong>Website:</strong> <a href="https://fibinaci.com/" target="_blank" style="color: #00ff41; text-decoration: underline;">fibinaci.com</a></p>
             <p><strong>Role:</strong> Technical Consultant (Dec 2025 - Jan 2026)</p>
             
-            <h3>About Nexus - The Open Source Revolution</h3>
-            <p>Nexus is the home of the Open Source Revolution - a collaborative dev community for creators where tools are not paywalled but instead open sourced to the community. Built by students, for students, we're shattering the status quo of bloated, paywall-locked development tools (like Cursor) by bringing a revolution against premium features and paywalls.</p>
+            <h3>Platform Direction</h3>
+            <p>Fibinaci is positioned as a map of the enterprise for AI agents: a system layer that helps agents understand what data exists, how business systems connect, what each field means, and what actions are allowed. The goal is to make enterprise agents more accurate, governable, reusable, and operationally useful.</p>
             
-            <h3>Platform Vision & Mission</h3>
-            <p>We built Nexus because we believe the original purpose of the digital revolution has been lost. Our team rapidly iterates and builds tools for democratized use. Our commitment to open source is shown through our open sourcing of all our tools. We understand the problems associated with the coding ecosystem - its bloat, lack of live collaboration, features locked behind paywalls, and dev teams not supporting users.</p>
-            
-            <h3>Core Platform Features</h3>
+            <h3>Core Platform Concepts</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>IDE:</strong> Advanced code editor with AI assistance and real-time collaboration features</li>
-                <li><strong>Drive:</strong> Cloud storage and version control for all projects and assets - seamlessly manage, organize, and open files without leaving the editor</li>
-                <li><strong>Community Feed:</strong> Connect with developers worldwide, share creations, ask questions, get feedback, and discover how others are solving similar problems</li>
-                <li><strong>Turing AI:</strong> Intelligent AI assistant that helps you code faster and smarter - AI support just a keystroke away without leaving your tab</li>
-                <li><strong>Live Collab:</strong> Multiple users can edit a single file simultaneously, making teamwork efficient for faster project delivery</li>
-                <li><strong>Immersive Experience:</strong> Deep dive into the future of collaborative development with immersive features</li>
+                <li><strong>Enterprise Map:</strong> Connects warehouses, databases, applications, and operational systems into a reusable context layer for agents</li>
+                <li><strong>Agent Context:</strong> Gives agents structured knowledge of business data, relationships, permissions, and allowed actions</li>
+                <li><strong>Governance:</strong> Supports identity-bound actions, policy boundaries, and auditability for enterprise AI workflows</li>
+                <li><strong>Model Flexibility:</strong> Designed around the idea that any agent or model can use the map without rebuilding the data layer</li>
+                <li><strong>Operational Value:</strong> Reduces bespoke integration work and helps pilots move toward production-grade AI systems</li>
             </ul>
             
-            <h3>Technical Role & Contributions</h3>
+            <h3>Technical Role & Strategic Contribution</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Product Direction Assessment:</strong> Collaborated with founding team to evaluate and shape strategic direction for developer-focused AI platform</li>
-                <li><strong>Architectural Guidance:</strong> Delivered system-level recommendations on platform scope, technical feasibility, and agentic workflows to establish technical foundation</li>
-                <li><strong>Full-Stack Development:</strong> Performed hands-on development work completing assigned tasks across frontend and backend technologies (React, Node.js, TypeScript), implementing features and ensuring code quality</li>
-                <li><strong>Team Leadership:</strong> Led team members on technical implementations, provided code guidance, reviewed work, and coordinated development efforts across multiple developers</li>
-                <li><strong>System Design Advisory:</strong> Provided high-level system design recommendations for cloud architecture, database optimization, and AWS infrastructure planning</li>
-                <li><strong>Strategic Planning:</strong> Advised on technical roadmap and implementation strategies to establish strategic clarity during initial engagement phase</li>
+                <li><strong>Rebrand Direction:</strong> Helped the founding team move away from a broad developer-platform concept toward a sharper enterprise-agent infrastructure thesis</li>
+                <li><strong>Product Scope:</strong> Advised on platform scope, technical feasibility, and where the product could create clearer enterprise value</li>
+                <li><strong>Agentic Workflows:</strong> Contributed system-level thinking around agents, enterprise context, data navigation, and workflow reliability</li>
+                <li><strong>Implementation Support:</strong> Supported targeted frontend/backend work while keeping execution aligned with the emerging business direction</li>
+                <li><strong>Architecture Input:</strong> Provided recommendations around cloud architecture, database planning, and technical coordination during the early engagement phase</li>
             </ul>
-            
-            <h3>Team Structure</h3>
-            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #00ff41;margin:1rem 0;">
-                <p style="color:#00ff41;font-family:'Fira Code',monospace;"><strong>Three-Team Architecture:</strong></p>
-                <ul style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
-                    <li><strong>Architecture/Resource Team:</strong> Cloud/databases for efficient app resource use (storage & compute), AWS optimization, client-side caching dynamics</li>
-                    <li><strong>Algo/AI/Search Team:</strong> Social features, AI integration, algorithm needs, search functionality, LLM implementation (math/quant position)</li>
-                    <li><strong>Full-Stack Developers:</strong> Build features, each takes responsibility for feature sets, works on their branch, knows database, submits PRs</li>
-                </ul>
-            </div>
-            
-            <h3>Weekly Development Workflow</h3>
-            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #ff6b35;margin:1rem 0;">
-                <p style="color:#ff6b35;font-family:'Fira Code',monospace;"><strong>Sprint Process:</strong></p>
-                <ol style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
-                    <li>Check out GitHub Projects</li>
-                    <li>Get user feedback (or team ideas)</li>
-                    <li>Create tasks and assign to developers</li>
-                    <li>Once assigned: Design UI (shadcn, AI usage for UI), create backend & frontend code, test</li>
-                    <li>Submit pull request when finished</li>
-                    <li>Review and approve</li>
-                    <li>Repeat cycle</li>
-                </ol>
-            </div>
-            
-            <h3>University Verification Program</h3>
-            <p>Now verifying students from prestigious universities including University of Pennsylvania (UPenn), New York University (NYU), Rutgers University, University of Maryland (UMD), and Johns Hopkins University (JHU). Students can verify their status and access Nexus.</p>
             
             <h3>Technical Stack</h3>
             <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #00ff41;margin:1rem 0;">
-                <p style="color:#00ff41;font-family:'Fira Code',monospace;"><strong>Technologies Used:</strong></p>
+                <p style="color:#00ff41;font-family:'Fira Code',monospace;"><strong>Relevant Technologies & Concepts:</strong></p>
                 <ul style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
-                    <li>Frontend: React, TypeScript, JavaScript, Shadcn UI</li>
-                    <li>Backend: Node.js, REST APIs</li>
-                    <li>Cloud & Infrastructure: AWS, cloud databases, caching strategies, resource optimization</li>
-                    <li>AI Integration: LLMs, Turing AI assistant, AI-powered development tools</li>
-                    <li>Collaboration: Real-time collaboration, WebSockets, version control, GitHub Projects</li>
-                    <li>Management: Agile workflow, code review processes, team coordination</li>
+                    <li>React, Node.js, TypeScript, JavaScript</li>
+                    <li>AWS, cloud databases, caching strategies, resource planning</li>
+                    <li>LLM integration, agentic workflows, enterprise data mapping</li>
+                    <li>Permissions, governance, auditability, and system architecture</li>
+                    <li>GitHub Projects, agile workflow, code review, and technical coordination</li>
                 </ul>
             </div>
             
             <h3>Impact</h3>
-            <p style="color:#00ff41;font-family:'Fira Code',monospace;">Provided foundational technical guidance and hands-on development contributions during the initial phase of Nexus, an open source platform built by students, for students. Completed development tasks, led team members, and helped establish technical direction and architectural framework for democratizing the coding ecosystem through free, powerful, open-source development tools that fight against paywalls and premium features, fostering a collaborative ecosystem where innovation is accessible to all.</p>
+            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #ff6b35;margin:1rem 0;">
+                <p style="color:#cccccc;font-family:'Fira Code',monospace;margin:0;">This project represents a strategic shift from a general developer tooling concept into a more defensible enterprise AI infrastructure direction. My contribution was strongest at the earliest stage: helping clarify the product thesis, technical direction, and system-level framing that supported the rebrand into Fibinaci.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enterprise RAG Support Agent Project Modal -->
+    <div id="project-enterprise-rag" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enterprise RAG Support Agent</h2>
+            <p><strong>Status:</strong> Organization-Backed SaaS Support System</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Scalable multi-tenant RAG system built for support automation across a large SaaS organization network. The system connected structured knowledge retrieval, LLM response generation, intake workflows, and escalation paths into a reusable support layer designed to reduce manual triage and improve answer consistency.</p>
+
+            <h3>System Focus</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Retrieval Infrastructure:</strong> Vector-backed knowledge retrieval designed for fast, source-grounded support responses</li>
+                <li><strong>Multi-Tenant Support:</strong> Architecture shaped around a 700+ organization SaaS network with scalable query and intake workflows</li>
+                <li><strong>LLM Orchestration:</strong> Answer generation workflow with retrieval context, fallback behavior, and support escalation handling</li>
+                <li><strong>Operational Reliability:</strong> Emphasis on retrieval latency, query throughput, feedback handling, and unresolved-case handoff</li>
+            </ul>
+
+            <h3>Technical Stack</h3>
+            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #00ff41;margin:1rem 0;">
+                <ul style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
+                    <li>FastAPI backend and API routes for support intake, retrieval, and response workflows</li>
+                    <li>PostgreSQL with pgvector for vector retrieval and scalable knowledge search</li>
+                    <li>LLM-based response generation with source-grounded retrieval context</li>
+                    <li>Feedback, escalation, and handoff flows for cases that require human review</li>
+                </ul>
+            </div>
+
+            <h3>Impact</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">The project demonstrates applied AI infrastructure beyond a demo chatbot: retrieval performance, platform scale, operational handoff, and real support workflow design all mattered as part of the system.</p>
         </div>
     </div>
 
@@ -1812,7 +2434,7 @@ I firmly believe that technology's true value lies in its ability to improve liv
             <h2>AArkboosted Website Auditor</h2>
             <p><strong>Status:</strong> Live Production</p>
             <h3>Project Overview</h3>
-            <p style="color:#cccccc;font-family:'Fira Code',monospace;">A comprehensive automated website audit tool that performs security, SEO, and UI/UX analysis. Built with FastAPI and React 18, this platform automates manual auditing processes and generates professional PDF reports, reducing audit time by 40%+.</p>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">A comprehensive automated website audit tool that performs security, SEO, and UI/UX analysis. Built with FastAPI and React 18, this platform automates manual auditing processes and generates professional PDF reports, reducing audit time by 40%+. The tool is paired with Arkboostedads.com, the client-facing business site used to present web audit and optimization services.</p>
             
             <h3>Core Features</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
@@ -1861,10 +2483,12 @@ npm run dev</pre>
                 <li><strong>Accuracy:</strong> Consistent, repeatable results with comprehensive coverage</li>
                 <li><strong>Reporting:</strong> Professional PDF reports with actionable insights</li>
                 <li><strong>Scalability:</strong> Can handle multiple concurrent audits efficiently</li>
+                <li><strong>Business Integration:</strong> Connected to Arkboosted's live service presence for client-facing positioning and discovery</li>
             </ul>
             
             <div style="text-align:center;margin-top:2rem;">
-                <a href="https://github.com/ak23bar/AArkboosted-Website-Auditor" target="_blank" style="background:#00ff41;color:#000;padding:0.75rem 1.5rem;text-decoration:none;border-radius:4px;font-weight:bold;">View Repository</a>
+                <a href="https://github.com/ak23bar/AArkboosted-Website-Auditor" target="_blank" style="background:#00ff41;color:#000;padding:0.75rem 1.5rem;text-decoration:none;border-radius:4px;font-weight:bold;margin-right:1rem;">View Repository</a>
+                <a href="https://arkboostedads.com" target="_blank" style="color:#00ff41;text-decoration:underline;font-family:'Fira Code',monospace;">Visit Arkboostedads.com</a>
             </div>
         </div>
     </div>
@@ -1926,24 +2550,24 @@ npm run dev</pre>
             <h2>MATRIX - Voice AI Assistant</h2>
             <p><strong>Status:</strong> Public Release</p>
             <h3>Project Overview</h3>
-            <p style="color:#cccccc;font-family:'Fira Code',monospace;">A sophisticated voice AI assistant that brings the Matrix aesthetic to conversational AI. Built with Python and powered by ElevenLabs' cutting-edge Conversational AI API, this application delivers real-time voice processing with an immersive cyberpunk interface.</p>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Voice AI system built to explore real-time conversational interaction, streaming audio workflows, and terminal-based assistant interfaces. The Matrix theme remains the visual layer, but the engineering focus is speech recognition, neural voice synthesis, audio routing, latency, and reliable interaction design.</p>
             
             <h3>Core Features</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Real-time Voice Processing:</strong> Continuous speech recognition with sub-second response times</li>
-                <li><strong>Neural Voice Synthesis:</strong> High-quality, natural-sounding AI voice responses</li>
-                <li><strong>Matrix-themed Interface:</strong> Immersive terminal experience with animated ASCII art</li>
-                <li><strong>Contextual Conversations:</strong> Maintains conversation history for coherent dialogue</li>
-                <li><strong>Cross-platform Audio:</strong> Optimized for Linux/WSL2 with PulseAudio integration</li>
+                <li><strong>Voice Interaction:</strong> Speech recognition and neural voice synthesis for conversational input/output</li>
+                <li><strong>Streaming Workflow:</strong> WebSocket-based response handling for real-time assistant behavior</li>
+                <li><strong>Context Handling:</strong> Conversation state support for more coherent multi-turn interactions</li>
+                <li><strong>Audio Integration:</strong> Cross-platform audio routing with Linux/WSL2 and PulseAudio considerations</li>
+                <li><strong>Terminal Interface:</strong> Branded CLI layer for testing interaction patterns without a heavy frontend</li>
             </ul>
             
             <h3>Technical Architecture</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
-                <li><strong>Backend:</strong> Python application with Matrix-themed CLI interface</li>
-                <li><strong>AI Integration:</strong> ElevenLabs Conversational AI with WebSocket streaming</li>
+                <li><strong>Backend:</strong> Python application coordinating assistant state, audio handling, and terminal interaction</li>
+                <li><strong>AI Integration:</strong> ElevenLabs Conversational AI with streaming response support</li>
                 <li><strong>Audio Pipeline:</strong> ALSA → PulseAudio → PyAudio → ElevenLabs</li>
-                <li><strong>Performance:</strong> Sub-200ms response times with optimized memory management</li>
-                <li><strong>Scalability:</strong> Modular architecture prepared for web application integration</li>
+                <li><strong>Performance:</strong> Latency-aware implementation with focused memory and audio pipeline tuning</li>
+                <li><strong>Extensibility:</strong> Modular structure designed for future web interface or assistant workflow integration</li>
             </ul>
             
             <h3>Key Technologies</h3>
@@ -1955,7 +2579,7 @@ npm run dev</pre>
             </p>
             
             <div style="margin-top:1rem;">
-                <a href="https://github.com/ak23bar/NEO" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
+                <a href="https://github.com/ak23bar/MATRIX" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
             </div>
         </div>
     </div>
@@ -2173,6 +2797,37 @@ Vision Mamba itself is not included, but this codebase contains adaptable tools 
         </div>
     </div>
 
+    <div id="project-hls4ml" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>hls4ml Edge-AI FPGA Projects</h2>
+            <p><strong>Status:</strong> Summer School Project Work / Edge-AI Hardware Acceleration</p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Hands-on FPGA and edge-AI project work completed through the hls4ml Summer School at Northwestern Engineering. The program focused on using hls4ml to convert machine learning models from frameworks such as PyTorch and Keras into high-level synthesis flows for FPGA deployment, with emphasis on latency, resource utilization, and hardware-aware model design.</p>
+
+            <h3>Project Work</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Self-Balancing Cartpole Controller:</strong> Built and tested a controller that adjusted motor direction and speed on an FPGA-based physical testbed to keep a pole balanced while moving left and right.</li>
+                <li><strong>Pokemon Card Vision Reader:</strong> Developed and live-tested a computer vision model workflow for identifying Pokemon cards, applying edge-AI concepts to image classification.</li>
+                <li><strong>hls4ml Training:</strong> Learned the open-source hls4ml workflow for translating ML models into FPGA-oriented high-level synthesis implementations.</li>
+            </ul>
+
+            <h3>Engineering Focus</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>FPGA-based machine learning inference and hardware acceleration</li>
+                <li>Hardware-software co-design for real-time edge-AI systems</li>
+                <li>Tradeoffs between model performance, latency, and resource utilization</li>
+                <li>Control systems, computer vision, and embedded ML deployment workflows</li>
+            </ul>
+
+            <h3>References</h3>
+            <div style="margin-top:1rem;">
+                <a href="https://www.mccormick.northwestern.edu/news/articles/2024/09/hls4ml-summer-school-offers-students-training-in-edge-ai-hardware-accelerators/" target="_blank" style="color:#00ff41;text-decoration:underline;margin-right:1rem;">Northwestern Engineering Article</a>
+                <a href="https://github.com/orgs/hls4ml-tutorial/teams/hls4ml-2024-summer-school" target="_blank" style="color:#00ff41;text-decoration:underline;">hls4ml 2024 Team Page</a>
+            </div>
+        </div>
+    </div>
+
     <div id="project3" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -2256,6 +2911,95 @@ Vision Mamba itself is not included, but this codebase contains adaptable tools 
             <div style="margin-top:1rem;">
                 <a href="https://github.com/ak23bar/web-dev-collection" target="_blank" style="color:#00ff41;text-decoration:underline;">View Repository →</a>
             </div>
+        </div>
+    </div>
+
+    <!-- CodeLingo Project Modal -->
+    <div id="project-codelingo" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>CodeLingo</h2>
+            <p><strong>Status:</strong> Public Repository</p>
+            <p><strong>Repository:</strong> <a href="https://github.com/ak23bar/CodeLingo" target="_blank" style="color:#00ff41;text-decoration:underline;">ak23bar/CodeLingo</a></p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">AI-powered code explanation tool built for students who can write code but struggle to read and reason through unfamiliar snippets. Paste code, select a language and explanation level, and receive a structured pedagogical breakdown designed for Python, JavaScript, and Java learners.</p>
+
+            <h3>Core Features</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Level-Based Explanations:</strong> Beginner, student, and teacher explanation modes with adjusted vocabulary and depth</li>
+                <li><strong>Structured Output:</strong> Human translation, line-by-line explanation, execution walkthrough, purpose, common mistakes, and key concepts</li>
+                <li><strong>Streaming UI:</strong> Word-by-word response rendering for a more interactive AI product feel</li>
+                <li><strong>Quiz Mode:</strong> Generates comprehension questions with answer feedback and scoring</li>
+                <li><strong>Teacher Utility:</strong> Misconceptions-only toggle, Markdown export, and shareable snippet links</li>
+            </ul>
+
+            <h3>Technical Stack</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Streamlit frontend with dark theme and section-card styling</li>
+                <li>Groq API with Llama 3.3 70B Versatile for structured reasoning and streaming</li>
+                <li>Stateless Python app architecture using session state, environment variables, and Streamlit secrets</li>
+                <li>Prompt reliability layer with heading validation, retry behavior, and safe fallback rendering</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- LLM Language Feedback API Project Modal -->
+    <div id="project-language-feedback-api" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>LLM Language Feedback API</h2>
+            <p><strong>Status:</strong> Public Repository / Applied AI API Challenge</p>
+            <p><strong>Repository:</strong> <a href="https://github.com/ak23bar/intern-task-2026" target="_blank" style="color:#00ff41;text-decoration:underline;">ak23bar/intern-task-2026</a></p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">FastAPI microservice that analyzes learner-written sentences and returns structured multilingual correction feedback. The system is designed around reliable LLM behavior: strict JSON output constraints, defensive parsing, schema validation, bounded repair retry, provider fallback, and cache-only-on-validated responses.</p>
+
+            <h3>Core Capabilities</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Structured Feedback:</strong> Returns corrected sentence, correctness status, error objects, and CEFR-style difficulty in a predictable schema</li>
+                <li><strong>Multilingual Support:</strong> Handles learner feedback across Latin and non-Latin scripts with explanations in the user's native language</li>
+                <li><strong>LLM Reliability Layer:</strong> Uses defensive JSON parsing, enum checks, typed response construction, and one bounded repair retry for malformed output</li>
+                <li><strong>Provider Strategy:</strong> Routes through OpenAI first with Anthropic fallback for provider unavailability or call failure</li>
+                <li><strong>Operational Controls:</strong> Timeout-bounded provider calls, validated response caching, Docker support, and unit/schema/integration tests</li>
+            </ul>
+
+            <h3>Engineering Focus</h3>
+            <div style="background:#1e1e1e;padding:1rem;border-radius:6px;border-left:4px solid #00ff41;margin:1rem 0;">
+                <ul style="color:#cccccc;margin:0.5rem 0;padding-left:2rem;">
+                    <li>Reliability and clarity over feature sprawl</li>
+                    <li>Schema-safe AI response handling under real model variability</li>
+                    <li>Prompt constraints for conservative, meaning-preserving corrections</li>
+                    <li>Clean failure behavior for invalid outputs and unavailable providers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crypt0nest Quant ML Project Modal -->
+    <div id="project-cryptonest-quant" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Crypt0nest Quant ML Workspaces</h2>
+            <p><strong>Status:</strong> Internship Research / Applied ML</p>
+            <p><strong>Repositories:</strong> <a href="https://github.com/teklystudio/ml-track-ak23bar" target="_blank" style="color:#00ff41;text-decoration:underline;">ml-track-ak23bar</a> · <a href="https://github.com/teklystudio/spring-lab-ak23bar" target="_blank" style="color:#00ff41;text-decoration:underline;">spring-lab-ak23bar</a></p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Applied quantitative research and machine learning work completed through Tekly Studio's Crypt0nest lab. The work spans onboarding curriculum, ML4T research foundations, data pipeline auditing, strategy replication, technical indicators, and quantitative trading experiments.</p>
+
+            <h3>Research & Engineering Focus</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Quant Strategy Work:</strong> Built and documented trading research exercises including Bollinger-RSI mean-reversion strategy work</li>
+                <li><strong>ML Foundations:</strong> Completed ML4T reading and replication exercises focused on market data, features, and model-oriented workflows</li>
+                <li><strong>Data Hygiene:</strong> Audited data architecture, survivorship risk, point-in-time accuracy, and pipeline reliability concerns</li>
+                <li><strong>Portfolio Metrics:</strong> Implemented indicators, portfolio metrics, verification notebooks, and experiment documentation</li>
+                <li><strong>Research Process:</strong> Maintained organized notebooks, proof artifacts, and commits across lab and ML track repositories</li>
+            </ul>
+
+            <h3>Technical Stack</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Python, Jupyter notebooks, pandas, NumPy, quantitative finance workflows</li>
+                <li>Technical indicators, portfolio analytics, backtesting concepts, and strategy validation</li>
+                <li>Data hygiene, feature engineering, market data structure, and reproducible research practices</li>
+                <li>Git-based workflow across private Tekly Studio internship repositories</li>
+            </ul>
         </div>
     </div>
 
@@ -2376,6 +3120,42 @@ Vision Mamba itself is not included, but this codebase contains adaptable tools 
         </div>
     </div>
 
+    <!-- Computer Organization Modal -->
+    <div id="project-computer-organization" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Computer Organization Portfolio</h2>
+            <p><strong>Tech Stack:</strong> Verilog, MIPS Assembly, Digital Logic, Computer Architecture</p>
+            <p><strong>Repository:</strong> <a href="https://github.com/ak23bar/Computer-Organization" target="_blank" style="color:#00ff41;text-decoration:underline;">ak23bar/Computer-Organization</a></p>
+            <h3>Project Overview</h3>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Coursework portfolio from ECE 366: Computer Organization, demonstrating digital logic design, hardware description languages, adder architecture analysis, and low-level MIPS assembly programming.</p>
+
+            <h3>Digital Logic Components</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li><strong>Full Adders:</strong> Structural and behavioral 1-bit full adder implementations</li>
+                <li><strong>Ripple-Carry Designs:</strong> 4-bit ripple-carry adder and subtractor with testbenches</li>
+                <li><strong>Carry Lookahead:</strong> 32-bit CLA using generate/propagate logic and hierarchical blocks</li>
+                <li><strong>Prefix Parallel Adder:</strong> 16-bit Brent-Kung style PPA for parallel carry computation</li>
+            </ul>
+
+            <h3>MIPS Assembly Components</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Iterative Fibonacci sequence generator with register-only computation and O(1) space</li>
+                <li>Parity checker demonstrating low-level control flow and branch behavior</li>
+                <li>Combined Fibonacci/parity program demonstrating function composition and register management</li>
+                <li>Tradeoff analysis across instruction count, branching, memory access, and algorithmic efficiency</li>
+            </ul>
+
+            <h3>Engineering Concepts</h3>
+            <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
+                <li>Hierarchical digital design from 1-bit components to wider arithmetic units</li>
+                <li>Delay, area, and power tradeoffs across RCA, CLA, and PPA architectures</li>
+                <li>Testbench design and verification methodology for hardware modules</li>
+                <li>Processor-level reasoning through MIPS32 assembly and register discipline</li>
+            </ul>
+        </div>
+    </div>
+
     <!-- LeetCode Modal -->
     <div id="project-leetcode" class="modal">
         <div class="modal-content">
@@ -2383,14 +3163,14 @@ Vision Mamba itself is not included, but this codebase contains adaptable tools 
             <h2>LeetCode Solutions</h2>
             <p><strong>Tech Stack:</strong> Python, Java, Algorithms, Problem Solving</p>
             <h3>Project Overview</h3>
-            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Comprehensive collection of LeetCode problem solutions designed for technical interview preparation and algorithmic skill development.</p>
+            <p style="color:#cccccc;font-family:'Fira Code',monospace;">Algorithmic problem-solving archive focused on clean implementations, complexity analysis, and reusable solution patterns across common data structures and programming paradigms.</p>
             
-            <h3>Key Features</h3>
+            <h3>Engineering Practices</h3>
             <ul style="color:#cccccc;font-family:'Fira Code',monospace;padding-left:2rem;">
                 <li><strong>Multiple Languages:</strong> Solutions implemented in Python and Java with clean, readable code</li>
                 <li><strong>Detailed Explanations:</strong> Each solution includes approach explanation and complexity analysis</li>
                 <li><strong>Test Cases:</strong> Comprehensive test coverage to verify solution correctness</li>
-                <li><strong>Interview Focus:</strong> Optimized for technical interview scenarios and time constraints</li>
+                <li><strong>Optimization:</strong> Emphasis on time/space tradeoffs, edge cases, and clear decomposition</li>
             </ul>
 
             <h3>Problem Categories</h3>

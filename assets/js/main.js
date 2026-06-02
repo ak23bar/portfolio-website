@@ -25,7 +25,7 @@ const enhancedTerminalCommands = {
     // Enhanced help with better formatting
     helpme: () => {
         const sections = [
-            '<div style="color: #ffff00; font-weight: bold;">PORTFOLIO TERMINAL v1.7</div>',
+            '<div style="color: #ffff00; font-weight: bold;">PORTFOLIO TERMINAL v1.8</div>',
             '<div style="color: #888888; margin: 10px 0;">═══════════════════════════════════════</div>',
             '',
             '<div style="color: #ffff00;">📂 NAVIGATION COMMANDS</div>',
@@ -1245,7 +1245,7 @@ Type 'man &lt;command&gt;' for detailed help.
         return `<div style="color: #00ff41;">
 <div style="color: #ffff00;">TERMINAL STATUS</div>
 <div style="color: #888888;">═════════════════</div>
-System: Portfolio OS v1.7<br>
+System: Portfolio OS v1.8<br>
 Commands loaded: ${commandCount}<br>
 Current path: ${currentPath}<br>
 History entries: ${commandHistory.length}<br>
@@ -1260,6 +1260,17 @@ ${commandList.join(', ')}<br>
 };
 
 // Terminal CLI Functions
+function getTerminalWelcomeMarkup() {
+    return `<div class="cli-output" data-terminal-welcome="true" style="color: #00ff41; font-family: 'Courier New', monospace;">
+<span style="color: #ffff00;">Site Terminal</span>
+<span style="color: #888888;">─────────────────────────────────────────────────</span>
+<span style="color: #00ccff;">System:</span> Portfolio OS v1.8 | <span style="color: #00ccff;">User:</span> akbar@portfolio-system
+<span style="color: #888888;">Use this as a fast keyboard layer for the site.</span>
+<br>
+<span style="color: #ffff00;">Try:</span> <span style="color: #ffffff;">ls</span> · <span style="color: #ffffff;">tree</span> · <span style="color: #ffffff;">cd projects</span> · <span style="color: #ffffff;">cat bio.txt</span> · <span style="color: #ffffff;">email</span> · <span style="color: #ffffff;">resume</span> · <span style="color: #ffffff;">help</span>
+</div>`;
+}
+
 function openTerminalCli() {
     const cli = document.getElementById('terminalCli');
     const output = document.getElementById('terminalCliContent');
@@ -1267,15 +1278,9 @@ function openTerminalCli() {
     cli.classList.add('active');
     cli.style.zIndex = 100001;
     
-    // Add welcome message if terminal is empty
-    if (!output.innerHTML.trim()) {
-        output.innerHTML = `<div class="cli-output" style="color: #00ff41; font-family: 'Courier New', monospace;">
-<span style="color: #ffff00;">🖥️  Welcome to Akbar's Interactive Portfolio Terminal</span>
-<span style="color: #888888;">─────────────────────────────────────────────────</span>
-<span style="color: #00ccff;">System:</span> Portfolio OS v1.7 | <span style="color: #00ccff;">User:</span> akbar@portfolio-system
-<span style="color: #888888;">Type 'help' for available commands, 'ls' to see sections, 'tree' for structure</span>
-<span style="color: #ff6b6b;">💡 Tip: Use 'cd projects' to explore my work, 'cat bio.txt' to learn more!</span>
-</div>`;
+    // Add a practical welcome message if terminal is empty or still on the default hint
+    if (!output.innerHTML.trim() || output.querySelector('[data-terminal-welcome="true"]')) {
+        output.innerHTML = getTerminalWelcomeMarkup();
     }
     
     document.getElementById('cliInput').focus();
@@ -1306,10 +1311,7 @@ function executeEnhancedCommand(command) {
     const inputLine = `<div class="cli-output"><span style="color:#ff0040; font-weight: bold;">akbar@portfolio-system</span><span style="color:#00ff41;">:</span><span style="color:#6495ED;">${currentPath === '/' ? '~' : currentPath}</span><span style="color:#00ff41;">$</span> <span style="color: #ffffff;">${command}</span></div>`;
     
     if (cmd.toLowerCase() === 'clear') {
-        output.innerHTML = `<div class="cli-output" style="color: #00ff41; font-family: 'Courier New', monospace;">
-<span style="color: #ffff00;">🖥️  Welcome to Akbar's Portfolio Terminal</span>
-<span style="color: #888888;">Type 'help' for available commands, 'ls' to see sections</span>
-</div>`;
+        output.innerHTML = getTerminalWelcomeMarkup();
         return;
     }
 
@@ -1460,6 +1462,13 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function scrollToContact() {
+    const contact = document.getElementById('contact');
+    if (contact) {
+        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 function downloadResume() {
     window.open('assets/files/Akbar_Resume.pdf', '_blank');
     return 'Opening resume PDF...';
@@ -1480,7 +1489,7 @@ function toggleMobileNav() {
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
     // Terminal functionality
-    document.querySelectorAll('.quick-action[title="Terminal"]').forEach(btn => {
+    document.querySelectorAll('.quick-action[title="Open Site Terminal"]').forEach(btn => {
         btn.onclick = function(e) {
             e.stopPropagation();
             openTerminalCli();
@@ -1645,13 +1654,14 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.7",
-    lastUpdated: "February 4, 2026",
+    current: "1.8",
+    lastUpdated: "June 2, 2026",
     changelog: [
-        "Added Crypt0nest Quantitative Research & AI/ML Engineering Intern position",
-        "Integrated Pocket Brain - offline quantized LLM assistant project",
-        "Updated Nexus to Technical Consultant role with end date",
-        "Enhanced Arkboosted with RAG agent and AI tooling achievements"
+        "Repositioned portfolio around AI systems, infrastructure, automation, and professional engineering delivery",
+        "Reorganized experience into a categorized tree grouped by credibility signal and working context",
+        "Rebuilt projects as an engineering portfolio with platform, AI, research, foundations, hardware, and tooling buckets",
+        "Expanded project coverage with RAG, LLM API, quant ML, hls4ml, CodeLingo, and computer organization work",
+        "Refined homepage, about, project, and contact copy for a more professional audience"
     ]
 };
 
@@ -1716,7 +1726,13 @@ function loadVersionConfig() {
     if (savedVersion) {
         try {
             const parsed = JSON.parse(savedVersion);
-            Object.assign(versionConfig, parsed);
+            const savedCurrent = parseFloat(parsed.current);
+            const defaultCurrent = parseFloat(versionConfig.current);
+            if (!Number.isNaN(savedCurrent) && savedCurrent >= defaultCurrent) {
+                Object.assign(versionConfig, parsed);
+            } else {
+                localStorage.setItem('portfolioVersion', JSON.stringify(versionConfig));
+            }
         } catch (e) {
             console.log('Using default version config');
         }
@@ -1767,18 +1783,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Engineer Type Typing Animation
 function initEngineerTypeAnimation() {
     const engineerTypes = [
-        'Computer Engineer',
-        'Software Engineer',
-        'Hardware Engineer',
-        'Full Stack Engineer',
-        'ML Engineer',
-        'Data Science Engineer',
-        'Signal Processing Engineer',
-        'Embedded Engineer',
-        'AI Engineer',
-        'Systems Engineer',
-        'Robotics Engineer',
-        'Cybersecurity Engineer'
+        'Computer Engineering.',
+        'Software Engineering.',
+        'Hardware Engineering.',
+        'AI Engineering.',
+        'Systems Engineering.'
     ];
     
     let currentIndex = 0;
@@ -1788,7 +1797,7 @@ function initEngineerTypeAnimation() {
     
     const element1 = document.getElementById('engineerType');
     const element2 = document.getElementById('engineerTypeAbout');
-    // The static 'Engineer' text is now outside the animated span in HTML
+    // The About copy animates full engineering phrases.
     
     function type() {
         const currentWord = engineerTypes[currentIndex];
@@ -1799,7 +1808,7 @@ function initEngineerTypeAnimation() {
             currentText = currentWord.substring(0, currentText.length + 1);
             typeSpeed = 100;
         }
-        // Update both elements: animate the full word (always ends with Engineer)
+        // Update both elements with the rotating engineering focus.
         if (element1) element1.textContent = currentText;
         if (element2) element2.textContent = currentText;
         
