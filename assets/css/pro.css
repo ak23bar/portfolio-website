@@ -48,8 +48,15 @@ h3 { font-size: 1.0625rem; }
 p { margin: 0 0 1rem; max-width: var(--measure); }
 p:last-child { margin-bottom: 0; }
 
-a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: color var(--dur) ease, border-color var(--dur) ease; }
-a:hover { color: var(--accent); border-color: var(--accent); }
+a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--text-muted);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    transition: color var(--dur) ease;
+}
+a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
 /* Focus rings use --accent (12.89:1), never --hairline (1.20:1, below the
    WCAG 1.4.11 3:1 threshold for non-text contrast). Never suppressed. */
@@ -96,13 +103,13 @@ section { padding-block: clamp(3rem, 2rem + 4vw, 5rem); }
 .site-header { border-bottom: 1px solid var(--hairline); }
 .header-inner {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 1rem; min-height: 64px;
+    flex-wrap: wrap; gap: 1rem; row-gap: 0.5rem; min-height: 64px;
 }
-.wordmark { font-size: 0.875rem; color: var(--text); border-bottom: none; }
+.wordmark { font-size: 0.875rem; color: var(--text); text-decoration: none; }
 .wordmark:hover { color: var(--accent); }
 .site-nav { display: flex; align-items: center; gap: 1.25rem; }
 .site-nav a {
-    font-size: 0.875rem; color: var(--text-muted); border-bottom: none;
+    font-size: 0.875rem; color: var(--text-muted); text-decoration: none;
     min-height: 44px; display: inline-flex; align-items: center;
 }
 .site-nav a:hover { color: var(--accent); }
