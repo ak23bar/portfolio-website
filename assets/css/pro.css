@@ -48,7 +48,7 @@ h3 { font-size: 1.0625rem; }
 p { margin: 0 0 1rem; max-width: var(--measure); }
 p:last-child { margin-bottom: 0; }
 
-a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--hairline-lit); transition: color var(--dur) ease, border-color var(--dur) ease; }
+a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: color var(--dur) ease, border-color var(--dur) ease; }
 a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* Focus rings use --accent (12.89:1), never --hairline (1.20:1, below the
