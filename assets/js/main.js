@@ -1214,12 +1214,12 @@ ${results.map(r => `<span style="color: #ffffff;">${r}</span>`).join('\n')}
     },
 
     resume: () => {
-        window.open('assets/files/Akbar_Resume.pdf', '_blank');
+        window.open('/assets/files/Akbar_Resume.pdf', '_blank');
         return 'Opening resume PDF...';
     },
 
     cv: () => {
-        window.open('assets/files/Akbar_Resume.pdf', '_blank');
+        window.open('/assets/files/Akbar_Resume.pdf', '_blank');
         return 'Opening CV PDF...';
     },
 
@@ -1476,7 +1476,7 @@ function scrollToContact() {
 }
 
 function downloadResume() {
-    window.open('assets/files/Akbar_Resume.pdf', '_blank');
+    window.open('/assets/files/Akbar_Resume.pdf', '_blank');
     return 'Opening resume PDF...';
 }
 
