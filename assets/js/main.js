@@ -1732,9 +1732,11 @@ function loadVersionConfig() {
     if (savedVersion) {
         try {
             const parsed = JSON.parse(savedVersion);
-            const savedCurrent = parseFloat(parsed.current);
-            const defaultCurrent = parseFloat(versionConfig.current);
-            if (!Number.isNaN(savedCurrent) && savedCurrent >= defaultCurrent) {
+            // Numeric collation, not parseFloat: parseFloat("1.10") is 1.1, so a saved
+            // "1.9" would outrank a released "1.10" and pin the badge to the stale config.
+            const savedIsCurrentOrNewer = typeof parsed.current === 'string' &&
+                parsed.current.localeCompare(versionConfig.current, undefined, { numeric: true }) >= 0;
+            if (savedIsCurrentOrNewer) {
                 Object.assign(versionConfig, parsed);
             } else {
                 localStorage.setItem('portfolioVersion', JSON.stringify(versionConfig));
