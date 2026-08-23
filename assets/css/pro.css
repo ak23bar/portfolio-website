@@ -1,0 +1,93 @@
+/* Professional surface. Loaded only by /index.html.
+   Deliberately shares nothing with the Matrix stylesheets. */
+
+:root {
+    --bg:          #0a0a0a;
+    --surface:     #111111;
+    --hairline:    #1f1f1f;
+    --hairline-lit:#2e2e2e;
+    --text:        #e8e8e8;
+    --text-muted:  #8a8a8a;
+    --accent:      #7ee787;
+
+    --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif;
+    --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --dur: 150ms;
+    --measure: 68ch;
+    --col: 720px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Single measure. Whitespace is the primary structural device. */
+.wrap {
+    width: 100%;
+    max-width: var(--col);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0; font-weight: 600; letter-spacing: -0.015em; }
+h1 { font-size: clamp(2rem, 1.6rem + 2vw, 2.75rem); }
+h2 { font-size: 0.8125rem; }
+h3 { font-size: 1.0625rem; }
+
+p { margin: 0 0 1rem; max-width: var(--measure); }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--hairline-lit); transition: color var(--dur) ease, border-color var(--dur) ease; }
+a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Focus rings use --accent (12.89:1), never --hairline (1.20:1, below the
+   WCAG 1.4.11 3:1 threshold for non-text contrast). Never suppressed. */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Mono is an accent, not the body voice: labels, metadata, tech lines,
+   the wordmark, and the palette. */
+.mono { font-family: var(--font-mono); font-variant-ligatures: none; }
+
+.section-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--hairline);
+}
+
+section { padding-block: clamp(3rem, 2rem + 4vw, 5rem); }
+
+.skip-link {
+    position: absolute; left: -9999px;
+    background: var(--surface); color: var(--text);
+    padding: 0.75rem 1rem; z-index: 100;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
