@@ -91,3 +91,35 @@ section { padding-block: clamp(3rem, 2rem + 4vw, 5rem); }
         scroll-behavior: auto !important;
     }
 }
+
+/* ---- header ---- */
+.site-header { border-bottom: 1px solid var(--hairline); }
+.header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; min-height: 64px;
+}
+.wordmark { font-size: 0.875rem; color: var(--text); border-bottom: none; }
+.wordmark:hover { color: var(--accent); }
+.site-nav { display: flex; align-items: center; gap: 1.25rem; }
+.site-nav a {
+    font-size: 0.875rem; color: var(--text-muted); border-bottom: none;
+    min-height: 44px; display: inline-flex; align-items: center;
+}
+.site-nav a:hover { color: var(--accent); }
+.matrix-entry { font-size: 1rem; }
+
+/* ---- footer ---- */
+.site-footer {
+    border-top: 1px solid var(--hairline);
+    padding-block: clamp(3rem, 2rem + 4vw, 5rem);
+}
+.footer-links {
+    list-style: none; margin: 1.5rem 0 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+    font-family: var(--font-mono); font-size: 0.875rem;
+}
+.footer-links a { min-height: 44px; display: inline-flex; align-items: center; }
+.alt-interface {
+    margin-top: 2.5rem; font-size: 0.8125rem; color: var(--text-muted);
+}
+.alt-interface a { color: var(--text-muted); }
