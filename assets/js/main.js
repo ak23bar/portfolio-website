@@ -4,8 +4,8 @@ const fileSystem = {
     '/about': ['bio.txt', 'skills.json', 'interests.md', 'timeline.log'],
     '/experience': ['current_roles.txt', 'research.txt', 'teaching.txt', 'mentorship.txt'],
     '/education': ['uic.txt', 'coursework.txt', 'gpa.txt', 'degree_plan.txt'],
-    '/projects': ['RAG_Support_Agent/', 'Property_Platform/', 'CodeLingo/', 'Quant_ML/', 'Embedded_Systems/'],
-    '/projects/RAG_Support_Agent': ['overview.md', 'stack.txt', 'architecture.txt'],
+    '/projects': ['GPS/', 'Property_Platform/', 'CodeLingo/', 'Quant_ML/', 'Embedded_Systems/'],
+    '/projects/GPS': ['overview.md', 'stack.txt', 'architecture.txt'],
     '/projects/CodeLingo': ['README.md', 'app.py', 'prompting.md'],
     '/skills': ['programming.txt', 'frameworks.txt', 'tools.txt', 'certifications.txt']
 };
@@ -25,7 +25,7 @@ const enhancedTerminalCommands = {
     // Enhanced help with better formatting
     helpme: () => {
         const sections = [
-            '<div style="color: #ffff00; font-weight: bold;">PORTFOLIO TERMINAL v1.8</div>',
+            '<div style="color: #ffff00; font-weight: bold;">PORTFOLIO TERMINAL v1.9</div>',
             '<div style="color: #888888; margin: 10px 0;">═══════════════════════════════════════</div>',
             '',
             '<div style="color: #ffff00;">📂 NAVIGATION COMMANDS</div>',
@@ -194,8 +194,8 @@ const enhancedTerminalCommands = {
        <span style="color: #ffffff;">current_roles.txt</span> Current professional positions
        <span style="color: #ffffff;">gpa.txt</span>           Academic performance details
        <span style="color: #ffffff;">README.md</span>         Project documentation (CodeLingo)
-       <span style="color: #ffffff;">overview.md</span>      RAG Support Agent overview
-       <span style="color: #ffffff;">stack.txt</span>        RAG Support Agent stack
+       <span style="color: #ffffff;">overview.md</span>      GPS platform overview
+       <span style="color: #ffffff;">stack.txt</span>        GPS platform stack
        <span style="color: #ffffff;">app.py</span>           CodeLingo application entry point
 
 <span style="color: #00ccff;">EXAMPLES</span>
@@ -871,7 +871,7 @@ Try 'help' for command overview</span>`;
 │ │   ├── <span style="color: #ffffff;">gpa.txt</span>                                      │
 │ │   └── <span style="color: #ffffff;">coursework.txt</span>                              │
 │ ├── <span style="color: #00ff41;">📁 projects/</span>       <span style="color: #888888;"># Technical projects</span>       │
-│ │   ├── <span style="color: #00ccff;">🚀 RAG_Support_Agent/</span>                        │
+│ │   ├── <span style="color: #00ccff;">🚀 GPS/</span>                                      │
 │ │   │   ├── <span style="color: #ffffff;">overview.md</span>                             │
 │ │   │   ├── <span style="color: #ffffff;">stack.txt</span>                               │
 │ │   │   └── <span style="color: #ffffff;">architecture.txt</span>                        │
@@ -959,15 +959,15 @@ Try 'help' for command overview</span>`;
         const fileContents = {
             'bio.txt': 'Computer Engineer and entrepreneur building practical software, AI-enabled products, automation workflows, web platforms, and computer engineering systems.\nExperience spans industry, research, teaching, client-facing engineering, and AI evaluation.',
             'resume.pdf': 'PDF document - Contact akbaraman797@gmail.com for latest resume\nSize: 2.4MB\nLast modified: Aug 26, 2025',
-            'current_roles.txt': 'Active Professional Roles:\n• AI Intern - AHEAD\n• AI Red Team Prompt Engineer - LinkedIn\n• Software Engineer - ArkBoosted LLC\n• Engineering Success Mentor - University of Illinois Chicago\n• Private Tutor - Varsity Tutors',
+            'current_roles.txt': 'Active Professional Roles:\n• Enterprise AI Engineering Intern - AHEAD\n• Engineering Success Mentor - University of Illinois Chicago',
             'skills.json': '{\n  "languages": ["Python", "C++", "JavaScript", "C", "Java", "ARM Assembly"],\n  "frameworks": ["PyTorch", "TensorFlow", "FastAPI", "Docker", "AWS"],\n  "domains": ["AI/ML", "Embedded Systems", "Web Development", "Computer Vision"],\n  "tools": ["Linux", "Git", "MATLAB", "Altium Designer", "Node.js"]\n}',
             'gpa.txt': 'Academic Performance:\nCurrent GPA: 3.65/4.0\nExpected BS: May 2027\nExpected MS: May 2028\nDean\'s List: Fall 2023, Spring 2024',
             'README.md': '# CodeLingo\nAI-powered code explanation tool for students learning to read and reason through code.\n\n## Features\n- Level-based explanations\n- Streaming output\n- Quiz mode\n- Misconception review\n\n## Tech Stack\nPython, Streamlit, Groq API, Llama 3.3',
             'app.py': '# CodeLingo Streamlit app entry point\n# Handles code input, explanation level selection, streaming responses, and quiz mode.',
             'prompting.md': '# Prompting Strategy\nStructured explanations with beginner, student, and teacher modes plus misconception-focused review.',
-            'overview.md': '# RAG Support Agent\nRetrieval and support automation system for multi-tenant SaaS support workflows.',
-            'stack.txt': 'FastAPI, PostgreSQL, pgvector, LLM workflows, vector search, support automation',
-            'architecture.txt': 'Retrieval layer, source-grounded responses, intake workflow, escalation handoff, operational feedback loop'
+            'overview.md': '# Governed Platform for Support (GPS)\nProvider-agnostic governed AI platform for secure, grounded automation across org support stacks.',
+            'stack.txt': 'Python, FastAPI, PostgreSQL/pgvector, RAG, LLM orchestration',
+            'architecture.txt': 'Modular agent runtime, vector retrieval, durable case/run state, typed decision contracts, human-approval gates, deterministic tool authorization, reconstructable audit trails'
         };
         
         return fileContents[file] || `cat: ${file}: No such file or directory`;
@@ -1133,7 +1133,7 @@ Example: find "machine learning"</span>`;
         const searchableContent = {
             'bio.txt': 'Computer Engineer entrepreneur practical software AI-enabled products automation web platforms computer engineering systems industry research teaching client work',
             'skills.json': 'Python C++ JavaScript C Java ARM Assembly PyTorch TensorFlow FastAPI Docker AWS AI ML Embedded Systems Web Development Computer Vision Linux Git MATLAB Altium Designer Node.js',
-            'current_roles.txt': 'AI Intern AHEAD AI Red Team Prompt Engineer LinkedIn Software Engineer ArkBoosted LLC Engineering Success Mentor UIC Private Tutor Varsity Tutors',
+            'current_roles.txt': 'Enterprise AI Engineering Intern AHEAD Engineering Success Mentor UIC University of Illinois Chicago',
             'gpa.txt': 'Academic Performance Current GPA 3.65 Expected BS May 2027 Expected MS May 2028 Deans List Fall 2023 Spring 2024',
             'README.md': 'CodeLingo AI-powered code explanation tool level-based explanations streaming output quiz mode misconception review Python Streamlit Groq API Llama 3.3'
         };
@@ -1251,7 +1251,7 @@ Type 'man &lt;command&gt;' for detailed help.
         return `<div style="color: #00ff41;">
 <div style="color: #ffff00;">TERMINAL STATUS</div>
 <div style="color: #888888;">═════════════════</div>
-System: Portfolio OS v1.8<br>
+System: Portfolio OS v1.9<br>
 Commands loaded: ${commandCount}<br>
 Current path: ${currentPath}<br>
 History entries: ${commandHistory.length}<br>
@@ -1270,7 +1270,7 @@ function getTerminalWelcomeMarkup() {
     return `<div class="cli-output" data-terminal-welcome="true" style="color: #00ff41; font-family: 'Courier New', monospace;">
 <span style="color: #ffff00;">Site Terminal</span>
 <span style="color: #888888;">─────────────────────────────────────────────────</span>
-<span style="color: #00ccff;">System:</span> Portfolio OS v1.8 | <span style="color: #00ccff;">User:</span> akbar@portfolio-system
+<span style="color: #00ccff;">System:</span> Portfolio OS v1.9 | <span style="color: #00ccff;">User:</span> akbar@portfolio-system
 <span style="color: #888888;">Use this as a fast keyboard layer for the site.</span>
 <br>
 <span style="color: #ffff00;">Try:</span> <span style="color: #ffffff;">ls</span> · <span style="color: #ffffff;">tree</span> · <span style="color: #ffffff;">cd projects</span> · <span style="color: #ffffff;">cat bio.txt</span> · <span style="color: #ffffff;">email</span> · <span style="color: #ffffff;">resume</span> · <span style="color: #ffffff;">help</span>
@@ -1660,14 +1660,14 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.8",
-    lastUpdated: "June 2, 2026",
+    current: "1.9",
+    lastUpdated: "August 23, 2026",
     changelog: [
-        "Repositioned portfolio around AI systems, infrastructure, automation, and professional engineering delivery",
-        "Reorganized experience into a categorized tree grouped by credibility signal and working context",
-        "Rebuilt projects as an engineering portfolio with platform, AI, research, foundations, hardware, and tooling buckets",
-        "Expanded project coverage with RAG, LLM API, quant ML, hls4ml, CodeLingo, and computer organization work",
-        "Refined homepage, about, project, and contact copy for a more professional audience"
+        "Promoted to Enterprise AI Engineering Intern at AHEAD, surfaced as progression within a single role entry",
+        "Narrowed current roles to active positions and closed out ended engagements with accurate dates",
+        "Repositioned the support platform project as Governed Platform for Support (GPS): an independently authored, provider-agnostic governed AI platform",
+        "Condensed the ArkBoosted client engineering role and removed duplicated system claims",
+        "Corrected Engineering Success Mentor scope to 200+ students across 10+ sections"
     ]
 };
 
