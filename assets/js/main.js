@@ -4,9 +4,9 @@ const fileSystem = {
     '/about': ['bio.txt', 'skills.json', 'interests.md', 'timeline.log'],
     '/experience': ['current_roles.txt', 'research.txt', 'teaching.txt', 'mentorship.txt'],
     '/education': ['uic.txt', 'coursework.txt', 'gpa.txt', 'degree_plan.txt'],
-    '/projects': ['lamhaa.ai/', 'VisionMamba/', 'DSA_Library/', 'Embedded_Systems/', 'Web-Dev/'],
-    '/projects/lamhaa.ai': ['README.md', 'requirements.txt', 'main.py'],
-    '/projects/VisionMamba': ['model.py', 'dataset.py', 'train.py', 'results.json'],
+    '/projects': ['GPS/', 'Property_Platform/', 'CodeLingo/', 'Quant_ML/', 'Embedded_Systems/'],
+    '/projects/GPS': ['overview.md', 'stack.txt', 'architecture.txt'],
+    '/projects/CodeLingo': ['README.md', 'app.py', 'prompting.md'],
     '/skills': ['programming.txt', 'frameworks.txt', 'tools.txt', 'certifications.txt']
 };
 
@@ -17,6 +17,7 @@ let historyIndex = 0;
 
 
 const enhancedTerminalCommands = {
+    // ...existing commands...
     help: () => {
         return '<div style="color: #00ff41;">PORTFOLIO TERMINAL HELP<br><br>Navigation: ls, cd, pwd, tree<br>Content: cat, grep, head, tail<br>System: whoami, ps, top, date, version, clear, history<br>Contact: email, linkedin, github, resume, cv<br><br>Type "commands" for a simple list or "man &lt;command&gt;" for detailed help.</div>';
     },
@@ -24,7 +25,7 @@ const enhancedTerminalCommands = {
     // Enhanced help with better formatting
     helpme: () => {
         const sections = [
-            '<div style="color: #ffff00; font-weight: bold;">PORTFOLIO TERMINAL v1.0</div>',
+            '<div style="color: #ffff00; font-weight: bold;">PORTFOLIO TERMINAL v1.9</div>',
             '<div style="color: #888888; margin: 10px 0;">═══════════════════════════════════════</div>',
             '',
             '<div style="color: #ffff00;">📂 NAVIGATION COMMANDS</div>',
@@ -192,8 +193,10 @@ const enhancedTerminalCommands = {
        <span style="color: #ffffff;">skills.json</span>       Technical skills in JSON format
        <span style="color: #ffffff;">current_roles.txt</span> Current professional positions
        <span style="color: #ffffff;">gpa.txt</span>           Academic performance details
-       <span style="color: #ffffff;">README.md</span>         Project documentation (lamhaa.ai)
-       <span style="color: #ffffff;">requirements.txt</span>  Technical dependencies
+       <span style="color: #ffffff;">README.md</span>         Project documentation (CodeLingo)
+       <span style="color: #ffffff;">overview.md</span>      GPS platform overview
+       <span style="color: #ffffff;">stack.txt</span>        GPS platform stack
+       <span style="color: #ffffff;">app.py</span>           CodeLingo application entry point
 
 <span style="color: #00ccff;">EXAMPLES</span>
        <span style="color: #ffffff;">cat bio.txt</span>           Read professional biography
@@ -848,30 +851,46 @@ Try 'help' for command overview</span>`;
     },
 
     tree: (args) => {
-        return `<div style="color: #00ff41; font-family: 'Courier New', monospace;">
-<span style="color: #ffff00;">🌳 PORTFOLIO WEBSITE STRUCTURE</span>
-<span style="color: #00ccff;">portfolio-website/</span>
-├── <span style="color: #00ff41;">📁 about/</span>          <span style="color: #888888;"># Personal background and journey</span>
-├── <span style="color: #00ff41;">📁 experience/</span>     <span style="color: #888888;"># Professional work history</span>
-├── <span style="color: #00ff41;">📁 education/</span>      <span style="color: #888888;"># Academic achievements</span>
-├── <span style="color: #00ff41;">📁 projects/</span>       <span style="color: #888888;"># Showcase of completed work</span>
-│   ├── <span style="color: #ffffff;">🚀 lamhaa.ai/</span>      <span style="color: #888888;"># AI-powered visual asset management</span>
-│   ├── <span style="color: #ffffff;">💻 portfolio-site/</span> <span style="color: #888888;"># This interactive website</span>
-│   └── <span style="color: #ffffff;">🔧 embedded-projects/</span> <span style="color: #888888;"># Hardware/firmware projects</span>
-├── <span style="color: #00ff41;">📁 skills/</span>         <span style="color: #888888;"># Technical expertise overview</span>
-├── <span style="color: #00ff41;">📁 contact/</span>        <span style="color: #888888;"># Ways to get in touch</span>
-├── <span style="color: #ffffff;">📄 bio.txt</span>         <span style="color: #888888;"># Professional summary</span>
-├── <span style="color: #ffffff;">📋 resume.pdf</span>      <span style="color: #888888;"># Latest CV document</span>
-├── <span style="color: #ffffff;">🔧 skills.json</span>     <span style="color: #888888;"># Technical skills data</span>
-├── <span style="color: #ffffff;">💼 current_roles.txt</span> <span style="color: #888888;"># Active professional positions</span>
-└── <span style="color: #ffffff;">📊 gpa.txt</span>         <span style="color: #888888;"># Academic performance metrics</span>
-
-<span style="color: #ff6b6b;">💡 Navigation tips:</span>
-  • Use '<span style="color: #00ccff;">cd <section></span>' to explore each area
-  • Use '<span style="color: #00ccff;">cat <file></span>' to read file contents
-  • Use '<span style="color: #00ccff;">ls -l</span>' for detailed file listings
+    const showAll = args.includes('-a');
+    return `<div style="color: #00ff41; font-family: 'Courier New', monospace; line-height: 1.6;">
+╭─────────────────────────────────────────────────────────────╮
+│ <span style="color: #ffff00; font-weight: bold;">🌳 PORTFOLIO STRUCTURE TREE</span>                           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ <span style="color: #00ccff;">portfolio-website/</span>                                   │
+│ ├── <span style="color: #00ff41;">📁 about/</span>          <span style="color: #888888;"># Personal background</span>      │
+│ │   ├── <span style="color: #ffffff;">bio.txt</span>                                       │
+│ │   ├── <span style="color: #ffffff;">skills.json</span>                                  │
+│ │   └── <span style="color: #ffffff;">interests.md</span>                                 │
+│ ├── <span style="color: #00ff41;">📁 experience/</span>     <span style="color: #888888;"># Professional history</span>     │
+│ │   ├── <span style="color: #ffffff;">current_roles.txt</span>                           │
+│ │   ├── <span style="color: #ffffff;">research.txt</span>                                │
+│ │   └── <span style="color: #ffffff;">teaching.txt</span>                                │
+│ ├── <span style="color: #00ff41;">📁 education/</span>      <span style="color: #888888;"># Academic background</span>      │
+│ │   ├── <span style="color: #ffffff;">uic.txt</span>                                      │
+│ │   ├── <span style="color: #ffffff;">gpa.txt</span>                                      │
+│ │   └── <span style="color: #ffffff;">coursework.txt</span>                              │
+│ ├── <span style="color: #00ff41;">📁 projects/</span>       <span style="color: #888888;"># Technical projects</span>       │
+│ │   ├── <span style="color: #00ccff;">🚀 GPS/</span>                                      │
+│ │   │   ├── <span style="color: #ffffff;">overview.md</span>                             │
+│ │   │   ├── <span style="color: #ffffff;">stack.txt</span>                               │
+│ │   │   └── <span style="color: #ffffff;">architecture.txt</span>                        │
+│ │   ├── <span style="color: #00ccff;">🏠 Property_Platform/</span>                       │
+│ │   ├── <span style="color: #00ccff;">🧠 CodeLingo/</span>                               │
+│ │   ├── <span style="color: #00ccff;">📈 Quant_ML/</span>                                │
+│ │   └── <span style="color: #00ccff;">🔧 Embedded_Systems/</span>                        │
+│ ├── <span style="color: #00ff41;">📁 skills/</span>         <span style="color: #888888;"># Technical expertise</span>      │
+│ │   ├── <span style="color: #ffffff;">programming.txt</span>                             │
+│ │   └── <span style="color: #ffffff;">frameworks.txt</span>                              │
+│ ├── <span style="color: #00ff41;">📁 contact/</span>        <span style="color: #888888;"># Contact information</span>     │
+│ └── <span style="color: #ffffff;">📋 resume.pdf</span>      <span style="color: #888888;"># Latest resume</span>           │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ <span style="color: #ff6b6b;">💡 Navigation:</span> Use <span style="color: #00ccff;">cd &lt;directory&gt;</span> to explore sections    │
+│ <span style="color: #ff6b6b;">📖 Read files:</span> Use <span style="color: #00ccff;">cat &lt;filename&gt;</span> to view content      │
+╰─────────────────────────────────────────────────────────────╯
 </div>`;
-    },
+},
 
     cd: (args) => {
         const target = args[0] || '/';
@@ -938,13 +957,17 @@ Try 'help' for command overview</span>`;
         if (!file) return 'cat: missing file operand\nTry \'cat --help\' for more information.';
         
         const fileContents = {
-            'bio.txt': 'Computer Engineering professional specializing in AI/ML, embedded systems, and full-stack development.\nCurrently pursuing Joint BS/MS at UIC with 6+ professional roles and research experience.',
+            'bio.txt': 'Computer Engineer and entrepreneur building practical software, AI-enabled products, automation workflows, web platforms, and computer engineering systems.\nExperience spans industry, research, teaching, client-facing engineering, and AI evaluation.',
             'resume.pdf': 'PDF document - Contact akbaraman797@gmail.com for latest resume\nSize: 2.4MB\nLast modified: Aug 26, 2025',
-            'current_roles.txt': 'Active Professional Roles:\n• AI Trainer - Outlier & Handshake\n• Teaching Assistant - UIC ECE Department\n• Code Coach - TheCoderSchool\n• Research Assistant - UIC Computer Vision Lab',
+            'current_roles.txt': 'Active Professional Roles:\n• Enterprise AI Engineering Intern - AHEAD\n• Engineering Success Mentor - University of Illinois Chicago',
             'skills.json': '{\n  "languages": ["Python", "C++", "JavaScript", "C", "Java", "ARM Assembly"],\n  "frameworks": ["PyTorch", "TensorFlow", "FastAPI", "Docker", "AWS"],\n  "domains": ["AI/ML", "Embedded Systems", "Web Development", "Computer Vision"],\n  "tools": ["Linux", "Git", "MATLAB", "Altium Designer", "Node.js"]\n}',
             'gpa.txt': 'Academic Performance:\nCurrent GPA: 3.65/4.0\nExpected BS: May 2027\nExpected MS: May 2028\nDean\'s List: Fall 2023, Spring 2024',
-            'README.md': '# lamhaa.ai\nAI-powered visual asset management platform\n\n## Features\n- Smart photo organization\n- Duplicate detection\n- Burst grouping\n- Quality assessment\n\n## Tech Stack\nPython, FastAPI, PyTorch, OpenCV, CLIP, BLIP',
-            'requirements.txt': 'torch>=1.9.0\nopencv-python>=4.5.0\ntransformers>=4.0.0\nfastapi>=0.68.0\nuvicorn>=0.15.0\nnumpy>=1.21.0\npillow>=8.3.0'
+            'README.md': '# CodeLingo\nAI-powered code explanation tool for students learning to read and reason through code.\n\n## Features\n- Level-based explanations\n- Streaming output\n- Quiz mode\n- Misconception review\n\n## Tech Stack\nPython, Streamlit, Groq API, Llama 3.3',
+            'app.py': '# CodeLingo Streamlit app entry point\n# Handles code input, explanation level selection, streaming responses, and quiz mode.',
+            'prompting.md': '# Prompting Strategy\nStructured explanations with beginner, student, and teacher modes plus misconception-focused review.',
+            'overview.md': '# Governed Platform for Support (GPS)\nProvider-agnostic governed AI platform for secure, grounded automation across org support stacks.',
+            'stack.txt': 'Python, FastAPI, PostgreSQL/pgvector, RAG, LLM orchestration',
+            'architecture.txt': 'Modular agent runtime, vector retrieval, durable case/run state, typed decision contracts, human-approval gates, deterministic tool authorization, reconstructable audit trails'
         };
         
         return fileContents[file] || `cat: ${file}: No such file or directory`;
@@ -1108,18 +1131,18 @@ Example: find "machine learning"</span>`;
         }
         
         const searchableContent = {
-            'bio.txt': 'Computer Engineering professional specializing in AI/ML, embedded systems, and full-stack development. Currently pursuing Joint BS/MS at UIC with 6+ professional roles and research experience.',
+            'bio.txt': 'Computer Engineer entrepreneur practical software AI-enabled products automation web platforms computer engineering systems industry research teaching client work',
             'skills.json': 'Python C++ JavaScript C Java ARM Assembly PyTorch TensorFlow FastAPI Docker AWS AI ML Embedded Systems Web Development Computer Vision Linux Git MATLAB Altium Designer Node.js',
-            'current_roles.txt': 'AI Trainer Outlier Handshake Teaching Assistant UIC ECE Department Code Coach TheCoderSchool Research Assistant UIC Computer Vision Lab',
+            'current_roles.txt': 'Enterprise AI Engineering Intern AHEAD Engineering Success Mentor UIC University of Illinois Chicago',
             'gpa.txt': 'Academic Performance Current GPA 3.65 Expected BS May 2027 Expected MS May 2028 Deans List Fall 2023 Spring 2024',
-            'README.md': 'lamhaa.ai AI-powered visual asset management platform Smart photo organization Duplicate detection Burst grouping Quality assessment Python FastAPI PyTorch OpenCV CLIP BLIP'
+            'README.md': 'CodeLingo AI-powered code explanation tool level-based explanations streaming output quiz mode misconception review Python Streamlit Groq API Llama 3.3'
         };
         
         const sectionContent = {
             'about': 'Personal background professional journey computer engineering UIC artificial intelligence machine learning',
-            'experience': 'professional work history AI trainer teaching assistant code coach research assistant computer vision embedded systems',
+            'experience': 'professional work history AHEAD LinkedIn ArkBoosted UIC Varsity Tutors AI evaluation teaching client engineering automation',
             'education': 'academic background achievements University Illinois Chicago electrical computer engineering joint degree',
-            'projects': 'portfolio technical projects lamhaa.ai wildfire detection VisionMamba DSA library embedded systems ARM',
+            'projects': 'portfolio technical projects RAG support agent property platform CodeLingo quantitative ML hls4ml DSA embedded systems ARM',
             'skills': 'technical expertise Python C++ JavaScript PyTorch TensorFlow machine learning artificial intelligence',
             'contact': 'get in touch connect email LinkedIn GitHub akbaraman797 gmail com'
         };
@@ -1228,7 +1251,7 @@ Type 'man &lt;command&gt;' for detailed help.
         return `<div style="color: #00ff41;">
 <div style="color: #ffff00;">TERMINAL STATUS</div>
 <div style="color: #888888;">═════════════════</div>
-System: Portfolio OS v1.0<br>
+System: Portfolio OS v1.9<br>
 Commands loaded: ${commandCount}<br>
 Current path: ${currentPath}<br>
 History entries: ${commandHistory.length}<br>
@@ -1243,6 +1266,17 @@ ${commandList.join(', ')}<br>
 };
 
 // Terminal CLI Functions
+function getTerminalWelcomeMarkup() {
+    return `<div class="cli-output" data-terminal-welcome="true" style="color: #00ff41; font-family: 'Courier New', monospace;">
+<span style="color: #ffff00;">Site Terminal</span>
+<span style="color: #888888;">─────────────────────────────────────────────────</span>
+<span style="color: #00ccff;">System:</span> Portfolio OS v1.9 | <span style="color: #00ccff;">User:</span> akbar@portfolio-system
+<span style="color: #888888;">Use this as a fast keyboard layer for the site.</span>
+<br>
+<span style="color: #ffff00;">Try:</span> <span style="color: #ffffff;">ls</span> · <span style="color: #ffffff;">tree</span> · <span style="color: #ffffff;">cd projects</span> · <span style="color: #ffffff;">cat bio.txt</span> · <span style="color: #ffffff;">email</span> · <span style="color: #ffffff;">resume</span> · <span style="color: #ffffff;">help</span>
+</div>`;
+}
+
 function openTerminalCli() {
     const cli = document.getElementById('terminalCli');
     const output = document.getElementById('terminalCliContent');
@@ -1250,15 +1284,9 @@ function openTerminalCli() {
     cli.classList.add('active');
     cli.style.zIndex = 100001;
     
-    // Add welcome message if terminal is empty
-    if (!output.innerHTML.trim()) {
-        output.innerHTML = `<div class="cli-output" style="color: #00ff41; font-family: 'Courier New', monospace;">
-<span style="color: #ffff00;">🖥️  Welcome to Akbar's Interactive Portfolio Terminal</span>
-<span style="color: #888888;">─────────────────────────────────────────────────</span>
-<span style="color: #00ccff;">System:</span> Portfolio OS v1.0 | <span style="color: #00ccff;">User:</span> akbar@portfolio-system
-<span style="color: #888888;">Type 'help' for available commands, 'ls' to see sections, 'tree' for structure</span>
-<span style="color: #ff6b6b;">💡 Tip: Use 'cd projects' to explore my work, 'cat bio.txt' to learn more!</span>
-</div>`;
+    // Add a practical welcome message if terminal is empty or still on the default hint
+    if (!output.innerHTML.trim() || output.querySelector('[data-terminal-welcome="true"]')) {
+        output.innerHTML = getTerminalWelcomeMarkup();
     }
     
     document.getElementById('cliInput').focus();
@@ -1289,19 +1317,20 @@ function executeEnhancedCommand(command) {
     const inputLine = `<div class="cli-output"><span style="color:#ff0040; font-weight: bold;">akbar@portfolio-system</span><span style="color:#00ff41;">:</span><span style="color:#6495ED;">${currentPath === '/' ? '~' : currentPath}</span><span style="color:#00ff41;">$</span> <span style="color: #ffffff;">${command}</span></div>`;
     
     if (cmd.toLowerCase() === 'clear') {
-        output.innerHTML = `<div class="cli-output" style="color: #00ff41; font-family: 'Courier New', monospace;">
-<span style="color: #ffff00;">🖥️  Welcome to Akbar's Portfolio Terminal</span>
-<span style="color: #888888;">Type 'help' for available commands, 'ls' to see sections</span>
-</div>`;
+        output.innerHTML = getTerminalWelcomeMarkup();
         return;
     }
 
     const cmdFunc = enhancedTerminalCommands[cmd.toLowerCase()];
     let response;
-    
     if (cmdFunc) {
         try {
             response = typeof cmdFunc === 'function' ? cmdFunc(args) : cmdFunc;
+            console.log('Command response:', cmd, response); // Debug line
+            // Check if response is empty or undefined
+            if (!response || response.trim() === '') {
+                response = `<span style="color: #ffff00;">Command '${cmd}' executed but returned empty output</span>`;
+            }
         } catch (error) {
             console.error('Error executing command:', cmd, error);
             response = `<span style="color: #ff6b6b;">Error executing command: ${error.message}</span>`;
@@ -1310,26 +1339,21 @@ function executeEnhancedCommand(command) {
         response = `<span style="color: #ff6b6b;">bash: ${cmd}: command not found</span>
 <span style="color: #888888;">Type 'help' for available commands or 'ls' to see sections</span>`;
     }
-    
-    // Check if response is empty or undefined
-    if (!response || response.trim() === '') {
-        response = `<span style="color: #ffff00;">Command '${cmd}' executed but returned no output</span>`;
-    }
-    
     output.innerHTML += inputLine + `<div class="cli-output" style="margin-bottom:1rem; line-height: 1.4;">${response}</div>`;
     output.scrollTop = output.scrollHeight;
+        // ...existing code...
 }
 
 // Enhanced AI Assistant
 const aiResponses = [
-    { keywords: ['akbar', 'about', 'who'], response: 'Akbar Aman is a Computer Engineering professional at UIC, specializing in AI/ML, embedded systems, and full-stack development. He has 6+ professional roles spanning research, teaching, and industry applications.' },
-    { keywords: ['experience', 'work', 'job', 'career'], response: 'Akbar currently holds multiple roles: AI Trainer at Outlier and Handshake, Teaching Assistant and Mentor at UIC, and Code Coach at TheCoderSchool. He has research experience in deep learning and computer vision at UIC ECE Department.' },
+    { keywords: ['akbar', 'about', 'who'], response: 'Akbar Aman is a Computer Engineer and entrepreneur building practical software, AI-enabled products, automation workflows, web platforms, and computer engineering systems across industry, research, teaching, and client work.' },
+    { keywords: ['experience', 'work', 'job', 'career'], response: 'Akbar currently works across enterprise AI enablement, AI safety evaluation, client-facing software engineering, engineering mentorship, and private tutoring, with experience at AHEAD, LinkedIn, ArkBoosted, UIC, and other technical organizations.' },
     { keywords: ['skills', 'technical', 'programming', 'languages'], response: 'Technical expertise includes: Python, C++, C, JavaScript, Java, ARM Assembly, MATLAB, AI/ML frameworks (PyTorch, TensorFlow), Linux, FastAPI, Docker, AWS, circuit design, and signal processing.' },
-    { keywords: ['education', 'degree', 'university', 'school'], response: 'Akbar is pursuing a Joint BS in Computer Engineering and MS in Electrical and Computer Engineering at University of Illinois Chicago, with a current GPA of 3.65. Expected graduation: BS May 2027, MS May 2028.' },
-    { keywords: ['projects', 'portfolio', 'code', 'github'], response: 'Key projects include: lamhaa.ai (AI-powered photo organization platform), VisionMamba (wildfire detection CNN), DSA library in C++, embedded systems with ARM, and various web applications. Check his GitHub: ak23bar' },
+    { keywords: ['education', 'degree', 'university', 'school'], response: 'Akbar is pursuing Computer Engineering at the University of Illinois Chicago, with coursework spanning computer and networked systems, digital systems and VLSI, data science, mathematics, and embedded systems.' },
+    { keywords: ['projects', 'portfolio', 'code', 'github'], response: 'Key projects include a RAG support agent, full-stack MLS property platform, CodeLingo, quantitative ML research work, hls4ml FPGA projects, DSA implementations, embedded systems, and independent tools. Check his GitHub: ak23bar' },
     { keywords: ['contact', 'email', 'reach', 'hire'], response: 'Contact Akbar at akbaraman797@gmail.com for opportunities, collaborations, or his resume. Also available on LinkedIn (akbar-aman-94b1b6263) and GitHub (ak23bar).' },
-    { keywords: ['ai', 'machine learning', 'ml', 'deep learning'], response: 'Akbar has extensive AI/ML experience including: AI training and validation at Outlier/Handshake, computer vision research (wildfire detection), PyTorch/TensorFlow projects, and building AI-powered applications like lamhaa.ai.' },
-    { keywords: ['teaching', 'mentor', 'instructor'], response: 'Akbar is actively involved in education as a TA for CS 109 (MATLAB), Engineering Success Program Mentor, and Code Coach teaching Python, C++, Java, and web development to students of all levels.' },
+    { keywords: ['ai', 'machine learning', 'ml', 'deep learning'], response: 'Akbar has AI/ML experience across enterprise AI enablement, red-team evaluation, RAG systems, LLM APIs, recommendation interfaces, quantitative ML research, and computer vision workflows.' },
+    { keywords: ['teaching', 'mentor', 'instructor'], response: 'Akbar is actively involved in technical education through engineering mentorship, private tutoring, coding instruction, curriculum design, and student project guidance.' },
     { keywords: ['matrix', 'linux', 'terminal'], response: 'Welcome to the Matrix! This portfolio showcases Akbar\'s love for Linux and terminal environments. Try the interactive terminal (CLI icon) for system commands, or explore the Matrix-themed interface.' },
     { keywords: ['help', 'commands', 'what can you do'], response: 'I can provide information about Akbar\'s professional experience, technical skills, education, projects, and career. Ask me about his work, skills, background, or how to contact him!' }
 ];
@@ -1395,22 +1419,19 @@ function createLoadingMatrixRain() {
     
     for (let c = 0; c < columns; c++) {
         const col = document.createElement('div');
-        col.style.cssText = `
-            position: absolute;
-            left: ${c * 20}px;
-            top: -100px;
-            width: 20px;
-            height: calc(100vh + 200px);
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 14px;
-            color: #00ff41;
-            text-shadow: 0 0 5px #00ff41;
-            animation: matrix-fall ${3 + Math.random() * 4}s linear infinite;
-            animation-delay: ${Math.random() * 2}s;
-            overflow: hidden;
-            opacity: ${0.4 + Math.random() * 0.6};
-        `;
-        
+        col.style.position = 'absolute';
+        col.style.left = (c * 20) + 'px';
+        col.style.top = '-100px';
+        col.style.width = '20px';
+        col.style.height = 'calc(100vh + 200px)';
+        col.style.fontFamily = 'Share Tech Mono, monospace';
+        col.style.fontSize = '14px';
+        col.style.color = '#00ff41';
+        col.style.textShadow = '0 0 5px #00ff41';
+        col.style.animation = `matrix-fall ${3 + Math.random() * 4}s linear infinite`;
+        col.style.animationDelay = `${Math.random() * 2}s`;
+        col.style.overflow = 'hidden';
+        col.style.opacity = (0.4 + Math.random() * 0.6).toString();
         let rain = '';
         const numChars = Math.ceil((window.innerHeight + 200) / 16);
         for (let r = 0; r < numChars; r++) {
@@ -1447,6 +1468,13 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function scrollToContact() {
+    const contact = document.getElementById('contact');
+    if (contact) {
+        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 function downloadResume() {
     window.open('assets/files/Akbar_Resume.pdf', '_blank');
     return 'Opening resume PDF...';
@@ -1467,7 +1495,7 @@ function toggleMobileNav() {
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
     // Terminal functionality
-    document.querySelectorAll('.quick-action[title="Terminal"]').forEach(btn => {
+    document.querySelectorAll('.quick-action[title="Open Site Terminal"]').forEach(btn => {
         btn.onclick = function(e) {
             e.stopPropagation();
             openTerminalCli();
@@ -1632,13 +1660,14 @@ window.addEventListener('load', function() {
 
 // Version Management System
 const versionConfig = {
-    current: "1.0",
-    lastUpdated: "August 27, 2025",
+    current: "1.9",
+    lastUpdated: "August 23, 2026",
     changelog: [
-        "Initial portfolio launch with Matrix theme",
-        "Complete terminal CLI with Linux-like commands",
-        "Interactive navigation and smooth animations",
-        "Comprehensive project showcase"
+        "Promoted to Enterprise AI Engineering Intern at AHEAD, surfaced as progression within a single role entry",
+        "Narrowed current roles to active positions and closed out ended engagements with accurate dates",
+        "Repositioned the support platform project as Governed Platform for Support (GPS): an independently authored, provider-agnostic governed AI platform",
+        "Condensed the ArkBoosted client engineering role and removed duplicated system claims",
+        "Corrected Engineering Success Mentor scope to 200+ students across 10+ sections"
     ]
 };
 
@@ -1703,7 +1732,13 @@ function loadVersionConfig() {
     if (savedVersion) {
         try {
             const parsed = JSON.parse(savedVersion);
-            Object.assign(versionConfig, parsed);
+            const savedCurrent = parseFloat(parsed.current);
+            const defaultCurrent = parseFloat(versionConfig.current);
+            if (!Number.isNaN(savedCurrent) && savedCurrent >= defaultCurrent) {
+                Object.assign(versionConfig, parsed);
+            } else {
+                localStorage.setItem('portfolioVersion', JSON.stringify(versionConfig));
+            }
         } catch (e) {
             console.log('Using default version config');
         }
@@ -1731,23 +1766,34 @@ document.addEventListener('DOMContentLoaded', () => {
     loadVersionConfig();
     initVersionDisplay();
     initEngineerTypeAnimation();
+
+    // Hide version card when clicking outside
+    const versionDisplay = document.getElementById('versionDisplay');
+    const versionTooltip = document.getElementById('versionTooltip');
+    if (versionDisplay && versionTooltip) {
+        // Make versionDisplay act as a button
+        versionDisplay.style.cursor = 'pointer';
+        versionDisplay.addEventListener('click', (e) => {
+            e.stopPropagation();
+            versionTooltip.classList.toggle('show');
+        });
+        // Hide tooltip when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!versionDisplay.contains(e.target) && !versionTooltip.contains(e.target)) {
+                versionTooltip.classList.remove('show');
+            }
+        });
+    }
 });
 
 // Engineer Type Typing Animation
 function initEngineerTypeAnimation() {
     const engineerTypes = [
-        'Computer',
-        'Software',
-        'Hardware',
-        'Full Stack',
-        'ML',
-        'Data Science',
-        'Signal Processing',
-        'Embedded',
-        'AI',
-        'Systems',
-        'Robotics',
-        'Cybersecurity'
+        'Computer Engineering.',
+        'Software Engineering.',
+        'Hardware Engineering.',
+        'AI Engineering.',
+        'Systems Engineering.'
     ];
     
     let currentIndex = 0;
@@ -1757,10 +1803,10 @@ function initEngineerTypeAnimation() {
     
     const element1 = document.getElementById('engineerType');
     const element2 = document.getElementById('engineerTypeAbout');
+    // The About copy animates full engineering phrases.
     
     function type() {
         const currentWord = engineerTypes[currentIndex];
-        
         if (isDeleting) {
             currentText = currentWord.substring(0, currentText.length - 1);
             typeSpeed = 50;
@@ -1768,10 +1814,9 @@ function initEngineerTypeAnimation() {
             currentText = currentWord.substring(0, currentText.length + 1);
             typeSpeed = 100;
         }
-        
-        // Update both elements with "Engineer" suffix
-        if (element1) element1.textContent = currentText + ' Engineer';
-        if (element2) element2.textContent = currentText + ' Engineer';
+        // Update both elements with the rotating engineering focus.
+        if (element1) element1.textContent = currentText;
+        if (element2) element2.textContent = currentText;
         
         if (!isDeleting && currentText === currentWord) {
             // Pause at end of word

@@ -15,9 +15,10 @@
         margin-bottom: 0.5rem;
     }
     .hero-text-wrap {
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem 0.2rem 0 0.2rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0.2rem 0 0.2rem;
+    font-size: clamp(1rem, 2vw, 1.15rem);
     }
     .terminal-neo-image {
         max-width: 110px;
@@ -98,7 +99,7 @@
 
     /* Section adjustments */
     .section-title {
-        font-size: 2.5rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     }
 
     .nav-center {
@@ -111,8 +112,8 @@
 
     /* About Section Responsive */
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     }
 
     /* Timeline Responsive */
@@ -129,6 +130,7 @@
 
     .timeline-item .timeline-dot {
         left: 12.5px !important;
+        display: none; /* Hide green circle on mobile */
     }
 
     /* Projects Responsive */
@@ -177,7 +179,7 @@
 /* Small Mobile Devices */
 @media (max-width: 480px) {
     .section-title {
-        font-size: 2rem;
+        font-size: clamp(1.2rem, 7vw, 2rem);
     }
 
     .terminal-body {
@@ -186,10 +188,12 @@
 
     .project-card {
         padding: 1.5rem;
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
     }
 
     .timeline-content {
         padding: 1.5rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
     }
 
     .education-card {
