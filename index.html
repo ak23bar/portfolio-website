@@ -73,7 +73,32 @@
     </div>
   </section>
 
-  <section id="projects" class="systems"></section>
+  <section id="projects" class="systems">
+    <div class="wrap">
+      <h2 class="section-label">selected systems</h2>
+
+      <article class="system system--lead">
+        <h3>Governed Platform for Support (GPS)</h3>
+        <p class="system-thesis">A provider-agnostic platform that treats agent
+          behaviour as something to authorize, bound, and audit rather than
+          something to prompt.</p>
+        <ul class="system-notes">
+          <li>Agent runtime kept provider-agnostic, so the governing logic never
+            couples to a single model vendor.</li>
+          <li>Decisions cross explicit typed contracts instead of being parsed
+            back out of free-form text.</li>
+          <li>Consequential actions block on human approval as a structural gate,
+            not a post-hoc review step.</li>
+          <li>Tool authorization resolves deterministically, so the same request
+            cannot be permitted in one run and denied in another.</li>
+        </ul>
+        <p class="system-tech mono">Python &middot; FastAPI &middot; PostgreSQL/pgvector &middot; RAG &middot; LLM orchestration</p>
+        <p class="system-evidence mono">source confidential &mdash; personal IP</p>
+      </article>
+
+      <p class="see-all mono"><a href="/matrix/#projects">See all work &rarr;</a></p>
+    </div>
+  </section>
 
   <section id="about" class="capabilities"></section>
 
