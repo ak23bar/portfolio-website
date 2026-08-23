@@ -123,3 +123,20 @@ section { padding-block: clamp(3rem, 2rem + 4vw, 5rem); }
     margin-top: 2.5rem; font-size: 0.8125rem; color: var(--text-muted);
 }
 .alt-interface a { color: var(--text-muted); }
+
+/* ---- hero ---- */
+.hero { padding-block: clamp(3.5rem, 2.5rem + 5vw, 7rem) clamp(3rem, 2rem + 4vw, 5rem); }
+.positioning {
+    margin: 0.75rem 0 2rem; font-size: 1rem;
+    color: var(--accent); letter-spacing: 0.02em;
+}
+.hero-thesis { color: var(--text); font-size: 1.0625rem; }
+.hero-role {
+    margin-top: 2rem; font-size: 0.8125rem; color: var(--text-muted);
+}
+.hero-actions {
+    list-style: none; margin: 2rem 0 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+    font-family: var(--font-mono); font-size: 0.875rem;
+}
+.hero-actions a { min-height: 44px; display: inline-flex; align-items: center; }
