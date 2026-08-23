@@ -38,3 +38,6 @@ yarn-error.log*
 
 # SDD workspace (scratch)
 .superpowers/
+
+# Playwright MCP artifacts
+.playwright-mcp/
