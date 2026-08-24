@@ -489,6 +489,14 @@ body::before {
 }
 .system-spec dd { margin: 0; color: var(--text); }
 
+/* The four followers are records, not essays: a narrower label column and a
+   tighter row gap than the lead's read as denser data, keeping GPS the one
+   card with room to breathe. */
+.system-spec--compact {
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 0.35rem 1.25rem;
+}
+
 .system-tech { padding-top: 1.5rem; }
 .system-evidence { color: var(--text-muted); }
 
@@ -537,3 +545,21 @@ body::before {
     .system-spec dt:first-of-type { padding-top: 0; }
     .system--lead { padding: 1.5rem; }
 }
+
+/* ---- selected systems: outbound links ----
+   Only two of the five records have a link: a verifiable, still-reachable
+   public repository. The other three carry none, on purpose, rather than
+   pointing at dead DNS or a private source. */
+.system-links {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    font-size: 0.8125rem;
+}
+.system-links a {
+    color: var(--text-muted);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+.system-links a:hover { color: var(--accent); }
