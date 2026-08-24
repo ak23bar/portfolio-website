@@ -4,31 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Akbar Aman — AI &amp; Systems Engineer</title>
-<meta name="description" content="Akbar Aman is an AI and systems engineer building governed AI platforms, agent runtimes, production backends, and embedded systems. Selected work, experience, and contact.">
+<meta name="description" content="Akbar Aman is a computer engineer working across AI systems, software infrastructure, and hardware — governed agents, production platforms, applied machine learning, embedded systems, and digital design.">
 <meta name="author" content="Akbar Aman">
 <link rel="canonical" href="https://akaman.dev/">
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Akbar Aman — AI &amp; Systems Engineer">
-<meta property="og:description" content="Governed AI platforms, agent runtimes, production backends, and embedded systems.">
+<meta property="og:description" content="I build across AI systems, software infrastructure, and hardware.">
 <meta property="og:url" content="https://akaman.dev/">
 <meta property="og:image" content="https://akaman.dev/assets/files/og-professional.png">
 <meta property="og:image:alt" content="Akbar Aman — AI & Systems Engineer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Akbar Aman — AI &amp; Systems Engineer">
-<meta name="twitter:description" content="Governed AI platforms, agent runtimes, production backends, and embedded systems.">
+<meta name="twitter:description" content="I build across AI systems, software infrastructure, and hardware.">
 <meta name="twitter:image" content="https://akaman.dev/assets/files/og-professional.png">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/pro.css">
 
+<script>
+/* Flags JS before first paint so scroll-reveal targets start hidden without a
+   flash. The timer is a dead-man switch: if pro.js never executes, the hiding
+   class is dropped and every section is visible. */
+(function (d) {
+  var h = d.documentElement;
+  h.classList.add('pro-js');
+  setTimeout(function () {
+    if (h.getAttribute('data-pro-ready') !== '1') h.classList.remove('pro-js');
+  }, 1500);
+})(document);
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Akbar Aman",
-  "jobTitle": "AI & Systems Engineer",
+  "jobTitle": ["AI Engineer", "Systems Engineer", "Computer Engineer"],
   "url": "https://akaman.dev/",
   "sameAs": [
     "https://github.com/ak23bar",
@@ -47,7 +60,10 @@
       <a href="#projects">work</a>
       <a href="#experience">experience</a>
       <a href="/assets/files/Akbar_Resume.pdf">resume</a>
-      <a class="matrix-entry mono" href="/matrix/" title="Alternate interface" aria-label="Alternate interface">&gt;_</a>
+      <span class="matrix-slot">
+        <a class="matrix-entry mono" href="/matrix/" aria-label="Open Matrix portfolio interface"><span class="caret" aria-hidden="true">&gt;_</span> matrix</a>
+        <span class="matrix-cue mono" id="matrix-cue" aria-hidden="true">alternate interface available</span>
+      </span>
     </nav>
   </div>
 </header>
@@ -55,48 +71,93 @@
 <main id="main">
 
   <section id="home" class="hero">
-    <div class="wrap">
-      <h1>Akbar Aman</h1>
-      <p class="positioning mono">AI &amp; Systems Engineer</p>
-      <p class="hero-thesis">I build systems where AI has to be accountable to
-        something concrete: a typed contract, an approval gate, an audit trail,
-        or a fixed hardware budget. That work runs from governed agent runtimes
-        and production backends down to firmware and models compiled onto FPGAs.
-        What interests me is the constraint that makes a system trustworthy
-        after it ships, not the demo that makes it look clever before.</p>
-      <p class="hero-role mono">Enterprise AI Engineering Intern &middot; AHEAD</p>
-      <ul class="hero-actions">
-        <li><a href="/assets/files/Akbar_Resume.pdf">Resume</a></li>
-        <li><a href="https://github.com/ak23bar">GitHub</a></li>
-        <li><a href="mailto:akbaraman797@gmail.com">Email</a></li>
-      </ul>
+    <div class="wrap hero-grid">
+
+      <div class="hero-copy">
+        <h1>Akbar Aman</h1>
+        <p class="positioning mono">
+          <span class="ident-anchor">Computer Engineer</span>
+          <span class="ident-sep" aria-hidden="true">/</span>
+          <span class="ident-rotator" aria-hidden="true">
+            <span class="ident-sizer">Systems Engineer</span>
+            <span class="ident-item is-active">AI Engineer</span>
+            <span class="ident-item">Systems Engineer</span>
+          </span>
+          <span class="sr-only">also AI Engineer and Systems Engineer</span>
+        </p>
+        <p class="hero-thesis">I build across AI systems, software infrastructure,
+          and hardware.</p>
+        <p class="hero-support">My work spans governed agents, production platforms,
+          applied machine learning, embedded systems, and digital design &mdash; with a
+          focus on reliability, performance, and systems that hold up in practice.</p>
+        <p class="hero-role mono">Enterprise AI &middot; AHEAD</p>
+        <ul class="hero-actions">
+          <li><a href="/assets/files/Akbar_Resume.pdf">Resume</a></li>
+          <li><a href="https://github.com/ak23bar">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/akbar-aman-94b1b6263">LinkedIn</a></li>
+          <li><a href="mailto:akbaraman797@gmail.com">Email</a></li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <svg class="topology" viewBox="0 0 260 344" role="img" aria-label="Diagram of the engineering abstraction layers this work spans: an agent layer above a runtime layer, above an API and state layer that branches to networking, above an embedded and DSP layer, above an FPGA and HDL layer. A signal travels down through every layer.">
+          <g class="topo-wire">
+            <line x1="20" y1="26" x2="20" y2="322"></line>
+            <line class="topo-branch" x1="20" y1="174" x2="112" y2="212"></line>
+          </g>
+          <g class="topo-bound">
+            <line x1="6" y1="137" x2="254" y2="137"></line>
+            <line x1="6" y1="285" x2="254" y2="285"></line>
+            <text class="topo-bound-label" x="254" y="130">runtime boundary</text>
+            <text class="topo-bound-label" x="254" y="278">hardware boundary</text>
+          </g>
+          <g class="topo-nodes">
+            <circle class="topo-node topo-n1" cx="20" cy="26"  r="4"></circle>
+            <circle class="topo-node topo-n2" cx="20" cy="100" r="4"></circle>
+            <circle class="topo-node topo-n3" cx="20" cy="174" r="4"></circle>
+            <circle class="topo-node topo-n4" cx="20" cy="248" r="4"></circle>
+            <circle class="topo-node topo-n5" cx="20" cy="322" r="4"></circle>
+            <circle class="topo-node topo-branch" cx="112" cy="212" r="3"></circle>
+            <text class="topo-label" x="34" y="26">agent</text>
+            <text class="topo-label" x="34" y="100">runtime</text>
+            <text class="topo-label" x="34" y="174">api &#183; state</text>
+            <text class="topo-label" x="34" y="248">embedded &#183; dsp</text>
+            <text class="topo-label" x="34" y="322">fpga &#183; hdl</text>
+            <text class="topo-label topo-branch" x="124" y="212">network</text>
+          </g>
+          <circle class="topo-packet" cx="20" cy="26" r="2.5"></circle>
+        </svg>
+      </div>
+
     </div>
   </section>
 
   <section id="projects" class="systems">
     <div class="wrap">
-      <h2 class="section-label">selected systems</h2>
+      <h2 class="section-label reveal">selected systems</h2>
 
-      <article class="system system--lead">
+      <article class="system system--lead reveal">
+        <p class="system-index mono">01 / governed ai</p>
         <h3>Governed Platform for Support (GPS)</h3>
-        <p class="system-thesis">A provider-agnostic platform that treats agent
-          behaviour as something to authorize, bound, and audit rather than
-          something to prompt.</p>
-        <ul class="system-notes">
-          <li>Agent runtime kept provider-agnostic, so the governing logic never
-            couples to a single model vendor.</li>
-          <li>Decisions cross explicit typed contracts instead of being parsed
-            back out of free-form text.</li>
-          <li>Consequential actions block on human approval as a structural gate,
-            not a post-hoc review step.</li>
-          <li>Tool authorization resolves deterministically, so the same request
-            cannot be permitted in one run and denied in another.</li>
-        </ul>
-        <p class="system-tech mono">Python &middot; FastAPI &middot; PostgreSQL/pgvector &middot; RAG &middot; LLM orchestration</p>
-        <p class="system-evidence mono">source confidential &mdash; personal IP</p>
+        <p class="system-thesis">Provider-agnostic infrastructure for secure,
+          grounded support automation.</p>
+        <p class="system-desc">GPS separates model reasoning from execution through
+          explicit system boundaries, giving organizations a way to use AI across
+          support workflows without allowing model output to directly become
+          authority.</p>
+        <dl class="system-spec">
+          <dt>runtime</dt>       <dd>Provider-agnostic agent orchestration</dd>
+          <dt>decisions</dt>     <dd>Typed contracts between reasoning and execution</dd>
+          <dt>control</dt>       <dd>Human approval for consequential actions</dd>
+          <dt>authorization</dt> <dd>Deterministic tool permissions</dd>
+          <dt>state</dt>         <dd>Durable case and run history</dd>
+          <dt>auditability</dt>  <dd>Reconstructable end-to-end execution trails</dd>
+        </dl>
+        <p class="system-tech mono">Python &middot; FastAPI &middot; PostgreSQL/pgvector &middot; RAG &middot; LLM Orchestration</p>
+        <p class="system-evidence mono">Independent system &middot; private source</p>
       </article>
 
-      <p class="see-all mono"><a href="/matrix/#projects">See all work &rarr;</a></p>
+      <p class="see-all mono reveal"><a href="/matrix/#projects">See all work &rarr;</a></p>
     </div>
   </section>
 
@@ -107,7 +168,7 @@
 </main>
 
 <footer id="contact" class="site-footer">
-  <div class="wrap">
+  <div class="wrap reveal">
     <h2 class="section-label">contact</h2>
     <p>Open to engineering roles, consulting engagements, and collaboration.
        Email is the best starting point.</p>
@@ -123,5 +184,6 @@
   </div>
 </footer>
 
+<script src="/assets/js/pro.js" defer></script>
 </body>
 </html>
