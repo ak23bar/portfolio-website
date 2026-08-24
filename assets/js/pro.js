@@ -105,7 +105,6 @@
         { label: 'Selected systems', hint: 'section', href: '#projects' },
         { label: 'Capabilities', hint: 'section', href: '#capabilities' },
         { label: 'Experience', hint: 'section', href: '#experience' },
-        { label: 'About', hint: 'section', href: '#about' },
         { label: 'Contact', hint: 'section', href: '#contact' },
         { label: 'Open resume', hint: 'file', href: '/assets/files/Akbar_Resume.pdf' },
         { label: 'Copy email address', hint: 'copy', copy: 'akbaraman797@gmail.com' },

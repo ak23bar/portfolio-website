@@ -605,12 +605,6 @@ body::before {
     color: var(--text-muted);
 }
 
-/* ---- about ----
-   Two paragraphs, no card, no border, no list. The absence of structure is
-   itself what reads as quieter than the bordered systems above and the
-   ruled capabilities groups: prose about the person is supporting evidence
-   here, not the centrepiece. */
-.about p { color: var(--text-muted); }
 
 /* Reuse the 559px breakpoint the systems spec grid already collapses at,
    rather than introducing a new one: a 12rem label column leaves too little
@@ -682,6 +676,21 @@ body::before {
 @media (max-width: 559px) {
     .role-head { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
 }
+
+/* The degree line closes the experience section rather than heading a section of
+   its own: it is context for the roles above it, not a claim that stands alone. */
+.role-education {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--hairline);
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+/* The degree sits at --text; the minor and specialisations stay quieter, so the
+   line reads as one fact with its detail rather than as two competing claims. */
+.role-education { color: var(--text); }
+.role-education-detail { color: var(--text-muted); }
 
 /* ---- command palette ----
    Cmd-K / Ctrl-K only; there is no trigger chip to style because there is no
