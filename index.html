@@ -100,33 +100,45 @@
       </div>
 
       <div class="hero-visual">
-        <svg class="topology" viewBox="0 0 260 344" role="img" aria-label="Diagram of the engineering abstraction layers this work spans: an agent layer above a runtime layer, above an API and state layer that branches to networking, above an embedded and DSP layer, above an FPGA and HDL layer. A signal travels down through every layer.">
+        <svg class="topology" viewBox="0 0 260 352" role="img" aria-label="Diagram of one engineering stack spanning six layers, from agent at the top down to runtime, api and state, systems and network, embedded and DSP, and fpga and HDL at the bottom. A dashed line marks the boundary from software into systems, and a second dashed line marks the boundary from systems into hardware. A single signal travels down the stack through every layer in order, then back up to the top, and repeats.">
           <g class="topo-wire">
-            <line x1="20" y1="26" x2="20" y2="322"></line>
-            <line class="topo-branch" x1="20" y1="174" x2="112" y2="212"></line>
+            <line x1="20" y1="26" x2="20" y2="326"></line>
           </g>
           <g class="topo-bound">
-            <line x1="6" y1="137" x2="254" y2="137"></line>
-            <line x1="6" y1="285" x2="254" y2="285"></line>
-            <text class="topo-bound-label" x="254" y="130">runtime boundary</text>
-            <text class="topo-bound-label" x="254" y="278">hardware boundary</text>
+            <line x1="6" y1="176" x2="254" y2="176"></line>
+            <line x1="6" y1="236" x2="254" y2="236"></line>
+            <text class="topo-bound-label" x="254" y="170">software / systems</text>
+            <text class="topo-bound-label" x="254" y="230">systems / hardware</text>
           </g>
           <g class="topo-nodes">
-            <circle class="topo-node topo-n1" cx="20" cy="26"  r="4"></circle>
-            <circle class="topo-node topo-n2" cx="20" cy="100" r="4"></circle>
-            <circle class="topo-node topo-n3" cx="20" cy="174" r="4"></circle>
-            <circle class="topo-node topo-n4" cx="20" cy="248" r="4"></circle>
-            <circle class="topo-node topo-n5" cx="20" cy="322" r="4"></circle>
-            <circle class="topo-node topo-branch" cx="112" cy="212" r="3"></circle>
-            <text class="topo-label" x="34" y="26">agent</text>
-            <text class="topo-label" x="34" y="100">runtime</text>
-            <text class="topo-label" x="34" y="174">api &#183; state</text>
-            <text class="topo-label" x="34" y="248">embedded &#183; dsp</text>
-            <text class="topo-label" x="34" y="322">fpga &#183; hdl</text>
-            <text class="topo-label topo-branch" x="124" y="212">network</text>
+            <g class="topo-layer topo-l1">
+              <circle class="topo-node" cx="20" cy="26" r="4"></circle>
+              <text class="topo-label" x="34" y="26">agent</text>
+            </g>
+            <g class="topo-layer topo-l2">
+              <circle class="topo-node" cx="20" cy="86" r="4"></circle>
+              <text class="topo-label" x="34" y="86">runtime</text>
+            </g>
+            <g class="topo-layer topo-l3">
+              <circle class="topo-node" cx="20" cy="146" r="4"></circle>
+              <text class="topo-label" x="34" y="146">api &#183; state</text>
+            </g>
+            <g class="topo-layer topo-l4">
+              <circle class="topo-node" cx="20" cy="206" r="4"></circle>
+              <text class="topo-label" x="34" y="206">systems &#183; network</text>
+            </g>
+            <g class="topo-layer topo-l5">
+              <circle class="topo-node" cx="20" cy="266" r="4"></circle>
+              <text class="topo-label" x="34" y="266">embedded &#183; dsp</text>
+            </g>
+            <g class="topo-layer topo-l6">
+              <circle class="topo-node" cx="20" cy="326" r="4"></circle>
+              <text class="topo-label" x="34" y="326">fpga &#183; hdl</text>
+            </g>
           </g>
           <circle class="topo-packet" cx="20" cy="26" r="2.5"></circle>
         </svg>
+        <p class="hero-visual-caption mono">across abstraction layers</p>
       </div>
 
     </div>

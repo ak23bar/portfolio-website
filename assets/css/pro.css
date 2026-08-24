@@ -324,44 +324,141 @@ body::before {
     fill: var(--node-idle); font-family: var(--font-mono); font-size: 8px;
     text-anchor: end; letter-spacing: 0.04em;
 }
+
+/* Each layer is one group (circle + label) so one animated property pair
+   drives both: `stroke` inherits down to the child circle, `fill` inherits
+   down to the child text. That lets a single @keyframes rule per layer light
+   up the ring and brighten its label together, and guarantees they can never
+   fall out of sync the way two independently-animated elements could. The
+   circle and the label must NOT set their own `stroke`/`fill` respectively,
+   or the explicit value on the child would beat the inherited animated one. */
+.topo-layer { stroke: var(--node-idle); fill: var(--text-muted); }
 .topo-label {
-    fill: var(--text-muted); font-family: var(--font-mono); font-size: 10px;
+    font-family: var(--font-mono); font-size: 10px;
     dominant-baseline: middle; letter-spacing: 0.02em;
 }
-.topo-node { fill: var(--bg); stroke: var(--node-idle); stroke-width: 1.5; }
-.topo-packet { fill: var(--accent); opacity: 0; }
+.topo-node { fill: var(--bg); stroke-width: 1.5; }
+.topo-packet { fill: var(--accent); }
 
-/* One 10s pass down the spine, dwelling at each layer. */
-@keyframes topo-travel {
-    0%           { transform: translateY(0);     opacity: 0; }
-    3%, 18%      { transform: translateY(0);     opacity: 1; }
-    25%, 40%     { transform: translateY(74px);  opacity: 1; }
-    47%, 62%     { transform: translateY(148px); opacity: 1; }
-    69%, 84%     { transform: translateY(222px); opacity: 1; }
-    91%          { transform: translateY(296px); opacity: 1; }
-    100%         { transform: translateY(296px); opacity: 0; }
+/*
+   Traversal schedule, derived from an 18.4s cycle: down through six layers,
+   dwell at the bottom, back up through six layers, dwell at the top, repeat.
+   Percent = seconds / 18.4 * 100. Re-derive from this table rather than the
+   percentages below if the cycle length ever changes.
+
+   time (s) | % of 18.4s | state
+   0.0      | 0          | at layer 1 (top pause begins)
+   2.0      | 10.87      | leave layer 1
+   2.9      | 15.76      | arrive layer 2
+   3.5      | 19.02      | leave layer 2
+   4.4      | 23.91      | arrive layer 3
+   5.0      | 27.17      | leave layer 3
+   5.9      | 32.07      | arrive layer 4
+   6.5      | 35.33      | leave layer 4
+   7.4      | 40.22      | arrive layer 5
+   8.0      | 43.48      | leave layer 5
+   8.9      | 48.37      | arrive layer 6
+   10.9     | 59.24      | leave layer 6 (bottom pause ends)
+   11.8     | 64.13      | arrive layer 5
+   12.4     | 67.39      | leave layer 5
+   13.3     | 72.28      | arrive layer 4
+   13.9     | 75.54      | leave layer 4
+   14.8     | 80.43      | arrive layer 3
+   15.4     | 83.70      | leave layer 3
+   16.3     | 88.59      | arrive layer 2
+   16.9     | 91.85      | leave layer 2
+   17.8     | 96.74      | arrive layer 1
+   18.4     | 100        | cycle end (top pause continues into next cycle)
+
+   The packet's transform holds its offset across each dwell (paired
+   percentage stops, equal value) and interpolates linearly across each
+   travel segment. Offsets are the node spacing (60px) times layers crossed.
+*/
+@keyframes topo-packet-travel {
+    0%, 10.87%   { transform: translateY(0); }
+    15.76%, 19.02%  { transform: translateY(60px); }
+    23.91%, 27.17%  { transform: translateY(120px); }
+    32.07%, 35.33%  { transform: translateY(180px); }
+    40.22%, 43.48%  { transform: translateY(240px); }
+    48.37%, 59.24%  { transform: translateY(300px); }
+    64.13%, 67.39%  { transform: translateY(240px); }
+    72.28%, 75.54%  { transform: translateY(180px); }
+    80.43%, 83.70%  { transform: translateY(120px); }
+    88.59%, 91.85%  { transform: translateY(60px); }
+    96.74%, 100%    { transform: translateY(0); }
 }
-/* A short pulse as the signal arrives; delay places each node on the pass. */
-@keyframes topo-arrive {
-    0%, 8%    { stroke: var(--accent); }
-    16%, 100% { stroke: var(--node-idle); }
+.topo-packet { animation: topo-packet-travel 18.4s linear infinite; }
+
+/* One @keyframes per layer: each holds the idle colours except during its own
+   dwell windows (from the table above), when it switches to the accent pair.
+   Each edge is written as two offsets 0.03% apart (about 5ms of the 18.4s
+   cycle) rather than as one repeated offset. Two keyframes at the exact same
+   percentage do NOT produce a zero-duration jump: the engine keeps both, and
+   because they carry different values it interpolates across the ENTIRE gap
+   to the next differing offset, not just up to the duplicate. On this table
+   that gap can span most of the cycle, which smears one layer's colour into
+   the next dwell window instead of cutting it off, briefly making several
+   layers read as active at once. Separating the edge into two distinct,
+   nearly-adjacent offsets keeps the fast snap while giving the interpolator
+   an unambiguous, vanishingly short segment to run it over. 0.03% is far
+   inside the 4.89% minimum gap between any two layers' windows, so no two
+   layers can straddle it at once. */
+@keyframes topo-l1 {
+    0%, 10.87%      { stroke: var(--accent); fill: var(--text); }
+    10.90%, 96.71%  { stroke: var(--node-idle); fill: var(--text-muted); }
+    96.74%, 100%    { stroke: var(--accent); fill: var(--text); }
+}
+@keyframes topo-l2 {
+    0%, 15.73%      { stroke: var(--node-idle); fill: var(--text-muted); }
+    15.76%, 19.02%  { stroke: var(--accent); fill: var(--text); }
+    19.05%, 88.56%  { stroke: var(--node-idle); fill: var(--text-muted); }
+    88.59%, 91.85%  { stroke: var(--accent); fill: var(--text); }
+    91.88%, 100%    { stroke: var(--node-idle); fill: var(--text-muted); }
+}
+@keyframes topo-l3 {
+    0%, 23.88%      { stroke: var(--node-idle); fill: var(--text-muted); }
+    23.91%, 27.17%  { stroke: var(--accent); fill: var(--text); }
+    27.20%, 80.40%  { stroke: var(--node-idle); fill: var(--text-muted); }
+    80.43%, 83.70%  { stroke: var(--accent); fill: var(--text); }
+    83.73%, 100%    { stroke: var(--node-idle); fill: var(--text-muted); }
+}
+@keyframes topo-l4 {
+    0%, 32.04%      { stroke: var(--node-idle); fill: var(--text-muted); }
+    32.07%, 35.33%  { stroke: var(--accent); fill: var(--text); }
+    35.36%, 72.25%  { stroke: var(--node-idle); fill: var(--text-muted); }
+    72.28%, 75.54%  { stroke: var(--accent); fill: var(--text); }
+    75.57%, 100%    { stroke: var(--node-idle); fill: var(--text-muted); }
+}
+@keyframes topo-l5 {
+    0%, 40.19%      { stroke: var(--node-idle); fill: var(--text-muted); }
+    40.22%, 43.48%  { stroke: var(--accent); fill: var(--text); }
+    43.51%, 64.10%  { stroke: var(--node-idle); fill: var(--text-muted); }
+    64.13%, 67.39%  { stroke: var(--accent); fill: var(--text); }
+    67.42%, 100%    { stroke: var(--node-idle); fill: var(--text-muted); }
+}
+@keyframes topo-l6 {
+    0%, 48.34%      { stroke: var(--node-idle); fill: var(--text-muted); }
+    48.37%, 59.24%  { stroke: var(--accent); fill: var(--text); }
+    59.27%, 100%    { stroke: var(--node-idle); fill: var(--text-muted); }
 }
 
-.topo-packet { animation: topo-travel 10s linear infinite; }
-.topo-node { animation: topo-arrive 10s linear infinite; }
-.topo-n1 { animation-delay: 0s; }
-.topo-n2 { animation-delay: 1.8s; }
-.topo-n3 { animation-delay: 4s; }
-.topo-n4 { animation-delay: 6.2s; }
-.topo-n5 { animation-delay: 8.4s; }
-circle.topo-branch { animation-delay: 4.3s; }
+.topo-l1 { animation: topo-l1 18.4s linear infinite; }
+.topo-l2 { animation: topo-l2 18.4s linear infinite; }
+.topo-l3 { animation: topo-l3 18.4s linear infinite; }
+.topo-l4 { animation: topo-l4 18.4s linear infinite; }
+.topo-l5 { animation: topo-l5 18.4s linear infinite; }
+.topo-l6 { animation: topo-l6 18.4s linear infinite; }
+
+.hero-visual-caption {
+    color: var(--text-muted); font-size: 0.6875rem; margin-top: 0.75rem;
+}
 
 /* Frozen, the diagram must still read as a diagram: park the signal on the top
-   layer and hold that node active rather than leaving an empty end state. */
+   layer and hold that layer active rather than leaving an empty end state. */
 @media (prefers-reduced-motion: reduce) {
-    .topo-packet { animation: none; opacity: 1; }
-    .topo-node { animation: none; }
-    .topo-n1 { stroke: var(--accent); }
+    .topo-packet { animation: none; transform: translateY(0); }
+    .topo-layer { animation: none; }
+    .topo-l1 { stroke: var(--accent); fill: var(--text); }
 }
 
 /* ---- selected systems: engineered system record ---- */
@@ -396,12 +493,12 @@ circle.topo-branch { animation-delay: 4.3s; }
 .system-evidence { color: var(--text-muted); }
 
 /* ---- narrow viewports ----
-   The topology collapses rather than compressing: it moves below the copy, the
-   network branch and boundary captions drop out, and the spine survives. */
+   The topology collapses rather than compressing: it moves below the copy and
+   the boundary captions drop out (too tight against the labels at this
+   width), while the spine and all six layers survive. */
 @media (max-width: 819px) {
     .hero-grid { grid-template-columns: 1fr; gap: 0; }
     .hero-visual { max-width: 300px; margin-top: 3rem; }
-    .topo-branch { display: none; }
     .topo-bound-label { display: none; }
 }
 
