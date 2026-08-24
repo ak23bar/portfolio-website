@@ -767,7 +767,7 @@ Try 'help' for command overview</span>`;
         
         const files = [
             { name: 'bio.txt', desc: 'Professional summary', icon: '📄', size: '847B', color: '#FFFFFF' },
-            { name: 'resume.pdf', desc: 'Latest resume document', icon: '📋', size: '2.4MB', color: '#FFA500' },
+            { name: 'resume.pdf', desc: 'Latest resume document', icon: '📋', size: '103KB', color: '#FFA500' },
             { name: 'skills.json', desc: 'Technical skills data', icon: '🔧', size: '1.2KB', color: '#00CED1' },
             { name: 'current_roles.txt', desc: 'Active professional roles', icon: '💼', size: '543B', color: '#98FB98' },
             { name: 'gpa.txt', desc: 'Academic performance info', icon: '📊', size: '278B', color: '#DDA0DD' }
@@ -958,10 +958,10 @@ Try 'help' for command overview</span>`;
         
         const fileContents = {
             'bio.txt': 'Computer Engineer and entrepreneur building practical software, AI-enabled products, automation workflows, web platforms, and computer engineering systems.\nExperience spans industry, research, teaching, client-facing engineering, and AI evaluation.',
-            'resume.pdf': 'PDF document - Contact akbaraman797@gmail.com for latest resume\nSize: 2.4MB\nLast modified: Aug 26, 2025',
+            'resume.pdf': 'PDF document - /assets/files/Akbar_Resume.pdf\nSize: 103KB\nRun `resume` to open it',
             'current_roles.txt': 'Active Professional Roles:\n• Enterprise AI Engineering Intern - AHEAD\n• Engineering Success Mentor - University of Illinois Chicago',
             'skills.json': '{\n  "languages": ["Python", "C++", "JavaScript", "C", "Java", "ARM Assembly"],\n  "frameworks": ["PyTorch", "TensorFlow", "FastAPI", "Docker", "AWS"],\n  "domains": ["AI/ML", "Embedded Systems", "Web Development", "Computer Vision"],\n  "tools": ["Linux", "Git", "MATLAB", "Altium Designer", "Node.js"]\n}',
-            'gpa.txt': 'Academic Performance:\nCurrent GPA: 3.65/4.0\nExpected BS: May 2027\nExpected MS: May 2028\nDean\'s List: Fall 2023, Spring 2024',
+            'gpa.txt': 'Academic Performance:\nCurrent GPA: 3.54/4.0\nExpected BS: May 2027\nExpected MS: May 2028\nDean\'s List: Fall 2023, Spring 2024',
             'README.md': '# CodeLingo\nAI-powered code explanation tool for students learning to read and reason through code.\n\n## Features\n- Level-based explanations\n- Streaming output\n- Quiz mode\n- Misconception review\n\n## Tech Stack\nPython, Streamlit, Groq API, Llama 3.3',
             'app.py': '# CodeLingo Streamlit app entry point\n# Handles code input, explanation level selection, streaming responses, and quiz mode.',
             'prompting.md': '# Prompting Strategy\nStructured explanations with beginner, student, and teacher modes plus misconception-focused review.',
@@ -1134,7 +1134,7 @@ Example: find "machine learning"</span>`;
             'bio.txt': 'Computer Engineer entrepreneur practical software AI-enabled products automation web platforms computer engineering systems industry research teaching client work',
             'skills.json': 'Python C++ JavaScript C Java ARM Assembly PyTorch TensorFlow FastAPI Docker AWS AI ML Embedded Systems Web Development Computer Vision Linux Git MATLAB Altium Designer Node.js',
             'current_roles.txt': 'Enterprise AI Engineering Intern AHEAD Engineering Success Mentor UIC University of Illinois Chicago',
-            'gpa.txt': 'Academic Performance Current GPA 3.65 Expected BS May 2027 Expected MS May 2028 Deans List Fall 2023 Spring 2024',
+            'gpa.txt': 'Academic Performance Current GPA 3.54 Expected BS May 2027 Expected MS May 2028 Deans List Fall 2023 Spring 2024',
             'README.md': 'CodeLingo AI-powered code explanation tool level-based explanations streaming output quiz mode misconception review Python Streamlit Groq API Llama 3.3'
         };
         
