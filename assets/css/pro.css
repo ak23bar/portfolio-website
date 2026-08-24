@@ -574,3 +574,52 @@ body::before {
     align-items: center;
 }
 .system-links a:hover { color: var(--accent); }
+
+/* ---- capabilities ----
+   Four groups, each one plain comma-separated line: no chips, no bars, no
+   badges. At 40+ items a chip cloud stops being scannable and starts reading
+   as decoration; a definition list of full sentences stays a statement. The
+   group name (dt) carries the visual weight; the concept line (dd) is mono
+   and muted, the opposite emphasis of the systems section's spec lists,
+   because this section is supporting evidence, not the centrepiece. */
+.capability-list { margin: 0; }
+.capability-group {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 0.35rem 2rem;
+    padding-block: 1.5rem;
+    border-top: 1px solid var(--hairline);
+}
+.capability-group:last-child { border-bottom: 1px solid var(--hairline); }
+.capability-group dt {
+    margin: 0;
+    padding-top: 0.15rem;
+    color: var(--text);
+    font-weight: 600;
+}
+.capability-group dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+/* ---- about ----
+   Two paragraphs, no card, no border, no list. The absence of structure is
+   itself what reads as quieter than the bordered systems above and the
+   ruled capabilities groups: prose about the person is supporting evidence
+   here, not the centrepiece. */
+.about p { color: var(--text-muted); }
+
+/* Reuse the 559px breakpoint the systems spec grid already collapses at,
+   rather than introducing a new one: a 12rem label column leaves too little
+   room for the long concept lines on a narrow viewport, so the label moves
+   above its line instead of squeezing it. */
+@media (max-width: 559px) {
+    .capability-group {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+        padding-block: 1.25rem;
+    }
+}
