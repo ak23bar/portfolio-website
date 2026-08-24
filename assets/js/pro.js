@@ -52,7 +52,7 @@
             index = (index + 1) % items.length;
             items[index].classList.add('is-active');
             if (++swaps >= MAX_SWAPS) window.clearInterval(timer);
-        }, 3200);
+        }, 5200);
     }
 
     /* ---- Matrix discovery cue ----
