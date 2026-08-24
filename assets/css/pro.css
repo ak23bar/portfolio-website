@@ -23,6 +23,12 @@
     /* diagram-only tones, deliberately below body-text contrast */
     --wire:      #262626;
     --node-idle: #4d4d4d;
+    /* One full traversal of the hero diagram, down the stack and back up.
+       Every stop in the topo keyframes is a percentage, so the schedule is
+       duration-independent: changing this one value rescales travel, dwell,
+       and both end pauses together and cannot break the one-active-layer
+       invariant. Tune the pace here, never in the keyframes. */
+    --topo-cycle: 30s;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -341,12 +347,17 @@ body::before {
 .topo-packet { fill: var(--accent); }
 
 /*
-   Traversal schedule, derived from an 18.4s cycle: down through six layers,
-   dwell at the bottom, back up through six layers, dwell at the top, repeat.
-   Percent = seconds / 18.4 * 100. Re-derive from this table rather than the
-   percentages below if the cycle length ever changes.
+   Traversal schedule: down through six layers, dwell at the bottom, back up
+   through six layers, dwell at the top, repeat. The percentages below are the
+   schedule; they are independent of the cycle length, which lives in
+   --topo-cycle. The seconds column is the 18.4s reference the ratios were
+   derived from (percent = seconds / 18.4 * 100) and is kept only so the
+   proportions stay legible; multiply by --topo-cycle / 18.4s for real times.
+   At the current 30s cycle that is 1.47s of travel between layers, 0.98s of
+   dwell on each, and 2.28s of extra pause at each end. Re-derive from this
+   table rather than from the percentages if the proportions ever change.
 
-   time (s) | % of 18.4s | state
+   ref (s)  | % of cycle | state
    0.0      | 0          | at layer 1 (top pause begins)
    2.0      | 10.87      | leave layer 1
    2.9      | 15.76      | arrive layer 2
@@ -387,11 +398,11 @@ body::before {
     88.59%, 91.85%  { transform: translateY(60px); }
     96.74%, 100%    { transform: translateY(0); }
 }
-.topo-packet { animation: topo-packet-travel 18.4s linear infinite; }
+.topo-packet { animation: topo-packet-travel var(--topo-cycle) linear infinite; }
 
 /* One @keyframes per layer: each holds the idle colours except during its own
    dwell windows (from the table above), when it switches to the accent pair.
-   Each edge is written as two offsets 0.03% apart (about 5ms of the 18.4s
+   Each edge is written as two offsets 0.03% apart (about 9ms of a 30s
    cycle) rather than as one repeated offset. Two keyframes at the exact same
    percentage do NOT produce a zero-duration jump: the engine keeps both, and
    because they carry different values it interpolates across the ENTIRE gap
@@ -442,12 +453,12 @@ body::before {
     59.27%, 100%    { stroke: var(--node-idle); fill: var(--text-muted); }
 }
 
-.topo-l1 { animation: topo-l1 18.4s linear infinite; }
-.topo-l2 { animation: topo-l2 18.4s linear infinite; }
-.topo-l3 { animation: topo-l3 18.4s linear infinite; }
-.topo-l4 { animation: topo-l4 18.4s linear infinite; }
-.topo-l5 { animation: topo-l5 18.4s linear infinite; }
-.topo-l6 { animation: topo-l6 18.4s linear infinite; }
+.topo-l1 { animation: topo-l1 var(--topo-cycle) linear infinite; }
+.topo-l2 { animation: topo-l2 var(--topo-cycle) linear infinite; }
+.topo-l3 { animation: topo-l3 var(--topo-cycle) linear infinite; }
+.topo-l4 { animation: topo-l4 var(--topo-cycle) linear infinite; }
+.topo-l5 { animation: topo-l5 var(--topo-cycle) linear infinite; }
+.topo-l6 { animation: topo-l6 var(--topo-cycle) linear infinite; }
 
 .hero-visual-caption {
     color: var(--text-muted); font-size: 0.6875rem; margin-top: 0.75rem;
