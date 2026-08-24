@@ -623,3 +623,62 @@ body::before {
         padding-block: 1.25rem;
     }
 }
+
+/* ---- experience ----
+   Deliberately not five more cards after the five boxed systems above: no
+   border, no background surface, no rail, no dots, no icons. A hairline top
+   rule between rows is the only separator, carried by the adjacent-sibling
+   selector so it also falls between the current role and the first prior
+   role without a dedicated class. The current role reads as the anchor
+   (more block padding, a larger heading, its two sentences in full prose at
+   --text); the four prior roles compress into a dense one-line record, the
+   contrast the section is built around. */
+.role { padding-block: 2rem; }
+.role:first-child { padding-top: 0; }
+.role + .role { border-top: 1px solid var(--hairline); }
+
+.role-dates {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+.role-org {
+    margin: 0.35rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.role--current { padding-bottom: 2.5rem; }
+.role--current .role-dates { margin-bottom: 0.75rem; }
+.role--current h3 { font-size: 1.25rem; }
+.role--current .role-org { margin-bottom: 1.5rem; }
+/* Explicit rather than relied-on: the brief calls out --text for the anchor
+   role's prose specifically, and paragraphs elsewhere in this section (the
+   muted metadata) rely on the same base color being overridden. */
+.role-desc { color: var(--text); font-size: 1rem; }
+.role-desc + .role-desc { margin-top: 0.85rem; }
+
+/* Prior roles put the date beside the title instead of above it (the
+   current role's treatment) so the row reads as one dense line rather than
+   a second small card; that pairing is exactly what has to un-pair at
+   narrow widths below. */
+.role-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+}
+.role-head h3 { min-width: 0; }
+.role-line {
+    margin-top: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+}
+
+/* Reuse the systems/capabilities breakpoint. A long title (the LinkedIn red
+   team role) plus a long date range is the pair most likely to collide on
+   one flex row at this width; stacking removes the collision outright
+   rather than shrinking type to avoid it. */
+@media (max-width: 559px) {
+    .role-head { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+}
