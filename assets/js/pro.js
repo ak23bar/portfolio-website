@@ -102,7 +102,7 @@
     'use strict';
 
     var ENTRIES = [
-        { label: 'Selected systems', hint: 'section', href: '#projects' },
+        { label: 'Projects & research', hint: 'section', href: '#projects' },
         { label: 'Experience', hint: 'section', href: '#experience' },
         { label: 'Contact', hint: 'section', href: '#contact' },
         { label: 'Open resume', hint: 'file', href: '/assets/files/Akbar_Resume.pdf' },
